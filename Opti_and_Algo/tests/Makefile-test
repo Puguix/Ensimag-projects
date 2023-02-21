@@ -1,0 +1,90 @@
+# Programme de vérification des sorties du programme
+A_TESTER= ../bin/distanceEdition 
+DIRTEST= .
+# DIRBENCH=/matieres/4MMAOD6/2022-10-TP-AOD-ADN-Docs-fournis/2022-10-TP-AOD-ADN-Benchmark
+DIRBENCH=~/Desktop
+all: .test1.expected .test2.expected .test3.expected .test4.expected .test5.expected 
+
+all-valgrind: valgrind4perf1000.output valgrind4perf2000.output valgrind4perf10000.output
+
+clean: 
+
+#######################################
+### Correction test 
+.test1.expected:  $(A_TESTER)
+	@echo "*******************************"
+	@echo "Test 1 : basic on small texts (should print 7) ..."
+	@echo "7" > .test1.expected 
+	$(A_TESTER) $(DIRTEST)/enonce-seq1 0 10 $(DIRTEST)/enonce-seq2 0 8  > test1.output
+	cat test1.output 
+	@diff  test1.output .test1.expected 
+	@echo "... test 1 passed !"
+	@echo "*******************************"
+
+.test2.expected:  $(A_TESTER) 
+	@echo "Test 2 : basic on small texts (should print 4) ..."
+	@echo "4" > .test2.expected 
+	$(A_TESTER) $(DIRTEST)/f1.fna 0 5 $(DIRTEST)/f2.fna 42 7 > test2.output
+	cat test2.output 
+	@diff  test2.output .test2.expected 
+	@echo "... test 2 passed !"
+	@echo "*******************************"
+
+.test3.expected:  $(A_TESTER) 
+	@echo "Test 3 : small texts truncated from real SARS-Cov2 sequences (should print 464)"
+	@echo "464" > .test3.expected 
+	$(A_TESTER) $(DIRTEST)/ba52_recent_omicron.fasta 0 1000 $(DIRTEST)/wuhan_hu_1.fasta 0 1234  > test3.output
+	cat test3.output 
+	@diff  test3.output .test3.expected 
+	@echo "... test 3 passed !"
+	@echo "*******************************"
+
+.test4.expected: $(A_TESTER) 
+	@echo "Test 4 : real SARS-Cov2 sequences,  size= 30 kB (should print 369) ..."
+	@echo "369" > .test4.expected 
+	time $(A_TESTER) $(DIRTEST)/ba52_recent_omicron.fasta 153 30183 $(DIRTEST)/wuhan_hu_1.fasta 116 30331  > test4.output
+	cat test4.output 
+	@diff  test4.output .test4.expected 
+	@echo "... test 4 passed !"
+	@echo "*******************************"
+
+.test5.expected:
+	@echo "Test 5 : real sequences (Arabidopsis thaliana), size= 20 MBs (should print Killed or an error message) ..."
+	# echo "Killed" > .test5.expected 
+	$(A_TESTER)  \
+		$(DIRBENCH)/GCA_024498555.1_ASM2449855v1_genomic.fna 77328790 20236404 \
+		$(DIRBENCH)/GCF_000001735.4_TAIR10.1_genomic.fna 30808129 19944517 \
+		> test5.output 
+	cat test5.output 
+	# diff  test5.output .test5.expected 
+	@echo "... test 5 passed (but result not checked)"
+	@echo "*******************************"
+
+#######################################
+### Experimentation with valgrind
+
+valgrind4perf1000.output:
+	@echo "Test 4 perf : performance test (extracts from SARS-Cov2 sequences), size= 1000 Bytes"
+	time valgrind --tool=cachegrind --D1=4096,4,64	\
+		$(A_TESTER) $(DIRTEST)/ba52_recent_omicron.fasta 153 1000 $(DIRTEST)/wuhan_hu_1.fasta 116 1000  2> valgrind4perf1000.output
+	cat valgrind4perf1000.output
+	@echo "*******************************"
+
+valgrind4perf2000.output:
+	@@echo "Test 4 : performance test (extracts from SARS-Cov2 sequences), size= 2000 Bytes"
+	time valgrind --tool=cachegrind --D1=4096,4,64	\
+		$(A_TESTER) $(DIRTEST)/ba52_recent_omicron.fasta 153 2000 $(DIRTEST)/wuhan_hu_1.fasta 116 2000  2> valgrind4perf2000.output
+	cat valgrind4perf2000.output
+	@echo "*******************************"
+
+valgrind4perf10000.output:
+	@echo "Test 4 : performance test (extracts from SARS-Cov2 sequences), size= 10000 Bytes"
+	time valgrind --tool=cachegrind --D1=4096,4,64	\
+		$(A_TESTER) $(DIRTEST)/ba52_recent_omicron.fasta 153 10000 $(DIRTEST)/wuhan_hu_1.fasta 116 10000  2> valgrind4perf10000.output
+	cat valgrind4perf10000.output
+	@echo "*******************************"
+
+#######################################
+### Experimentation with perf
+
+

@@ -1,0 +1,2264 @@
+INFO: [XSIM 43-3496] Using init file passed via -initfile option "/bigsoft/Xilinx/Vivado/2019.1/data/xsim/ip/xsim_ip.ini".
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /bigsoft/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/xelab tb_autotest -cc gcc -initfile=/bigsoft/Xilinx/Vivado/2019.1/data/xsim/ip/xsim_ip.ini -L xpm -nolog -debug typical -generic_top mutant=0 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling package work.pkg
+Compiling package work.txt_util
+Compiling architecture rtl of entity work.CPU_PC [cpu_pc_default]
+Compiling architecture rtl of entity work.CPU_CSR [\CPU_CSR(interrupt_vector="00000...]
+Compiling architecture rtl of entity work.CPU_CND [cpu_cnd_default]
+Compiling architecture rtl of entity work.CPU_PO [\CPU_PO(reset_vector="0000000000...]
+Compiling architecture rtl of entity work.CPU [\CPU(reset_vector="0000000000000...]
+Compiling architecture rtl of entity work.PROC_bus [\PROC_bus(n_slave=3,base=("00000...]
+Compiling architecture behavioral of entity work.RAM32 [\RAM32(memory_size=32768,file_na...]
+Compiling architecture rtl of entity work.IP_ITpush [ip_itpush_default]
+Compiling architecture rtl of entity work.IP_PLIC [ip_plic_default]
+Compiling architecture rtl of entity work.IP_CLINT [ip_clint_default]
+Compiling architecture behavior of entity work.tb_autotest
+Built simulation snapshot work.tb_autotest
+
+****** xsim v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/work.tb_autotest/xsim_script.tcl
+# xsim {work.tb_autotest} -wdb {trace.wdb} -autoloadwcfg -tclbatch {/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/config/autotest.xsim.tcl}
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+source /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/config/autotest.xsim.tcl
+## if {[info exists ::env(TESTS)]} {
+## 	set string_test $env(TESTS)
+## } else {
+## 	set string_test 
+## }
+## set tests [regexp -all -inline -- {\S+} $string_test]
+## puts $string_test
+ addi  add  andi  and  auipc  beq  bge  bgeu  blt  bltu  bne  csrrci_mepc  csrrci_mie  csrrci_mip  csrrci_mstatus  csrrci_mtvec  csrrc_mepc  csrrc_mie  csrrc_mip  csrrc_mstatus  csrrc_mtvec  csrrsi_mepc  csrrsi_mie  csrrsi_mip  csrrsi_mstatus  csrrsi_mtvec  csrrs_mepc  csrrs_mie  csrrs_mip  csrrs_mstatus  csrrs_mtvec  csrrwi_mepc  csrrwi_mie  csrrwi_mip  csrrwi_mtvec  csrrw_mepc  csrrw_mie  csrrw_mip  csrrw_mstatus  csrrw_mtvec  jalr  jal  lb  lbu  lh  lhu  lui  lw  ori  or  rebouclage  sb  sh  slli  sll  slti  slt  sltui  sltu  srai  sra  srli  srl  sub  sw  xori  xor
+## puts $tests
+addi add andi and auipc beq bge bgeu blt bltu bne csrrci_mepc csrrci_mie csrrci_mip csrrci_mstatus csrrci_mtvec csrrc_mepc csrrc_mie csrrc_mip csrrc_mstatus csrrc_mtvec csrrsi_mepc csrrsi_mie csrrsi_mip csrrsi_mstatus csrrsi_mtvec csrrs_mepc csrrs_mie csrrs_mip csrrs_mstatus csrrs_mtvec csrrwi_mepc csrrwi_mie csrrwi_mip csrrwi_mtvec csrrw_mepc csrrw_mie csrrw_mip csrrw_mstatus csrrw_mtvec jalr jal lb lbu lh lhu lui lw ori or rebouclage sb sh slli sll slti slt sltui sltu srai sra srli srl sub sw xori xor
+## foreach test $tests {
+## 	put "Preparing test: ${test}"
+## 	file delete test_default.out test_default.irq test_default.setup test_default.mem
+## 	file link -symbolic test_default.out   ${test}/test_default.out
+## 	file link -symbolic test_default.irq   ${test}/test_default.irq
+## 	file link -symbolic test_default.setup ${test}/test_default.setup
+## 	file link -symbolic test_default.mem   ../mem/${test}.mem
+## 
+## 	put "Running test: ${test}"
+## 	restart
+## 	run -all
+## 	file copy -force test_default.res  ${test}
+## 	file copy -force test_default.test ${test}
+## }
+Preparing test: addi
+Running test: addi
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 000F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 001F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFF8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 400F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345001  get : 0x12345001
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345400  get : 0x12345400
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 180 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: add
+Running test: add
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 00001F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 001F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 01FF0FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFF37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 01FF0FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00001001  get : 0x00001001
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000001  get : 0x00000001
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 210 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: andi
+Running test: andi
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 000FFF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 111F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 803FFF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10110111  get : 0x10110111
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10110001  get : 0x10110001
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 180 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: and
+Running test: and
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00111FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10011F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01FF7FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 01EF7FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00111000  get : 0x00111000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00011000  get : 0x00011000
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10011000  get : 0x10011000
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 150 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: auipc
+Running test: auipc
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00000F97
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 60 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: beq
+Running test: beq
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10110F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01EF8463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 160 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: bge
+Running test: bge
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10111F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 03EFD063
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 70000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 01EFD463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 55555FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1032] = 01EFD463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1033] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1034] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1035] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x70000000  get : 0x70000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 330 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 360 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 360 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 360 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 360 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: bgeu
+Running test: bgeu
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10111F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 03EFF063
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 70000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 01EFF463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 55555FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1032] = 01EFF663
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1033] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1034] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1035] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1036] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x70000000  get : 0x70000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 330 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 330 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 330 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 330 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: blt
+Running test: blt
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10111F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01EFC863
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 70000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 01EFC463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 55555FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 10111FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = 01EFC463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1032] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1033] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1034] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10111000  get : 0x10111000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 260 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 260 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 260 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 260 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: bltu
+Running test: bltu
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10111F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01EFE863
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 70000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 01EFE463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 55555FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 10111FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = 01EFE463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1032] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1033] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1034] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10111000  get : 0x10111000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 260 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 260 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 260 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 260 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: bne
+Running test: bne
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10111F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01EF9463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 54521FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFF37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = 01EF9463
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1032] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1033] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1034] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x54521000  get : 0x54521000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 290 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 320 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 320 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 320 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 320 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrci_mepc
+Running test: csrrci_mepc
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 341F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3417FFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 341F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345670  get : 0x12345670
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 230 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrci_mie
+Running test: csrrci_mie
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 671F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 304F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3047FFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 304F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345671  get : 0x12345671
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345671  get : 0x12345671
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345670  get : 0x12345670
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 230 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrci_mip
+Running test: csrrci_mip
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 344F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3447FFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 344F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: FAILED 
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 190 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrci_mstatus
+Running test: csrrci_mstatus
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 300F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3007FFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 300F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345670  get : 0x12345670
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 230 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrci_mtvec
+Running test: csrrci_mtvec
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 305F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3057FFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 305F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345670  get : 0x12345670
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 230 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrc_mepc
+Running test: csrrc_mepc
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 341F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 341FBFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 341F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x02345000  get : 0x02345000
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 200 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrc_mie
+Running test: csrrc_mie
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 304F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 304FBFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 304F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x02345000  get : 0x02345000
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 200 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrc_mip
+Running test: csrrc_mip
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 344F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 344FBFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 344F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: FAILED 
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 160 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrc_mstatus
+Running test: csrrc_mstatus
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 300F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 300FBFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 300F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x02345000  get : 0x02345000
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 200 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrc_mtvec
+Running test: csrrc_mtvec
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 305F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 305FBFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 305F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x02345000  get : 0x02345000
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 200 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrsi_mepc
+Running test: csrrsi_mepc
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 341F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3417EFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 341F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x1234567C  get : 0x1234567C
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 230 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrsi_mie
+Running test: csrrsi_mie
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 304F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3047EFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 304F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345670  get : 0x12345670
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345677  get : 0x12345677
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 230 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrsi_mip
+Running test: csrrsi_mip
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 344F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3447EFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 344F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: FAILED 
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 190 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrsi_mstatus
+Running test: csrrsi_mstatus
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 300F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3007EFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 300F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x1234567F  get : 0x1234567F
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 230 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrsi_mtvec
+Running test: csrrsi_mtvec
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 678F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 305F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 3057EFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 305F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345678  get : 0x12345678
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x1234567C  get : 0x1234567C
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 230 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 230 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrs_mepc
+Running test: csrrs_mepc
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 341F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 341FAFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 341F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF2345000  get : 0xF2345000
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 200 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrs_mie
+Running test: csrrs_mie
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 304F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 304FAFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 304F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF2345000  get : 0xF2345000
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 200 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrs_mip
+Running test: csrrs_mip
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 344F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 344FAFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 344F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: FAILED 
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 160 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrs_mstatus
+Running test: csrrs_mstatus
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 300F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 300FAFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 300F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF2345000  get : 0xF2345000
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 200 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrs_mtvec
+Running test: csrrs_mtvec
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 305F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = F0000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 305FAFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 305F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF0000000  get : 0xF0000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xF2345000  get : 0xF2345000
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 200 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 200 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrwi_mepc
+Running test: csrrwi_mepc
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 341C5F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 3414DFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 100 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000018  get : 0x00000018
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 130 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrwi_mie
+Running test: csrrwi_mie
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 304C5F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 3044DFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 100 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000010  get : 0x00000010
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 130 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrwi_mip
+Running test: csrrwi_mip
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 344C5F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 3444DFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 100 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: FAILED 
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 130 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrwi_mtvec
+Running test: csrrwi_mtvec
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 305C5F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 3054DFF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 100 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000018  get : 0x00000018
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 130 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrw_mepc
+Running test: csrrw_mepc
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 341F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 341F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 160 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrw_mie
+Running test: csrrw_mie
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 304F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 304F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 160 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrw_mip
+Running test: csrrw_mip
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 344F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 344F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: FAILED 
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 160 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrw_mstatus
+Running test: csrrw_mstatus
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 300F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 300F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 160 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: csrrw_mtvec
+Running test: csrrw_mtvec
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 305F9F73
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 305F1FF3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 160 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 160 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: jalr
+Running test: jalr
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 018F8F67
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00008FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 0000CFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 00010FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 00014FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 00018FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00018000  get : 0x00018000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 130 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: jal
+Running test: jal
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 02000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 00800F6F
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x02000000  get : 0x02000000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 130 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 130 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: lb
+Running test: lb
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 12345F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 678F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 11EF8023
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 100F8F83
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000078  get : 0x00000078
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 220 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: lbu
+Running test: lbu
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 12345F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 678F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 11EF8023
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 100FCF83
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000078  get : 0x00000078
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 220 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: lh
+Running test: lh
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 12345F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 678F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 11EF9023
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 100F9F83
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00005678  get : 0x00005678
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 220 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: lhu
+Running test: lhu
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 12345F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 678F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 11EF9023
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 100FDF83
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00005678  get : 0x00005678
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 220 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: lui
+Running test: lui
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 120 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: lw
+Running test: lw
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 12345F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 11EFA023
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 100FAF83
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 190 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: ori
+Running test: ori
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 191FEF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = FFFFEF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10110191  get : 0x10110191
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFFFFF  get : 0xFFFFFFFF
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 120 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: or
+Running test: or
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10110F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01FF6FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 181F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 01FF6FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10110181  get : 0x10110181
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 210 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: rebouclage
+Running test: rebouclage
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 12345FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 140 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 140 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 140 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 140 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: sb
+Running test: sb
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 12345F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 678F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 11EF8023
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 100F8F83
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000078  get : 0x00000078
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 220 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: sh
+Running test: sh
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 12345F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 678F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 11EF9023
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 100F9F83
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00005678  get : 0x00005678
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 220 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 220 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: slli
+Running test: slli
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 001F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 001F9F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 01FF9F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF001  get : 0xFFFFF001
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFE002  get : 0xFFFFE002
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 150 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: sll
+Running test: sll
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 001F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 001F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 01EF9FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 01FF0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = 01EF9FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1032] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF001  get : 0xFFFFF001
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFE002  get : 0xFFFFE002
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 270 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: slti
+Running test: slti
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 000FAF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = FFFFAF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000001  get : 0x00000001
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 120 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: slt
+Running test: slt
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 00111F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01EFAFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 70000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 01EFAFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 80000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 01EFAFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000001  get : 0x00000001
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x80000000  get : 0x80000000
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000001  get : 0x00000001
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 240 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: sltui
+Running test: sltui
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 000FBF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 700FBF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000001  get : 0x00000001
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 120 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: sltu
+Running test: sltu
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10111F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01EFBFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 70000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 01EFBFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 80000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 01EFBFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000001  get : 0x00000001
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000001  get : 0x00000001
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x80000000  get : 0x80000000
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 240 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: srai
+Running test: srai
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 001F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 401FDF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 41FFDF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF001  get : 0xFFFFF001
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF800  get : 0xFFFFF800
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFFFFF  get : 0xFFFFFFFF
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 150 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: sra
+Running test: sra
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 001F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 001F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 41EFDFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 01FF0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = 41EFDFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1032] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF001  get : 0xFFFFF001
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF800  get : 0xFFFFF800
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFFFFF  get : 0xFFFFFFFF
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 270 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: srli
+Running test: srli
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 001F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 001FDF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 01FFDF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF001  get : 0xFFFFF001
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x7FFFF800  get : 0x7FFFF800
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 150 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: srl
+Running test: srl
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 001F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 001F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 01EFDFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 01FF0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = 01EFDFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1032] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF001  get : 0xFFFFF001
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x7FFFF800  get : 0x7FFFF800
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 270 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 270 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: sub
+Running test: sub
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = FFFFFFB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 001F8F93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 00000F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 001F0F13
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = 41EF8FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1029] = 80000FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1030] = 41EF8FB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1031] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF001  get : 0xFFFFF001
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xFFFFF000  get : 0xFFFFF000
+Time: 180 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x80000000  get : 0x80000000
+Time: 210 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x7FFFFFFF  get : 0x7FFFFFFF
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 240 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 240 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: sw
+Running test: sw
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 00001FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 12345F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 11EFA023
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 100FAF83
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x00001000  get : 0x00001000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x12345000  get : 0x12345000
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 190 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 190 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: xori
+Running test: xori
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 191FCF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = FFFFCF93
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10110191  get : 0x10110191
+Time: 90 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0xEFEEFE6E  get : 0xEFEEFE6E
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 120 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+Preparing test: xor
+Running test: xor
+INFO: [Simtcl 6-17] Simulation restarted
+Note: @ 00000400 = 1024
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1024] = 10110FB7
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1025] = 10110F37
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1026] = 01EFCFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1027] = 01EFCFB3
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+Note: memory[1028] = FFFFFFFF
+Time: 0 ps  Iteration: 1  Process: /tb_autotest/C_RAM/line__149  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/RAM32_reload.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 60 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x00000000  get : 0x00000000
+Time: 120 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+
+Note: pout expect   : 0x10110000  get : 0x10110000
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Note: PASSED 
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+Failure: Assertion violation
+Time: 150 ns  Iteration: 1  Process: /tb_autotest/tb_pout  File: /user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd
+$finish called at time : 150 ns : File "/user/9/.base/gauthpau/home/Desktop/TP/gauthpau_stevantg/vhd/bench/tb_autotest.vhd" Line 203
+## exit
+INFO: [Common 17-206] Exiting xsim at Fri Apr 15 16:49:32 2022...

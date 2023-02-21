@@ -1,0 +1,10 @@
+# python generated
+__pycache__
+*.pyc
+
+# images ppm et gif
+*.ppm
+*.gif
+
+# bazar machintochien
+.DS_STORE
