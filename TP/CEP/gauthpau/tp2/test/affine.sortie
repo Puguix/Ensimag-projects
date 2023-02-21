@@ -1,0 +1,9 @@
+Fonction affine : Entrez le premier opérande
+2
+Fonction affine : Entrez le deuxième opérande
+
+3
+Fonction affine : Entrez le troisième opérande
+
+4
+affine(2,3,4) calculé en assembleur: 11 et en C: 11

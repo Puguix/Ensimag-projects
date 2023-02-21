@@ -1,0 +1,32 @@
+Test pour l'arbre de l'énoncé:abr_est_present_tail_call(0, abr) ? : non
+abr_est_present_tail_call(1, abr) ? : oui
+abr_est_present_tail_call(2, abr) ? : non
+abr_est_present_tail_call(3, abr) ? : oui
+abr_est_present_tail_call(4, abr) ? : oui
+abr_est_present_tail_call(5, abr) ? : non
+abr_est_present_tail_call(6, abr) ? : oui
+abr_est_present_tail_call(7, abr) ? : oui
+abr_est_present_tail_call(8, abr) ? : oui
+abr_est_present_tail_call(9, abr) ? : non
+abr_est_present_tail_call(10, abr) ? : oui
+abr_est_present_tail_call(11, abr) ? : non
+abr_est_present_tail_call(12, abr) ? : non
+abr_est_present_tail_call(13, abr) ? : oui
+abr_est_present_tail_call(14, abr) ? : oui
+
+Test pour l'arbre vide:abr_est_present_tail_call(0, abr) ? : non
+abr_est_present_tail_call(1, abr) ? : non
+abr_est_present_tail_call(2, abr) ? : non
+abr_est_present_tail_call(3, abr) ? : non
+abr_est_present_tail_call(4, abr) ? : non
+abr_est_present_tail_call(5, abr) ? : non
+abr_est_present_tail_call(6, abr) ? : non
+abr_est_present_tail_call(7, abr) ? : non
+abr_est_present_tail_call(8, abr) ? : non
+abr_est_present_tail_call(9, abr) ? : non
+abr_est_present_tail_call(10, abr) ? : non
+abr_est_present_tail_call(11, abr) ? : non
+abr_est_present_tail_call(12, abr) ? : non
+abr_est_present_tail_call(13, abr) ? : non
+abr_est_present_tail_call(14, abr) ? : non
+
