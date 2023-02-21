@@ -1,9 +1,11 @@
 # Gitlab ci/cd file configuration 
 
 variables:
+    OPT: "-k"
     REF: "master"
+    TOSOURCE: "/bigsoft/Xilinx/Vivado/2019.1/settings64.sh"
     TOOLCHAIN_PATH: "/matieres/3MMCEP/riscv/bin"
-    TOCLEAN: "bin program config .git .gitlab-ci.yml"
+    TOCLEAN: "vhd bin program config .git .gitlab-ci.yml"
 
 stages:
     - test
@@ -14,11 +16,15 @@ stages:
 student_test:
     stage: test 
     script:
-        - for tp in tp1 tp2 tp3 tp4 tp5; do (cd $tp;make clean;../verif_etud.sh);done
+        - source ${TOSOURCE} 
+        - make clean
+        - TOOLCHAIN_DIR=${TOOLCHAIN_PATH} make autotest
     artifacts:
         paths:
-            - tp*/test/*.sortie
-            - tp*/*.s
+            - vhd
+            - program/autotest
+            - program/sequence_tag
+            - autotest.res
     only:
         - master
         

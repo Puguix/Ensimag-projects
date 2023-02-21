@@ -1,8 +1,0 @@
-*.log
-*.o
-*.stx
-*.stxetd
-*.test
-*.go
-*.svg
-*.pr.s
