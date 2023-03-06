@@ -1,0 +1,145 @@
+---
+title: "TP1"
+date: "21/02/2023"
+name: Alexandre Gournail, Célien Bonhomme, Paul Gauthier
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# TP1
+
+## Exercise 1
+
+    prostateCancer <- read.table("./prostate.data", header=T) 
+    dataSet = prostateCancer[-10] 
+    attach(dataSet)
+
+    pairs(dataSet)
+
+correlated data #lcp, lpsa
+
+## Exercise 2
+
+### a)
+
+        dataSet$gleason<-factor(prostateCancer$gleason) dataSet$svi<-factor(prostateCancer$svi)
+
+        linear_regression = lm(lcavol ~ lweight + age + lbph + lcp + pgg45 + lpsa + gleason + svi, data = dataSet) 
+        summary(linear_regression) 
+        plot(linear_regression)
+
+Gleason and svi are discrete variables, find their line signification
+
+### b)
+
+    confint(linear_regression)
+
+Commentaire ?
+
+### c)
+
+Voir T test
+
+### d)
+
+    predicted_values <- predict(linear_regression, interval="confidence", newdata=dataSet) ord_fit <- as.vector(predicted_values)[-98:-291] 
+    dataSet$lcavol 
+    plot(dataSet$lcavol, ord_fit, xlab="actual values of lcavol", ylab="predicted values of lcavol") 
+    res <- resid(linear_regression) 
+    hist(res, prob=T) 
+    square_res<-res*res 
+    sum(square_res)
+
+/! on mélange les tests et les training (à changer)
+
+### e)
+
+41.8 ca parait bcp (vraiment ?)
+
+### f)
+
+    linear_regression = lm(lcavol ~ lweight + age + lbph + pgg45 + gleason + svi, data = dataSet) 
+    summary(linear_regression) 
+    plot(linear_regression) 
+    predicted_values <- predict(linear_regression, interval="confidence", newdata=dataSet) ord_fit <- as.vector(predicted_values)[-98:-291] 
+    dataSet$lcavol 
+    plot(dataSet$lcavol, ord_fit, xlab="actual values of lcavol", ylab="predicted values of lcavol") 
+    res <- resid(linear_regression) 
+    hist(res, prob=T) 
+    square_res<-res*res sum(square_res) 
+
+75.6 c'est moins bien qu'avant
+
+## Exercise 3
+
+### a)
+
+    mod1 <- lm(lcavol ~ 1, data=dataSet) 
+    summary(mod1) 
+    mod2 <- lm(lcavol ~ ., data=dataSet[,c(1,4,9)]) 
+    summary(mod2) 
+    mod3 <- lm(lcavol ~ ., data=dataSet[,c(1,2,9)]) 
+    summary(mod3)
+
+mod2 : lweight and
+
+### b)
+
+    mod res <- resid(mod1) 
+    hist(res, prob=T) 
+    sum(abs(res)) 
+    square_res<-res*res 
+    sum(square_res)
+
+    k<-2 
+    m<-8 
+    idx_params <- combn(m,k) 
+    idx_params[,1] 
+    idx_params[2,2] 
+    min=c(0,0) 
+    print(min) 
+    min_res=.Machine$integer.max for (params in combn(m,k)){ print(params[,parmas]) print(params[1]) 
+    mod <- lm(lcavol ~ ., data=dataSet[,c(1,params[0], params[1])]) 
+    res <- resid(mod) 
+    square_res<-res*res 
+    current_sum_square <- sum(square_res) 
+    print(min) 
+    print(current_sum_square) 
+    if(current_sum_square < min_res){ 
+      min[0] = params[0] 
+      min[1] = params[1] 
+      print("new min =") print(min) 
+      min_res = current_sum_square
+    }
+    min
+
+### c)
+
+
+### d)
+
+
+## Exercise 2
+
+## a)
+
+
+## b)
+
+
+## c)
+
+
+## d)
+
+
+## e)
+
+
+## f)
+
+
+## Exercise 5
+
