@@ -2,6 +2,9 @@
 title: "TP1"
 date: "21/02/2023"
 name: Alexandre Gournail, Célien Bonhomme, Paul Gauthier
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r setup, include=FALSE}
@@ -9,137 +12,235 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 # TP1
+Alexandre GOURNAIL
+Célien BONHOMME
+Paul GAUTHIER
+## Exercise 1: Preliminary analysis of the data
 
-## Exercise 1
+```{r }
+prostateCancer <- read.table("./prostate.data", header=T) 
+prostateCancer = prostateCancer[-10] 
+attach(prostateCancer)
 
-    prostateCancer <- read.table("./prostate.data", header=T) 
-    dataSet = prostateCancer[-10] 
-    attach(dataSet)
+pairs(prostateCancer)
+```
 
-    pairs(dataSet)
+Two predictors seem to be the most correlated with are lcavol are lcp and lpsa. Some other predictors seem also to be a little correlated with lcavol such as weight, age and pgg45. Gleason and svi are discrete predictors so we cannot tell anything with a simple analysis like this.
 
-correlated data #lcp, lpsa
-
-## Exercise 2
+## Exercise 2: Linear regression
 
 ### a)
+First, let define the variables gleason and svi as qualitative variables.
+```{r }
+prostateCancer$gleason<-factor(prostateCancer$gleason)
+prostateCancer$svi<-factor(prostateCancer$svi)
+```
 
-        dataSet$gleason<-factor(prostateCancer$gleason) dataSet$svi<-factor(prostateCancer$svi)
+Then we define training and test data sets, there is 97 data so we chose to keep 19 data for test and 80 for training (1/5 vs 4/5).
+```{r }
+nb_of_data <- length(prostateCancer[,1])
+testSet_size <- 19
+groups <- c(rep(c('training'), times = nb_of_data - testSet_size), rep(c('test'), testSet_size))
+dataSet <- split(prostateCancer, groups)
+```
 
-        linear_regression = lm(lcavol ~ lweight + age + lbph + lcp + pgg45 + lpsa + gleason + svi, data = dataSet) 
-        summary(linear_regression) 
-        plot(linear_regression)
-
-Gleason and svi are discrete variables, find their line signification
+After that, we set the linear regression model.
+```{r }
+linear_regression <- lm(lcavol ~ lweight + age + lbph + lcp + pgg45 + lpsa + gleason + svi, data = dataSet$training)
+```
 
 ### b)
-
-    confint(linear_regression)
-
-Commentaire ?
+Here are the confidence intervals for coefficients of the predictors.
+```{r }
+confint(linear_regression)
+```
 
 ### c)
-
-Voir T test
+```{r }
+summary(linear_regression)
+```
+The summary of the linear regression shows that the predictor lpsa is the predictors the most correlated with lcavol.
 
 ### d)
+Let observe the predicted values of lcavol as a function of the actual values (dataSet$test).
+```{r }
+predicted_values <- predict(linear_regression, interval="confidence", newdata=dataSet$test)
+ord_fit <- predicted_values[,1]
+plot(dataSet$test$lcavol, ord_fit, xlab="actual values of lcavol", ylab="predicted values of lcavol")
+abline(0, 1)
+```
+We can notice that some predicted values are very closed to the actual ones. However, we miss data to have a real interpretation of the predicted values because we chose not to mix training data and test data, otherwise, the test would have been biased.
 
-    predicted_values <- predict(linear_regression, interval="confidence", newdata=dataSet) ord_fit <- as.vector(predicted_values)[-98:-291] 
-    dataSet$lcavol 
-    plot(dataSet$lcavol, ord_fit, xlab="actual values of lcavol", ylab="predicted values of lcavol") 
-    res <- resid(linear_regression) 
-    hist(res, prob=T) 
-    square_res<-res*res 
-    sum(square_res)
-
-/! on mélange les tests et les training (à changer)
+Let see the histogram of residuals and compute the residual sum of squares (RSS).
+```{r }
+res <- resid(linear_regression) 
+hist(res, prob=T) 
+square_res<-res*res 
+sum(square_res)
+```
+The histogram has a gaussian shape. So we can admit that residuals are normally distributed.
 
 ### e)
-
-41.8 ca parait bcp (vraiment ?)
+The model seems not to be optimal because we have found a RSS quite high. The fact is that we only have less than a hundred observations to evaluate and train our model which is quite low.
 
 ### f)
 
-    linear_regression = lm(lcavol ~ lweight + age + lbph + pgg45 + gleason + svi, data = dataSet) 
-    summary(linear_regression) 
-    plot(linear_regression) 
-    predicted_values <- predict(linear_regression, interval="confidence", newdata=dataSet) ord_fit <- as.vector(predicted_values)[-98:-291] 
-    dataSet$lcavol 
-    plot(dataSet$lcavol, ord_fit, xlab="actual values of lcavol", ylab="predicted values of lcavol") 
-    res <- resid(linear_regression) 
-    hist(res, prob=T) 
-    square_res<-res*res sum(square_res) 
+```{r }
+linear_regression = lm(lcavol ~ lweight + age + lbph + pgg45 + gleason + svi, data = dataSet$training) 
+predicted_values <- predict(linear_regression, interval="confidence", newdata=dataSet$test)
+ord_fit <- predicted_values[,1] 
+plot(dataSet$test$lcavol, ord_fit, xlab="actual values of lcavol", ylab="predicted values of lcavol")
+abline(0,1)
+res <- resid(linear_regression) 
+square_res <- res*res
+sum(square_res)
+```
 
-75.6 c'est moins bien qu'avant
+We observed visually in the exercise 1 that both lpsa and lcp were very correlated with lcavol. That is why removing these predictors from the training data set decrease the quality of the model.
 
-## Exercise 3
+## Exercise 3 : Best subset selection
 
 ### a)
-
-    mod1 <- lm(lcavol ~ 1, data=dataSet) 
-    summary(mod1) 
-    mod2 <- lm(lcavol ~ ., data=dataSet[,c(1,4,9)]) 
-    summary(mod2) 
-    mod3 <- lm(lcavol ~ ., data=dataSet[,c(1,2,9)]) 
-    summary(mod3)
-
-mod2 : lweight and
+```{r }
+mod1 <- lm(lcavol ~ 1, data=dataSet$training)
+res1 <- resid(mod1)
+RSS1<- sum(res1*res1)
+mod2 <- lm(lcavol ~ ., data=dataSet$training[,c(1,4,9)])
+res2 <- resid(mod2)
+RSS2<- sum(res2*res2)
+mod3 <- lm(lcavol ~ ., data=dataSet$training[,c(1,2,9)])
+res3 <- resid(mod3)
+RSS3<- sum(res3*res3)
+RSS1
+RSS2
+RSS3
+```
+The RSS is higher with model 1 than with model 2 and 3. Using predictors lweight and lpsa seems equivalent to use predictors lbph and lpsa.
 
 ### b)
+Now let see what are the two best predictors.
+```{r }
+predictors <- dataSet$training[-1]
 
-    mod res <- resid(mod1) 
-    hist(res, prob=T) 
-    sum(abs(res)) 
-    square_res<-res*res 
-    sum(square_res)
-
-    k<-2 
-    m<-8 
-    idx_params <- combn(m,k) 
-    idx_params[,1] 
-    idx_params[2,2] 
-    min=c(0,0) 
-    print(min) 
-    min_res=.Machine$integer.max for (params in combn(m,k)){ print(params[,parmas]) print(params[1]) 
-    mod <- lm(lcavol ~ ., data=dataSet[,c(1,params[0], params[1])]) 
-    res <- resid(mod) 
-    square_res<-res*res 
-    current_sum_square <- sum(square_res) 
-    print(min) 
-    print(current_sum_square) 
-    if(current_sum_square < min_res){ 
-      min[0] = params[0] 
-      min[1] = params[1] 
-      print("new min =") print(min) 
-      min_res = current_sum_square
+k<-2 
+m<-8 
+idx_params <- combn(m,k) 
+min_idx=c(0,0) 
+min_res=.Machine$integer.max
+for (idx in 1:length(idx_params[1,])) {
+    mod <- lm(dataSet$training$lcavol ~ ., data=predictors[,c(1,idx_params[,idx])])
+    res_vect <- resid(mod)
+    square_res_vect <-res_vect*res_vect 
+    square_res <- sum(square_res_vect)
+    if (square_res < min_res) {
+      min_idx <- idx_params[,idx]
+      min_res <- square_res
     }
-    min
+}
+```
+The two best predictors are:
+```{r }
+names(predictors)[min_idx]
+```
+
+The RSS for these predictors is:
+```{r }
+min_res
+```
+
+The two best predictors are lcp and lpsa which fit with what we have found visually in the exercise 1.
 
 ### c)
+We compute the best predictors for each k.
+```{r }
+result <- c()
+result_idx <- matrix(nrow = 8, ncol = 8)
+for (k in 1:8) {
+  idx_params <- combn(m,k) 
+  min_idx= 1:k 
+  min_res=.Machine$integer.max
+  for (idx in 1:length(idx_params[1,])) {
+    mod <- lm(dataSet$training$lcavol ~ ., data=predictors[,c(1,idx_params[,idx])])
+    res_vect <- resid(mod)
+    square_res_vect <-res_vect*res_vect 
+    square_res <- sum(square_res_vect)
+    if (square_res < min_res) {
+      min_idx <- idx_params[,idx]
+      min_res <- square_res
+    }
+  }
+  result <- c(result, min_res)
+  print(k)
+  print(names(predictors)[min_idx])
+  result_idx[k,] <- c(min_idx, rep(c(NA), 8-k))
+}
+```
 
+We can compare the RSS score for these different combinations of predictors:
+```{r }
+plot(1:8, result, xlab="nb of predictors", ylab="lowest RSS")
+```
 
 ### d)
+Minimizing the residual sum of square doesn't tell us anything about how the model will deal with a new set of data. Moreover, adding new predictor uncorrelated would decrease the sum of square residuals, but not increase the quality of the model.
+
+## Exercise 4 : Split-validation
+### a)
+  Split validation is a method which consist in dividing the training data set in two groups, the training group and the validation group.
+  The main asset of this method compared to what we did in the previous exercise is that we can evaluate the quality of the model even when the model is still in production. Observations used to validate the model are not involved in the training of the model, as test data. It means that the model isn't biased by this set of data.
+
+### b)
+```{r }
+valid <- which((1:length(dataSet$training[,1])) %% 3 == 0)
+valid
+```
+
+### c)
+We have used the split function rather than the method proposed in the subject, but the result is the same.
+
+```{r }
+groups <- c(rep(c('training', 'training', 'validation'), 26), rep(c('test'), testSet_size))
+dataSet <- split(prostateCancer, groups)
+
+mod <- lm(lcavol ~ ., data=dataSet$training[, c(1, 6, 9)])
+```
+This model is only trained with the training data, and does not use validation and test data to be trained.
+
+### d)
+```{r }
+predicted_values <- predict(mod, interval="confidence", newdata=dataSet$validation)
+ord_fit <- predicted_values[,1] 
+plot(dataSet$validation$lcavol, ord_fit, xlab="actual values of lcavol", ylab="predicted values of lcavol")
+abline(0,1)
+res <- resid(linear_regression) 
+square_res <- res*res
+sum(square_res)
+```
+
+### e)
+```{r }
+predictors <- dataSet$training[-1]
+training_residuals_vect <- c()
+validation_residual_vect <- c()
+
+for (k in 1:8) {
+  mod <- lm(dataSet$training$lcavol ~ ., data=predictors[,c(1,result_idx[k,1:k])])
+  training_residuals_vect <- c(training_residuals_vect, sum(abs(resid(mod))))
+  predicted_values <- predict(mod, interval="confidence", newdata=predictors$validation[,c(1,result_idx[k,1:k])])
+  validation_residual_vect <-  c(validation_residual_vect, sum(abs(predicted_values - dataSet$validation$lcavol)))
+  print(validation_residual_vect)
+}
+training_residuals_vect
+validation_residual_vect
+
+plot(1:8, training_residuals_vect, xlab="nb of predictors", ylab="training error")
+plot(1:8, validation_residual_vect, xlab="nb of predictors", ylab="validation error")
+```
+
+According to this graph, the best number of predictors is 4 because it is the model which has the lowest validation error.
+
+### f)
 
 
-## Exercise 2
-
-## a)
-
-
-## b)
-
-
-## c)
-
-
-## d)
-
-
-## e)
-
-
-## f)
-
-
-## Exercise 5
-
+## Exercise 5 : Conclusion
+According to all the results, the best model includes the following parameters age, lcp, pgg45, lpsa.

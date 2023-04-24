@@ -1,0 +1,208 @@
+---
+title: "TP2"
+output: html_document
+date: "2023-03-06"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# TP2 : Célien BONHOMME Paul GAUTHIER Alexandre GOURNAIL
+
+## Exercise 1
+
+```{r}
+NAm2 = read.table("NAm2.txt", header=TRUE)
+names = unique(NAm2$Pop)
+npop = length(names)
+coord = unique(NAm2[,c("Pop","long","lat")]) #coordinates for each pop
+colPalette = rep(c("black","red","cyan","orange","brown","blue","pink",
+"purple","darkgreen"),3)
+pch=rep(c(16,15,25),each=9)
+plot(coord[,c("long","lat")],pch=pch,col=colPalette,asp=1)
+# asp allows to have the correct ratio between axis longitude
+# and latitude, thus the map is not deformed
+legend("bottomleft",legend=names,col=colPalette,lty=-1,
+pch=pch,cex=0.75,ncol=2,lwd=2)
+library(maps); map("world",add=T)
+```
+
+The code generate a map with the coordinates of populations shown as points with different colors and symbols on a map thanks to unique, which eliminates duplicates. Each population name is extracted and stored to 'names'. Then, the coordinates are extracted and stored in 'coord'. The different colors are stored in 'colPalette' and the symbols in 'pch'. Finally, the code creates a scatter plot of longitude and latitude coordinates in the 'coord' data frame with the 'pch' and 'colPalette' as arguments in order to have different colors and/or symbols for each population.
+
+## Exercise 2
+
+```{r}
+# for (idx_col in 9:length(NAm2[1,]))
+#   NAm2[,idx_col] <- factor(NAm2[,idx_col])
+NAaux_long = NAm2[,-c(1:7)]
+NAaux_lat = NAm2[,-c(c(1:6), 8)]
+dataSet = NAm2[,-c(1:8)]
+linear_regression <- lm(long ~., data = NAaux_long)
+```
+
+What is happening is that many coefficients could not be computed due to the fact that there are 5709 markers for only 494 individuals. Therefore, there is more variables to determine than the numbers of n-tuple of known values. The rank of the matrix for which we would like to use the algorithm of Gauss is not sufficient to do so. We need to reduce the number of markers, which is the subject of the following exercises.
+
+## Exercise 3
+
+(a) The PCA is a method which aims at preparing the reduction of the number of predictors in the model. It consists in finding eigenvectors and in building the matrix Q, called "prediction matrix". This matrix is a way to perform some qualitative analysis on the observations.
+
+(b)
+```{r}
+pcaNAm2_sc <- prcomp(NAaux_long[,-1], scale=T)
+pcaNAm2_nsc <- prcomp(NAaux_long[,-1])
+```
+
+Because of the fact that markers are binary (0 or 1), they are all at the same scale so we can choose not to scale.
+
+(c) Without re scaling
+
+```{r}
+caxes=c(1,2)
+plot(pcaNAm2_nsc$x[,caxes],col="white")
+for (i in 1:npop){
+  print(names[i])
+  lines(pcaNAm2_nsc$x[which(NAm2[,3]==names[i]),caxes], type="p",
+  col=colPalette[i],pch=pch[i])
+  legend("top",legend=names,col=colPalette,lty=-1,pch=pch,cex=0.75,ncol=3,lwd=2)
+}
+```
+
+With re scaling
+
+```{r}
+caxes=c(1,2)
+plot(pcaNAm2_sc$x[,caxes],col="white")
+for (i in 1:npop)
+{
+lines(pcaNAm2_nsc$x[which(NAm2[,3]==names[i]),caxes], type="p",col=colPalette[i],pch=pch[i])
+legend("top",legend=names,col=colPalette, lty=-1,pch=pch,cex=0.75,ncol=3,lwd=2)
+}
+```
+
+(d) 
+
+```{r}
+sum <- summary(pcaNAm2_nsc)
+plot(sum$importance[2,],xlab='PC', ylab='% of variance')
+perc_var <- sum$importance[2,][1] + sum$importance[2,][2]
+perc_var
+```
+
+The 2 firsts components only capture a very little part (3.6%) of the variance.
+
+```{r}
+abs <- 1:nrow(NAm2)
+ord <- c()
+for(i in abs){
+  ord <- c(ord, sum(sum$importance[2,1:i]))
+}
+plot(abs, ord, ylab='% of variance', xlab='nb of PC')
+```
+
+According to the graphic, there is no clear minimal number of components we can keep to represent the genetic markers. With 25 components, we capture about 20% of the variance, 50% with about 120 components and 80% with 250 components.
+
+## Exercise 4
+
+(a) 
+
+```{r}
+# We select the 250 best axis
+best_ev <- pcaNAm2_nsc$x[,1:250]
+
+# Then we create the training data for the latitude predictor model
+training_data_lat <- as.data.frame(cbind(best_ev, NAm2$lat))
+colnames(training_data_lat)[length(training_data_lat)] <- "lat"
+
+# We do the same for the longitude
+training_data_long <- as.data.frame(cbind(best_ev, NAm2$long))
+colnames(training_data_long)[length(training_data_long)] <- "long"
+
+# Here we train our models with the pca axis
+lmlat <- lm(training_data_lat$lat~., data=training_data_lat)
+lmlong <- lm(long~., data=training_data_long)
+
+plot(lmlong$fitted.values,lmlat$fitted.values,col="white",asp=1)
+for (i in 1:npop)
+{
+print(names[i])
+lines(lmlong$fitted.values[which(NAm2[,3]==names[i])],
+lmlat$fitted.values[which(NAm2[,3]==names[i])],
+type="p", col=colPalette[i],pch=pch[i])
+}
+legend("bottomleft",legend=names,col=colPalette,lty=-1,
+pch=pch, cex=.75,ncol=3,lwd=2)
+map("world",add=T)
+```
+
+The model seems visually correct.
+
+(b)
+```{r}
+library("fields")
+
+nb_indiv <- length(NAm2[,1])
+mean_error <- 0
+
+for (i in 1:nb_indiv) {
+data <- matrix(data = c(coord$long[which(coord$Pop==NAm2[i,3])], 
+          coord$lat[which(coord$Pop==NAm2[i,3])] ), ncol=2)
+prediction <- matrix(data = c(as.numeric(lmlong$fitted.values[i][1]),
+                as.numeric(lmlat$fitted.values[i][1])), ncol=2)
+
+mean_error <- rdist.earth(data, prediction, miles=F)
+}
+mean_error/nb_indiv
+```
+
+This model has a mean error of 452m. This is very low. This is caused by the phenomena called "overfitting". In fact the model is able the predict very well the data he has been trained on.
+
+## Exercise 5
+
+(a) Cross-validation is a technique which aims at evaluating the performance of a predictive model by dividing the dataset into two parts, a training set and a validation set. The principle of cross-validation involves randomly dividing the dataset into equal subsets. Each subset is used in turn as a validation set while using the others subsets as the training set.
+
+Cross-validation is useful when building a predictive model because validation data is not biased by training data.
+
+```{r}
+k <- 10
+n <- length(NAm2)
+idx_vec <- sample(rep(1:k, length.out=n))
+```
+
+(b) 
+
+```   
+predictedCoord <- data.frame(longitude = rep(NA, nrow(NAm2)), latitude = rep(NA, nrow(NAm2)))
+
+nb_pred <- 4
+best_pred <- pcaNAm2_nsc$rotation[,1:nb_pred]
+nrow(best_pred)
+for (i in 1:k) {
+valid_set <- which(idx_vec == i)
+train_set <- which(idx_vec != i)
+latlm <- lm(lat~. , data=)
+
+max(train_set)
+nrow(best_pred)
+
+training_data_lat <- as.data.frame(cbind(best_pred[train_set,], NAm2$lat))
+colnames(training_data_lat)[length(training_data_lat)] <- "lat"
+training_data_long <- as.data.frame(cbind(best_pred[train_set,], NAm2$long))
+colnames(training_data_long)[length(training_data_long)] <- "long"
+lmlat <- lm(lat~., data=training_data_lat)
+lmlong <- lm(long~., data=training_data_long)
+predictedCoord[valid_set,] <- predict(lmlat, newdata = NAm2[valid_set, 1:nb_pred])[, c("longitude", "latitude")]
+ }
+```
+
+## Exercise 6
+
+To recap this TP, we:
+- learned visualy what the data looks like with a map of populations
+- tried a multiple linear regression
+- used the PCA to isolate the main components of the genetic markers thanks to the prcomp command. With only the first 2 main components, we saw that we lose a lot of information so we chose to keep 250 components in order to have 80% of the total eigenvectors's standart deviation
+- did a PCR now that the PCA was done, with the first 250 axes
+- put in place a 10-fold cross-validation method with 10 random subsets, for 4 axes, then for axes in the 2 - 440 range and chose the number of axes so it minimises the prediction error
+- obtained the final model by making the linear regression with the number of axes found above.
+
+During this TP, we learned the utility of reducing the numbers of predictors in order to improve the prediction and the interpretation of the data. We also put into practice the theory behind PCA and PCR.

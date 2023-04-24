@@ -1,0 +1,314 @@
+---
+title: "tp3"
+output: html_document
+date: "2023-03-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### TP3
+Paul GAULTIER
+Célien BONHOMME
+Alexandre GOURNAIL
+
+## Exercise 1
+
+```{r }
+NAm2 = read.table("NAm2.txt", header=TRUE)
+
+cont <- function(x){
+  if(x %in% c('Canada'))
+    cont <- 'NorthAmerica'
+  else if(x %in% c('Guatemala', 'Mexico', 'Panama', 'CostaRica'))
+    cont<-'CentralAmerica'
+  else
+    cont<-'SouthAmerica'
+  return(factor(cont))
+}
+  contID<-sapply(as.character(NAm2[,4]),FUN=cont)
+  N <- length(contID)
+  dataSet <- NAm2[,-c(1:8)]
+```
+
+## Exercise 2
+### a)
+
+```{r}
+library("nnet")
+
+NAcont <- data.frame(cbind(contID=contID, NAm2[,-(1:8)]))
+NAcont[,1] <- factor(NAcont[,1])
+# model <- multinom(contID ~ ., data=NAcont)
+# summary(model)
+```
+We get the following error: "Error in nnet.default(X, Y, w, mask = mask, size = 0, skip = TRUE, softmax = TRUE, : too many (17133) weights". It occurs because the multinom function is trying to fit a model with a large number of predictor variables (genetic markers) and the default maximum number of weights in the is exceeded.
+
+```{r}
+model <- multinom(contID ~ ., data=NAcont, MaxNWts = 18000, maxit = 200)
+```
+By setting MaxNWts = 18000 and maxit = 200, we allow for more weights in the model, which was the problem that occured before, and increase the maximum number of iterations to estimate the model.
+
+### b)
+
+```{r}
+pcaNAm2 = prcomp(NAm2[,-c(1:8)], scale = FALSE)$x
+NAcontPca<-data.frame(cbind(contID=contID, pcaNAm2))
+NAcontPca[,1]<- factor(NAcontPca[,1])
+model <- multinom(NAcontPca$contID ~ ., data=NAcontPca, MaxNWts = 1500)
+table = table(predict(model, NAcontPca), contID)
+table
+
+classification_error = 1 - sum(diag(table)) / sum(table)
+classification_error
+
+```
+
+We see that the model correctly classifies all individuals. This means that the principal components get enough of the variation in the genetic markers that is informative for predicting the continent of origin.
+
+```{r }
+barplot(table,
+        main = "Predictions on Training Data",
+        ylab = "number of prediction",
+        )
+```
+
+There is not any error on the training data set prediction. But that does not seems that we will have the same results on validation data, because it could be an over fitting phenomenon.
+
+### c)
+
+```{r}
+K <- 10
+subset_idx <- sample((1:N) %% K)
+
+cross_validation <- function(nb_predictors) {
+  error_sample_i <- c()
+  for (i in 0:K-1) {
+    # Definition of the different data sets
+    x_train_set <- NAcont[subset_idx != i,]
+    x_validation_set <- NAcont[subset_idx == i,]
+    y_train_set <- contID[subset_idx != i]
+    y_validation_set <- contID[subset_idx == i]
+    
+    # we compute the pca, which will be used to create the model
+    pca_training <- prcomp(x_train_set[, -1], scale = FALSE)
+    # we choose the good number of predictor
+    x_pca_training <- pca_training$x[,1:nb_predictors]
+    
+    # training of our model
+    # model <- multinom(NAcontPca$contID ~ ., data=NAcontPca, MaxNWts = 1500)
+    model <- multinom(y_train_set ~ ., data=x_train_set, MaxNWts = 18000, maxit = 20)
+    # summary((model))
+    # Computation of validation error
+    # First, we adapt the validation set by projecting it in the right space with "predict" function
+    pca_validation <- predict(pca_training, x_validation_set[, -1])[, 1:nb_predictors]
+    # Then we make the prediction on this new set of data
+    predictions <- predict(model, newdata = pca_validation)
+    error_sample_i <- append(error_sample_i, sum(predictions != y_validation_set)/length(y_validation_set))
+  }
+  #computation of the error
+  return(mean(error_sample_i))
+  # mean(error_sample_i)
+}
+```
+The previous function apply a K Fold validation for nb_predictors.
+
+```{r }
+nb_predictors <- seq(from = 20, to = 100, by = 4)
+#error_by_predictor_nb <- sapply(nb_predictors, cross_validation)
+#error_by_predictor_nb
+
+```
+
+The cross validation function has a problem that we did not managed to solve during the prediction.
+
+(d)
+
+```{r}
+min_err <- 10
+pc_scores <- pcaNAm2[, 1:min_err]
+
+# Build multinomial regression model
+model <- multinom(NAcontPca$contID ~ ., data = NAcontPca, MaxNWts = 18000)
+predicted_classes <- predict(model, NAcontPca)
+
+# Compute confusion matrix
+table = table(predicted_classes, contID)
+table
+
+```
+
+## Exercise 3
+
+(b)
+```{r}
+library('MASS')
+library('class')
+
+pca <- prcomp(dataSet, scale=FALSE)
+nParam <- ncol(pca$x)
+data <- data.frame(pca$x[,1:nParam], contID=NAcont[,1])
+model <- lda(data$contID ~ ., data=data[-c(1, nParam)])
+```
+There is a problem with the last column of the data set. It appears the last column has a null variance. This is why we delete this predictor from the data set.
+
+
+```{r}
+predictions <- predict(model, data=data)
+
+table <- table(predictions$class, contID)
+table
+```
+
+```{r }
+barplot(table,
+        main = "Predictions on Training Data",
+        ylab = "number of prediction",
+        )
+```
+Error is very low on training data set. There is only a few Central American subjects that are predicted as South American by the lda model.
+
+(c)
+```{r }
+K <- 10
+subset_idx <- sample((1:N) %% K)
+
+#nb_predictors <- 40
+#i <- 5
+
+cross_validation <- function(nb_predictors) {
+  print(nb_predictors)
+  error_sample_i <- c()
+  for (i in 0:9) {
+    # Definition of the different data sets
+    x_train_set <- dataSet[subset_idx != i,]
+    x_validation_set <- dataSet[subset_idx == i,]
+    y_train_set <- contID[subset_idx != i]
+    y_validation_set <- contID[subset_idx == i]
+    
+    model <- lda(data$contID ~ ., data=data[-c(1, nParam)])
+    
+    # we compute the pca, which will be used to create the model
+    pca_training <- prcomp(x_train_set, scale=FALSE)
+    # we choose the good number of predictor
+    x_pca_training <- data.frame(pca_training$x[,1:nb_predictors], contID=y_train_set)
+    
+    # training of our model
+    lda_classifier <- lda(x_pca_training$contID ~ ., data=x_pca_training[-c(1, nParam)])
+    
+    # Computation of validation error
+    # First, we adapt the validation set by projecting it in the right space with "predict" function
+    pca_validation <- predict(pca_training, x_validation_set)[,1:nb_predictors]
+    # Then we make the prediction on this new set of data
+    predictions <- predict(lda_classifier, data.frame(pca_validation)) 
+    error_sample_i <- append(error_sample_i, sum(predictions != y_validation_set)/length(y_validation_set))
+    }
+  #computation of the error
+  return(mean(error_sample_i))
+  #mean(error_sample_i)
+}
+```
+
+At the execution of these lines, we obtain a lot of warnings and a rate of errors of 1 for each set of validation, which means the warnings prevent to have results.
+
+```{r}
+nb_predictors <- seq(from = 20, to = 60, by = 5)
+
+# error_by_predictor_nb <- sapply(nb_predictors, cross_validation)
+# error_by_predictor_nb
+```
+
+
+## Exercise 4
+```{r }
+library("naivebayes")
+```
+(a)
+First, we compute the PCA
+```{r }
+pca <- prcomp(dataSet, scale=FALSE)
+```
+
+Then we train our naive Bayes Bernoulli Classifier and plot its confusion matrix:
+```{r }
+bern_classifier <- bernoulli_naive_bayes(pca$x, contID)
+summary(bern_classifier)
+```
+
+Then we evaluate the classifier on the data set:
+```{r }
+predictions <- predict(bern_classifier, pca$x) # prediction on training data
+predictions <- bern_classifier$data$y
+confusion_matrix_bern <- table(predict(bern_classifier, pca$x), contID)
+confusion_matrix_bern
+```
+```{r }
+barplot(confusion_matrix_bern,
+        main = "Predictions on Training Data",
+        ylab = "number of prediction",
+        )
+```
+
+On training data, we can see that the model surestimates a little bit SouthAmerican and central American clusters. But 100% of the prediction that the model classifies in North American are true. On the opposite, 100% of South American are classified in the good cluster, but this cluster surestimates a little bit.
+
+Now we apply the K-fold cross-validation procedure (with K = 10) to choose the optimum number of predictors in the pca
+```{r }
+K <- 10
+subset_idx <- sample((1:N) %% K)
+
+cross_validation <- function(nb_predictors) {
+  print(nb_predictors)
+  error_sample_i <- c()
+  for (i in 0:9) {
+    # Definition of the different data sets
+    x_train_set <- dataSet[subset_idx != i,]
+    x_validation_set <- dataSet[subset_idx == i,]
+    y_train_set <- contID[subset_idx != i]
+    y_validation_set <- contID[subset_idx == i]
+    
+    # we compute the pca, which will be used to create the model
+    pca_training <- prcomp(x_train_set, scale=FALSE)
+    # we choose the good number of predictor
+    x_pca_training <- pca_training$x[,1:nb_predictors]
+    
+    # training of our model
+    bern_classifier <- bernoulli_naive_bayes(x_pca_training, y_train_set)
+    
+    # Computation of validation error
+    # First, we adapt the validation set by projecting it in the right space with "predict" function
+    pca_validation <- predict(pca_training, x_validation_set)[,1:nb_predictors]
+    # Then we make the prediction on this new set of data
+    predictions <- predict(bern_classifier, pca_validation) 
+    error_sample_i <- append(error_sample_i, sum(predictions != y_validation_set)/length(y_validation_set))
+  }
+  #computation of the error
+  return(mean(error_sample_i))
+  #mean(error_sample_i)
+}
+```
+This function compute the mean error for a given number of predictors by using a 10-cross-validation method. We apply this function to find the best number of predictors for this model.
+
+The calculation is a bit long, this is why we do not plot the error for all the number between 1 and the maximum number of predictors.
+
+```{r}
+nb_predictors <- seq(from = 20, to = 100, by = 4)
+
+error_by_predictor_nb <- sapply(nb_predictors, cross_validation)
+error_by_predictor_nb
+```
+Then we plot the result:
+
+```{r }
+plot(nb_predictors, 
+     error_by_predictor_nb, 
+     main = "Prediction Error by Bernouilli Naive Bayes Classifier",
+     xlab = "number of predictors",
+     ylab = "prediction error",
+     type = "l")
+
+```
+
+This graph shows us that the best possible prediction error is
+```{r}
+min(error_by_predictor_nb)
+```
