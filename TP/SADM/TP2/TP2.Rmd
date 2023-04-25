@@ -171,7 +171,7 @@ idx_vec <- sample(rep(1:k, length.out=n))
 
 (b) 
 
-```   
+```{r}
 predictedCoord <- data.frame(longitude = rep(NA, nrow(NAm2)), latitude = rep(NA, nrow(NAm2)))
 
 nb_pred <- 4

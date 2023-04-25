@@ -1,0 +1,215 @@
+---
+title: "TP4"
+output: html_document
+date: "2023-04-17"
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+### TP4
+Paul GAUTHIER, Célien BONHOMME, Alexandre GOURNAIL
+
+## Part 1
+(a)
+
+```{r, echo=FALSE, message=FALSE}
+library(igraph)
+```
+
+
+```{r}
+dat <- read.table("lesmis.txt", header = FALSE, sep = "\t")
+misgraph <- simplify(graph.data.frame(dat, directed=FALSE))
+
+plot.igraph(misgraph, vertex.label.cex = 0.8, vertex.size = 5)
+```
+
+We can observe that without choosing a layout, the vizualisation of the graph is quite complicated due to the number of characters in the book (many nodes in the graph). That's why we can use different choices of layout to represent different ways to position the vertices of the graph. Let's try some layouts.
+
+With the "Fruchterman-Reingold" layout : 
+
+```{r, message=FALSE}
+l <- layout_with_fr(misgraph)
+plot.igraph(misgraph, vertex.label.cex = 0.8, vertex.size = 5, layout=l)
+```
+
+With the "kk" layout :
+
+```{r, message=FALSE}
+l <- layout_with_kk(misgraph)
+plot.igraph(misgraph, vertex.label.cex = 0.8, vertex.size = 5, layout=l)
+```
+
+With the "Davidson-Harel" layout : 
+
+```{r, message=FALSE}
+l <- layout_with_dh(misgraph)
+plot.igraph(misgraph, vertex.label.cex = 0.8, vertex.size = 5, layout=l)
+```
+
+(b)
+The graph is an undirected graph.
+
+The size of the graph is :  
+
+```{r,  echo=FALSE}
+vcount(misgraph)
+```
+
+The order of the graph is : 
+```{r, echo=FALSE}
+ecount(misgraph)
+```
+
+The density of the graph is :
+```{r, echo=FALSE}
+graph.density(misgraph)
+```
+
+The diameter of the graph is :  
+```{r, echo=FALSE}
+diameter(misgraph, weights = NA)
+```
+
+The graph is not complete because there are only $254$ edges for $77$ nodes, if the graph were complete, the graph would have $77!$ edges
+
+(c)
+
+```{r}
+set.seed(3)
+V(misgraph)$label.cex <- (degree(misgraph)+10)/max(degree(misgraph))
+l <- layout_with_fr(misgraph)
+plot.igraph(misgraph)
+```
+
+This code aims at changing the size of the labels depending on the degree of each vertex, the higher the degree of the vertex is, the bigger the label will be. Then it uses Fruchterman-Reingold algorithm to dispose the nodes. We can easily see that Jean Valjean is the main character, the size of its label is the biggest of the graph while some other characters are only linked to one other character. We can also see that some characters are strongly linked by a chapter and create a distinct cluster.
+
+## Part 2
+
+### Hierarchical agglomerative clustering
+
+(a)
+Agglomerative clustering algorithm is initialized with one cluster by node. Then, at each iteration, it merges the nodes with the most important cosine similarity, (or cluster with the Jaccard coefficient). At the end, we get all the node in the same cluster. The user just have to decide how many cluster he desires and to take the good iteration of the algorithm to get them.
+
+(b)
+```{r}
+mishclust <- hclust(as.dist((1-similarity.jaccard(misgraph))))
+plot(mishclust, cex=0.5)
+```
+
+(c)
+```{r}
+mod = c()
+for (i in 1:10){
+  labels = cutree(mishclust , i)
+  mod[i] = modularity(x=misgraph, membership=labels)
+}
+plot(mod,type="l")
+```
+The modularity is a way to measure the connectivity inside the clusters, and so how relevant they are. The graph stops at 10 clusters, but when we increase the index, we notice that it keeps decreasing. It means that 9 is the optimal number of clusters for the agglomerative clustering algorithm, regarding the modularity metric.
+
+(d)
+```{r}
+optimal_number_cluster <- 9
+labels = cutree(mishclust , optimal_number_cluster)
+V(misgraph)$color = labels
+plot(misgraph)
+```
+```{r }
+for (i in 1:9) {
+  print(i);
+  for (j in 1:77) {
+    if (labels[j] == i) {
+      print( V(misgraph)$name[j]);
+    }
+  }
+}
+```
+Among the different clusters we notice that in this book, many characters have meet each other, this could be why the first cluster, the most important one, contains more than half of the 77 characters of the story, without a real group identity.
+In the second one, gathers many bandits and criminals, some chapters of the book are dedicated to them. JeanValJean belongs to this cluster, because he has spent many time to fight them in the book.
+The third one gathers two minors characters from books 2 an 3.
+The fourth cluster gather very minor character from the 3rd book. They only appears once.
+In the fifth cluster, mother Plutarch is a minor character from the very end of the last book.
+In the sixth cluster, Anzelma and Magnon are two minor female characters linked to the main male characters.
+Gribier from the seventh cluster is also a minor character.
+In the nineth cluster Jondrette is the fake name of Thenardier.
+
+The problem of this clustering algorithm is that he focus two much on minor characters, and did not bring much information on the main characters, who are all gathered in the first cluster.
+
+We can characterize these communities:
+
+(e)
+```{r}
+# mishclust$labels <- V(misgraph)$
+plot(mishclust, labels = V(misgraph)$name, cex=0.5, hang=0.05)
+```
+
+### Edge betweenness
+
+(a)
+The edge betweenness of a node e is caracterized by the betweenness centrality: the sum of the fraction of all-pairs shortest paths that pass through e. 
+The algorithm based in this measure is the following:
+  - Calculate betwenness scores for all edges in the network
+  - Find the edge with the highest score and remove it from the network
+    -> If the edge removal splits the graph, then divide the graph into subgroups and
+compute the edge betweeness of the subgraphs
+    -> Else update the edge betweeness for the whole graph
+  - Repeat the previous step
+  
+(b)
+
+```{r}
+mis_edgeb <- cluster_edge_betweenness(misgraph)
+plot_dendrogram(mis_edgeb, cex=0.5, rect=0)
+```
+(c)
+
+```{r}
+f <- function(i){
+  mis_graph2 = delete.edges(misgraph, mis_edgeb$removed.edges[seq(length=i)])
+  cl = clusters(mis_graph2)$membership
+  modularity(misgraph,cl)
+}
+mods = sapply(0:ecount(misgraph), f)
+mis_graph2<-delete.edges(misgraph, mis_edgeb$removed.edges[seq(length=which.max(mods)-1)])
+```
+
+The function f applied to i removes the i highest weighted edges from the graph and computes the modularity of the resulting graph using the Louvain algorithm.
+Then we apply f to all possible numbers of edges to be removed and we identify the number of edges to be removed that leads to the highest modularity value and removes those edges from the original graph. mis_graph2 is the graph that maximizes the modularity.
+
+```{r}
+plot(mis_graph2)
+```
+
+Now we can observe clear clusters with no link between them.
+
+### Spectral clustering and the Louvain algorithm
+
+
+```{r}
+set.seed(3)
+louvain <- cluster_louvain(misgraph)
+length(louvain)
+```
+
+
+```{r}
+leading_eigen <- cluster_leading_eigen(misgraph)
+length(leading_eigen)
+```
+
+The Louvain algorithm finds 6 communities, and the spectral algorithm 8.
+
+
+### Conclusion
+
+```{r}
+modularity(x=misgraph, membership=cutree(mishclust , 9))
+modularity(mis_edgeb)
+modularity(louvain)
+modularity(leading_eigen)
+```
+
+The modularities are pretty similar except for the Hierarchical agglomerative clustering method which is significantly lower.
