@@ -1,0 +1,18 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+  "Kestrel": {
+    "EndPoints": {
+      "Https": {
+        "Url": "https://localhost:7177"
+      }
+    },
+    "EndpointDefaults": {
+      "Protocols": "Http2"
+    }
+  }

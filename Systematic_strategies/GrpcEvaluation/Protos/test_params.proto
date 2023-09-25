@@ -1,0 +1,90 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option csharp_namespace = "BacktestGrpc.Protos";
+
+
+service BacktestRunner {
+  rpc RunBacktest (BacktestRequest) returns (BacktestOutput);
+}
+
+message BacktestRequest {
+	TestParams tst_params = 1;
+	DataParams data = 2;
+}
+
+
+// Output
+message BacktestOutput {
+	repeated BacktestInfo backtest_info = 1;
+}
+
+message BacktestInfo {
+	google.protobuf.Timestamp date = 1;
+	double portfolio_value = 2;
+	repeated double delta = 3;
+	repeated double delta_stddev = 4;
+	double price = 5;
+	double price_stddev = 6;
+}
+
+// Data parameters
+message DataParams {
+	repeated ShareData data_values = 1;
+}
+
+message ShareData {
+	string id = 1;
+	double value = 2;
+	google.protobuf.Timestamp date = 3;
+}
+
+// Test parameters
+message TestParams {
+  PricingParams price_params = 1;
+  BasketParams basket_params = 2;
+  RebalancingParams reb_params = 3;
+}
+
+message PricingParams {
+	repeated double vols = 1;
+	repeated CorrLine corrs = 2;
+}
+
+message CorrLine {
+	repeated double value = 1;
+}
+
+message BasketParams {
+	double strike = 1;
+	google.protobuf.Timestamp maturity = 2;
+	repeated string share_ids = 3;
+	repeated double weights = 4;
+}
+
+message RebalancingParams {
+	oneof reb_type {
+		RegularRebalancing regular = 1;
+		WeeklyRebalancing weekly = 2;
+	}
+}
+
+message RegularRebalancing {
+	int32 period = 1;
+}
+
+message WeeklyRebalancing {
+	ProtoDayOfWeek day = 1;
+}
+
+enum ProtoDayOfWeek {
+	SUNDAY = 0;
+	MONDAY = 1;
+	TUESDAY = 2;
+	WEDNESDAY = 3;
+	THURSDAY = 4;
+	FRIDAY = 5;
+	SATURDAY = 6;
+}
+
+

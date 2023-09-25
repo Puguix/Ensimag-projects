@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+    <StartupObject>ConsoleBacktest.BacktestConsole</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PricingLibrary" Version="2.0.4.2" />
+  </ItemGroup>
+
+</Project>
