@@ -1,0 +1,25 @@
+{
+    "model type": "bs",
+    "option size": 5,
+    "strike": 100.0,
+    "spot": [
+        100.0
+    ],
+    "maturity": 1.0,
+    "volatility": [
+        0.2
+    ],
+    "interest rate": 0.04879,
+    "correlation": 0.0,
+    "trend": [
+        0.04
+    ],
+    "option type": "basket",
+    "payoff coefficients": [
+        0.2
+    ],
+    "timestep number": 1,
+    "sample number": 50000,
+    "hedging dates number": 365,
+    "fd step": 0.1
+}

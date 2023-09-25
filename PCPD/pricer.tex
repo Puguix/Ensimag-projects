@@ -1,0 +1,604 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{a4wide}
+\usepackage{amssymb, amsmath, amsthm}
+\usepackage{lmodern,multicol}
+\usepackage{t1enc}
+%\usepackage[notref]{showkeys}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{tikz}
+\usepackage{listings}
+\lstset{basicstyle=\small\ttfamily,
+  showstringspaces=false,
+  language=C++,
+  breaklines=true,
+  breakautoindent=true,
+  inputencoding=latin1
+  }
+
+%--------------------------------------------
+\hbadness=10000
+\emergencystretch=\hsize
+\tolerance=9999
+%--------------------------------------------
+
+\def\ce{{\mathcal E}}
+\def\cf{{\mathcal F}}
+\def\cg{{\mathcal G}}
+\def\cl{{\mathcal L}}
+\def\E{{\mathbb E}}
+\def\N{{\mathbb N}}
+\def\P{{\mathbb P}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\s{\star}
+\def\rP{\mathop{\rm P}\nolimits}
+\def\rQ{\mathop{\rm Q}\nolimits}
+\def\rpartial{{\rm d}}
+\def\ind#1{{\bf 1}_{#1}}
+\def\abs#1{\left|#1\right|}
+\def\Cov{\mathop{\rm Cov}\nolimits}
+\def\Var{\mathop{\rm Var}\nolimits}
+\def\norm#1{\mathop{\left\| #1 \right\|}\nolimits}
+\def\inv#1{\mathop{\frac{1}{ #1}}\nolimits}
+\def\expp#1{\mathop {\mathrm{e}^{ #1}}}
+
+\def\var#1{{\tt #1}}
+
+\newtheorem*{ex}{Exemple}
+\newtheorem{question}{Question}
+%%--------------------------------------------
+
+% \newcommand{\fullversion}{}
+% \newcommand{\shortversion}{}
+
+\title{Projet de couverture de produits dérivés}
+\author{Jérôme Lelong}
+
+\begin{document}
+\maketitle
+
+Le but de ce projet  est de réfléchir à la structure d'un outil permettant de calculer des prix d'options par une méthode de Monte Carlo ainsi que leurs dérivées par rapport au spot, puis de l'implémenter en C++.
+
+La section~\ref{sec:motiv} présente le problème auquel on s'intéresse et les motivations pratiques. La dynamique choisie pour modéliser l'évolution des cours des actifs (les sous--jacents) est détaillée dans la section~\ref{sec:modele}.  La section~\ref{sec:archi} vous invite à réfléchir à l'architecture du pricer.
+
+L'exécutable développé devra lire les paramètres des produits dans un fichier texte comme expliqué à la section~\ref{sec:parser}. Finalement, vous trouverez en section~\ref{sec:options} la liste des produits que votre pricer devra prendre en charge.
+
+\section{Motivations pratiques}
+\label{sec:motiv}
+
+Lorsque l'on s'intéresse à un produit dérivé, il est important de pouvoir
+calculer son prix et de savoir construire son portefeuille de couverture.
+
+Notons $S = (S_t, \; t \ge 0)$ la dynamique du sous-jacent et $\cf$ sa filtration naturelle. On suppose dans ce projet que $S$ suit un modèle de Black Scholes multidimensionnel (c.f.  section~\ref{bsnd}).  Pour simplifier les choses, nous allons supposer que le payoff des options que nous considérons s'écrit sous la forme
+\begin{equation*}
+ \varphi(S_{t_0}, S_{t_1}, \dots, S_{t_N})
+\end{equation*}
+où $0 = t_0 < t_1 < \dots < t_N = T$ est une grille de dates de constatation équirépartie, ie. $t_k = kT / N$ pour $k=0,\dots, N$.
+
+\begin{ex} Voici quelques exemples de fonctions $\varphi$ dans le cas d'un
+  sous-jacent unique.
+  \begin{itemize}
+    \item $N=1$ et $\varphi(S_0, S_1) = (S_1 - K)_+$ correspond à une option
+      d'achat
+    \item $T = 1$, $N=12$  et $\varphi(S_0, S_1, \dots, S_{12}) = (S_{12} - K)_+
+      \ind{\{\forall 0 \le i \le 12,\; S_i \ge L\}}$ correspond à une option
+      d'achat barrière à monitoring discret (une date de constatation par mois).
+      L'option est annulée si à une des dates de constatation, la valeur du
+      sous-jacent est inférieure à $L$.
+    \item $T=1$, $N=365$ et $\varphi(S_0, \dots, S_{365}) = (\inv{365}
+      \sum_{i=0}^{364} S_i - K)_+$ correspond à une option d'achat asiatique où
+      la moyenne continue du sous-jacent $\inv{T} \int_0^T S_u du$ a été
+      remplacée par une moyenne discrète.
+  \end{itemize}
+\end{ex}
+Notons $r$ le taux d'intérêt instantané que nous supposerons constant dans ce
+projet. Le prix à l'instant $0 \le t \le T$, avec $t_i \le t < t_{i+1}$ d'une telle option
+est donné par
+\begin{equation*}
+  v(t, S_{t_0}, \dots, S_{t_i}, S_t) = \expp{-r (T - t)} \E(\varphi(S_{t_0},
+  S_{t_1}, \dots, S_{t_N}) | \cf_{t})
+\end{equation*}
+Cette quantité sera calculée par une méthode de Monte Carlo.
+
+\paragraph{Prix à l'instant $0$.}
+
+Attardons nous un instant sur le cas particulier du calcul du prix à l'instant $0$
+\begin{equation*}
+  v(0, S_{0}) = \expp{-r T} \E(\varphi(S_{t_0}, S_{t_1}, \dots, S_{t_N}))
+\end{equation*}
+On approche $v(0,S_0)$ par
+\begin{equation*}
+  \expp{-r T} \inv{M} \sum_{j=1}^M \varphi(S_{t_0}^{(j)}, S_{t_1}^{(j)}, \dots, S_{t_N}^{(j)})
+\end{equation*}
+où les $N-$uplets $(S_{t_0}^{(j)}, S_{t_1}^{(j)}, \dots, S_{t_N}^{(j)})$ pour
+$j=1,\cdots,M$ sont i.i.d selon la loi de $(S_{t_0}, S_{t_1}, \dots, S_{t_N})$. \\
+
+\paragraph{Prix à un instant $t>0$.}
+
+Le calcul du prix à l'instant $t$ est légèrement plus compliqué car il faut
+calculer une espérance conditionnelle. Lorsque cela est possible, une manière de
+traiter le calcul de cette espérance conditionnelle est de réécrire le
+sous-jacent $S_{t+u}$ à l'instant $t+u$ pour $u>0$ en fonction de la valeur
+$S_t$ du sous--jacent à l'instant $t$ et d'une quantité indépendante de
+$\cf_t$. Nous verrons dans la suite que cela est en particulier possible dans le
+modèle de Black--Scholes et que l'on peut écrire
+\begin{align*}
+  S_{t+u} = S_t \tilde S_u
+\end{align*}
+où $\tilde S$ est un processus de même loi que $S$ mais indépendant de $\cf_t$, ie. indépendant du passé
+jusqu'à l'instant $t$ inclus.
+Ainsi le prix à l'instant $t$ se réécrit
+\begin{equation*}
+  v(t, S_{t_0}, \dots, S_{t_i}, S_t) = \expp{-r (T - t)} \E(\varphi(s_{t_0}, \dots,
+  s_{t_i}, s_t \tilde S_{t_{i+1} - t}, \dots,  s_t \tilde S_{t_N - t}))_{\left|
+  \begin{array}{l}
+    s_{t_k} = S_{t_k}, \; k=0,\cdots,i \\
+    s_t = S_t
+  \end{array}\right.}
+\end{equation*}
+Les lettres $s$ minuscules désignent des variables déterministes.
+On peut alors approcher le prix à l'instant $t$ par la moyenne Monte Carlo
+suivante
+\begin{equation}
+  \label{MC_t}
+  \expp{-r (T - t)} \inv{M} \sum_{j=1}^M \varphi(s_{t_0}, s_{t_1}, \dots,
+  s_{t_i}, s_t \tilde S_{t_{i+1} - t}^{(j)}, \dots,  s_t \tilde S_{t_N - t}^{(j)})
+\end{equation}
+où les $N-i$uplets $(\tilde S_{t_{i+1} - t}^{(j)}, \dots, \tilde S_{t_N - t}^{(j)})$ sont
+i.i.d selon la loi de $(\tilde S_{t_{i+1} - t}, \dots, \tilde S_{t_N - t})$. On portera
+une attention particulière à la simulation du vecteur $(s_t \tilde S_{t_{i+1} - t}^{(j)},
+\dots,  s_t \tilde S_{t_N - t}^{(j)})$. Les quantités $(s_{t_0}, s_{t_1}, \dots, s_{t_i},
+s_t)$ représentent les valeurs réellement observées jusqu'à l'instant $t$ sur la
+trajectoire du sous-jacent sur laquelle on souhaite calculer le prix de l'option. D'un
+point du vue pratique, les valeurs $(s_{t_0}, s_{t_1}, \dots, s_{t_i}, s_t)$ sont les
+cotations du sous-jacent observées sur le marché jusqu'à la date $t$.
+
+
+\section{Modèle de Black Scholes}
+\label{sec:modele}
+\subsection{Cas de la dimension 1}
+\label{bs1d}
+
+Considérons un modèle de Black--Scholes pour modéliser l'évolution d'un
+sous--jacent
+\begin{align*}
+  S_t = S_0 \expp{(r - \sigma^2/2)t + \sigma B_t}
+\end{align*}
+où $B$ est un mouvement Brownien standard réel, $r>0$ le taux d'intérêt
+instantané supposé constant et $\sigma>0$ la volatilité du sous--jacent.
+Remarquons que pour tout $t, u \ge 0$, on peut écrire
+\begin{equation}
+  \label{flot} S_{t+u} = S_{t} \expp{(r- \sigma^2/2) u + \sigma (B_{t+u} - B_t)}
+  = S_t \tilde S_u
+\end{equation}
+où $\tilde S$ est {\bf indépendant} de $\cf_t$ et la dynamique de $\tilde S$ est
+donnée par
+\begin{equation*}
+  \tilde S_u = \expp{(r- \sigma^2/2) u + \sigma \tilde B_u}
+\end{equation*}
+où $\tilde B$ est un mouvement Brownien réel standard indépendant de $\cf_t$.
+Remarquons que $\tilde S$ suit la même dynamique que $S$ mais a pour valeur
+initiale $1$.
+La discrétisation de $S$ sur la grille $t_0, t_1, \dots, t_N$ s'écrit alors
+\begin{align*}
+  S_{t_{i+1}} \stackrel{Loi}{=} S_{t_i} \expp{(r - \sigma^2/2) (t_{i+1} - t_i) + \sigma
+  \sqrt{t_{i+1} - t_i} G_{i+1}}
+\end{align*}
+où la suite $(G_i)_{i \ge 1}$ est une suite i.i.d. selon la loi normale centrée
+réduite.
+
+
+\subsection{Cas multidimensionnel}
+\label{bsnd}
+
+Considérons $D$ actifs évoluant chacun selon un modèle de Black Scholes de
+dimension $1$ et corrélés entre eux. La dynamique $S$ de ces $D$ actifs s'écrit
+\begin{equation}
+  \label{eqbsnd}
+  S_{t,d} = S_{0,d} \expp{(r- {(\sigma_d)}^2/2) t + \sigma_d B_{t,d}}, \quad d=1\dots D
+\end{equation}
+où  $r$ est le taux d'intérêt, $(\sigma_1, \dots, \sigma_D)$ sont les
+volatilités de chacun des actifs et $B = (B_1, \dots, B_D)^T$ est un vecteur de
+$D$ mouvements Browniens standards et réels de matrice de corrélation $\Gamma$
+définie par $\Gamma = \frac{\Cov(B_t, B_t)}{t}$. Dans la suite, on suppose que
+$\Gamma_{ij} = \rho$ pour tout $i \neq j$ et $\Gamma_{ii} = 1$. Le paramètre
+$\rho$ doit être choisi dans $]-\inv{D-1}, 1[$ de telle sorte que $\Gamma$ soit
+définie positive pour assurer que le marché soit complet.  Attention $B$ n'est
+pas un mouvement Brownien standard à valeurs dans $\R^D$ car ses composantes ne
+sont pas indépendantes mais on peut le réécrire en utilisant un mouvement
+Brownien standard à valeurs dans $\R^D$, noté dans la suite $W = (W^1, \dots,
+W^d)^T$ et qui sera vu comme un vecteur colonne. Ainsi on a l'égalité en loi
+$(B_t, t \ge 0) = (L W_t, t \ge 0)$ pour tout $t \ge 0$ où L est la factorisée
+de Cholesky de la matrice $\Gamma$, .i.e $\Gamma = LL'$ avec $L$ triangulaire
+inférieure.  L'équation~\eqref{eqbsnd} se réécrit alors
+\begin{equation*}
+  S_{t,d} = S_{0,d} \expp{(r- {(\sigma_d)}^2/2) t + \sigma_d L_d W_t}, \quad d=1\dots D
+\end{equation*}
+où $L_d$ est la ligne $d$ de la matrice $L$. Ainsi la quantité $L_d W_t$ est
+bien un réel.
+De cette équation, on remarque facilement que l'on peut déduire
+\begin{align*}
+  % S_{t_{i+1}}^d & = S_{t_i}^d \expp{(r- {(\sigma^d)}^2/2) (t_{i+1} - t_i) + \sigma^d
+  % L^d (W_{t_{i+1}} - W_{t_i})}, \quad d=1\dots D \\
+  S_{t_{i+1},d} & \stackrel{Loi}{=} S_{t_i,d} \expp{(r- {(\sigma_d)}^2/2)
+  (t_{i+1} - t_i) + \sigma_d \sqrt{(t_{i+1} - t_i)}L_d G_{i+1}}, \quad d=1\dots D
+\end{align*}
+où la suite $(G_i)_{i \ge 1}$ une suite i.i.d de vecteurs gaussiens centrés de
+matrice de covariance identité à valeurs dans $\R^D$. Ainsi pour simuler le
+processus $S$ sur la grille $(t_i)_{i=0,\dots,N}$ il suffit de savoir simuler
+des vecteurs gaussiens centrés de matrice de covariance identité. \\
+
+
+Vous avez vu en cours d'{\it Introduction aux produits dérivés} qu'il était
+possible de construire un portefeuille de couverture pour les options d'achat et
+de vente dans le modèle de Black Scholes en dimension $1$. Ce portefeuille de
+couverture est entièrement déterminé par la quantité d'actifs risqués à posséder
+à chaque instant $t$ qui est donnée par la dérivée du prix par rapport à $S_t$,
+i.e $\frac{\partial v(t, S_{t_0}, \dots, S_{t_i}, S_{t})}{\partial S_t}$.
+Cette théorie est en fait valable bien au delà des options d'achat et de vente,
+elle est connue sous le nom de {\it couverture en delta}. Dans ce projet, nous
+l'appliquerons à d'autres produits bien plus complexes.  Ces quantités sont
+connues sous le nom de delta de l'option et sont en pratique approchées par une
+méthode de différences finies
+\begin{align}
+  \label{delta_t}
+  \frac{\expp{-r (T - t)}}{M  2 s_t h} \sum_{j=1}^M & \left ( \varphi(s_{t_0}, s_{t_1}, \dots,
+  s_{t_i}, s_t(1+h) \tilde S_{t_{i+1} - t}^{(j)}, \dots,  s_t(1+h) \tilde S_{t_N -
+  t}^{(j)}) \right. \nonumber \\
+  & \left. - \varphi(s_{t_0}, s_{t_1}, \dots,
+  s_{t_i}, s_t(1-h) \tilde S_{t_{i+1} - t}^{(j)}, \dots,  s_t (1-h) \tilde
+  S_{t_N - t}^{(j)}) \right)
+\end{align}
+où les $N-$uplets $(\tilde S_{t_{i+1} - t}^{(j)}, \dots, \tilde S_{t_N -
+t}^{(j)})$ sont i.i.d selon la loi de $(S_{t_{i+1} - t}, \dots, S_{t_N - t})$.
+
+Pour un produit faisant intervenir $D$ sous-jacents, son portefeuille de
+couverture contient les $D$ actifs et la quantité d'actifs $d$ à détenir à
+l'instant $t$ est donnée par
+\begin{equation*}
+  \frac{\partial v(t, S_{t_0}, \dots, S_{t_i}, S_{t})}{\partial S_{t,d}}
+\end{equation*}
+
+\section{Architecture du Pricer Monte Carlo}
+\label{sec:archi}
+\subsection{Calcul des prix}
+
+% \ifdefined\fullversion
+% L'ambition de cette partie est d'écrire un outil permettant de pricer n'importe
+% quel produit dans un modèle de Black Scholes de dimension $1$ ou plus en ne
+% spécifiant que 2 choses : le payoff de l'option et la manière de générer une
+% trajectoire du modèle.
+
+% Votre pricer devra contenir les classes suivantes
+% \begin{lstlisting}
+% class BlackScholesModel {
+%     int size_; /*! nombre d'actifs du modèle */
+%     double r_; /*! taux d'intérêt */
+%     double rho_; /*! paramètre de corrélation */
+%     PnlVect *sigma_; /*! vecteur de volatilités */
+%     PnlVect *spot_; /*! valeurs initiales du sous-jacent */
+%     /// Génère une trajectoire du modèle et la stocke dans path
+%     void asset (PnlMat *path, double T, int N, PnlRng *rng) ;
+% }
+
+% class Option {
+%     double T_; /*! maturité */
+%     int TimeSteps_; /*! nombre de pas de temps de discrétisation */
+%     int size_; /* dimension du modèle, redondant avec BlackScholesModel::size_ */
+%     /// Calcule la valeur du payoff sur la trajectoire
+%     virtual double payoff(const PnlMat *path) = 0;
+% }
+
+% class MonteCarlo {
+%     BlackScholesModel *mod_; /*! pointeur vers le modèle */
+%     Option *opt_; /*! pointeur sur l'option */
+%     PnlRng *rng; /*! pointeur sur le générateur */
+%     double h_; /*! pas de différence finie */
+%     int samples_; /*! nombre de tirages Monte Carlo */
+% }
+% \end{lstlisting}
+% De la classe \var{Option} vont dériver toutes les classes implémentant une
+% option particulière. La liste des produits à implémenter se trouve
+% Section~\ref{sec:options}. Le paramètre \var{rng} est un générateur de nombres
+% aléatoires qui doit être créé (avec \var{pnl\_rng\_create}) et initialisé (avec
+% \var{pnl\_rng\_sseed}) dans la fonction \var{main}.
+% \fi %\fullversion
+
+L'ambition de ce projet est d'écrire un outil permettant de pricer n'importe
+quel produit dans un modèle de Black Scholes de dimension quelconque en ne
+spécifiant que 3 choses: le payoff de l'option, les paramètres du modèle et sa
+fonction de simulation \texttt{asset}. Pour ce faire nous allons implémenter
+trois classes: \verb!MonteCarlo!, \verb!Option!, \verb!BlackScholesModel!.
+
+\begin{question}
+  Proposer une spécification d'une classe \verb!MonteCarlo! permettant de
+  réaliser le travail demandé.
+\end{question}
+
+\begin{question}
+  Proposer une architecture pour la classe \verb!Option!, quelles
+  fonctionnalités devra--t--elle implémenter?
+\end{question}
+
+\begin{question}
+  Proposer une spécification de la classe \verb!BlackScholesModel! permettant de simuler le
+  sous--jacent. On s'assurera qu'il n'y ait pas de dépendance inutile entre les
+  3 classes.
+\end{question}
+
+
+\paragraph{Prix à l'instant $0$}
+
+Dans un premier temps, on se limitera au calcul du prix à l'instant $0$.
+Implémenter la méthode \var{price} à la classe \var{MonteCarlo} permettant de
+calculer par une méthode de Monte Carlo le prix à l'instant $0$ d'une option.
+Cette fonction calculera également la largeur de l'intervalle de confiance de
+l'estimateur à $95\%$. On rappelle que la
+variance de l'estimateur peut être approchée par
+\begin{equation*}
+  \xi_M^2 = \expp{-2rT} \left[\inv{M} \sum_{j=1}^M (\varphi(S_{t_0}^{(j)},
+  S_{t_1}^{(j)}, \dots, S_{t_N}^{(j)}))^2 - \left(\inv{M} \sum_{j=1}^M
+  \varphi(S_{t_0}^{(j)}, S_{t_1}^{(j)}, \dots, S_{t_N}^{(j)}) \right)^2 \right]
+\end{equation*}
+et que l'intervalle de confiance à $95\%$ est alors donné par
+\begin{equation*}
+  \left[\expp{-rT} \inv{M} \sum_{j=1}^M \varphi(S_{t_0}^{(j)}, S_{t_1}^{(j)}, \dots,
+  S_{t_N}^{(j)}) \pm \frac{1.96 \xi_M}{\sqrt{M}} \right]
+\end{equation*}
+Ecrire une méthode \var{MonteCarlo::price} qui fera appel aux méthodes \var{asset} et
+\var{payoff}.
+
+\begin{question}
+  Proposer des tests pour les différentes fonctionnalités et composants de votre code.
+\end{question}
+
+\begin{question}
+  Implémenter les différentes classes et le calcul du prix à l'instant $0$.
+\end{question}
+
+\paragraph{Prix à un instant $t > 0$}
+
+Une fois le calcul du prix à l'instant $0$ testé et validé, vous pourrez passer
+au calcul du prix à tout instant $t > 0$. \\
+
+Pour ce faire, il faut être capable de calculer l'estimateur~\eqref{MC_t}.  Cette
+espérance peut-être calculée par une méthode de Monte Carlo standard pourvu que
+l'on soit capable de générer des trajectoires i.i.d selon la loi conditionnelle
+de $S$ sachant $\cf_t$, i.e. grâce à la propriété~\eqref{flot} des trajectoires
+de la forme
+\begin{equation*}
+(s_{t_0}, s_{t_1}, \dots, s_{t_i}, s_t \tilde S_{t_{i+1} - t}^{(j)}, \dots,  s_t
+\tilde S_{t_N - t}^{(j)})
+\end{equation*}
+
+\begin{question}
+  Modifier les spécifications des classes précédentes, pour pouvoir rajouter la
+  simulation d'une trajectoire connaissant son passé jusqu'à une certaine date.
+\end{question}
+
+\begin{question}
+  Implémenter le calcul du prix à une date quelconque.
+\end{question}
+
+
+Avant de continuer l'ajout de nouvelles fonctionnalités, il est essentiel réfléchir aux
+possibles optimisations de code (ordre des boucles, utilisation d'espaces de travail) tout
+en maintenant sa lisibilité. Pour ce faire, il est recommandé d'utiliser un outil dit de
+\emph{profiling}: on pourra par exemple utiliser \emph{gprof}.
+\begin{enumerate}
+  \item Compiler votre code avec l'option \verb!-pg! (avec cmake \verb!-DCMAKE_CXX_FLAGS=-pg!).
+  \item Lancer le code (ne pas s'inquiéter d'une exécution ralentie). Cela crée un fichier
+    \texttt{gmon.out}.
+  \item Lancer la commande \texttt{gprof ./nom\_executable gmon.out > profile.txt}.
+  \item Etudier le fichier \texttt{profile.txt}.
+\end{enumerate}
+
+
+\subsection{Calcul du delta}
+
+Dans cette partie, on cherche à écrire une méthode \var{MonteCarlo::delta} qui
+calcule le delta de l'option à un instant $t$ à partir de la
+formule~\eqref{delta_t}.  Remarquons dans cette formule qu'il faut être capable
+de simuler $2$ trajectoires utilisant les mêmes aléas Browniens mais shiftées
+l'une par rapport à l'autre. Considérons une trajectoire $(s_{t_0}, s_{t_1},
+\dots, s_{t_i}, s_t \tilde S_{t_{i+1} - t}^{(j)}, \dots,  s_t \tilde S_{t_N -
+t}^{(j)})$, nous souhaitons à partir de cette trajectoire construire pour
+$d=1\dots D$ les trajectoires
+\begin{align*}
+  (s_{t_0}, s_{t_1}, \dots, s_{t_i}, g_{d,+}(s_t) \tilde S_{t_{i+1} - t}^{(j)},
+ \dots,  g_{d,+}(s_t) \tilde S_{t_N - t}^{(j)})  \\
+ (s_{t_0}, s_{t_1}, \dots, s_{t_i}, g_{d,-}(s_t) \tilde S_{t_{i+1} - t}^{(j)},
+ \dots, g_{d,-}(s_t)   \tilde S_{t_N - t}^{(j)})
+\end{align*}
+où
+\begin{equation*}
+  g_{d,+}(x)  = \left(\begin{array}{c}
+    x_1 \\
+    \vdots\\
+    x_{d-1} \\
+    x_d (1+h) \\
+    x_{d+1} \\
+    \vdots\\
+    x_D
+  \end{array}\right) \qquad g_{d,-}(x)  = \left(\begin{array}{c}
+    x_1 \\
+    \vdots\\
+    x_{d-1} \\
+    x_d (1-h) \\
+    x_{d+1} \\
+    \vdots\\
+    x_D
+  \end{array}\right)
+\end{equation*}
+% Pour ce faire, nous pouvons créer une nouvelle méthode \var{BlackScholesModel::shift\_asset}.
+% \begin{lstlisting}
+%  /**
+%   *
+%   * Shift d'une trajectoire du sous-jacent
+%   *
+%   * @param  path (input) contient en input la trajectoire
+%   * du sous-jacent
+%   * @param shift_path (output) contient la trajectoire path
+%   * dont la composante d a été shiftée par (1+h)
+%   * à partir de la date t.
+%   * @param t (input) date à partir de laquelle on shift
+%   * @param h (input) pas de différences finies
+%   * @param d (input) indice du sous-jacent à shifter
+%   * @param timestep (input) pas de constatation du sous-jacent
+%   */
+%   void shift_asset (PnlMat *shift_path, const PnlMat *path,
+%                     int d, double h, double t, double timestep);
+% \end{lstlisting}
+% Il ne reste vous plus ensuite qu'à écrire sur le principe des méthodes
+% \var{MonteCarlo::price} une méthode \var{MonteCarlo::delta}
+% \begin{lstlisting}
+%  /**
+%   *
+%   * Calcul du delta de l'option à la date t
+%   *
+%   * @param  past (input) contient la trajectoire du sous-jacent
+%   * jusqu'à l'instant t
+%   * @param t (input) date à laquelle le calcul est fait
+%   * @param delta (outptut) contient le vecteur de delta
+%   * @param ic (outptut) contient la largeur de l'intervalle
+%   * de confiance sur le calcul du delta
+%   */
+%   void delta (const PnlMat *past, double t,
+%               PnlVect *delta, PnlVect *ic);
+% \end{lstlisting}
+
+\begin{question}
+  Implémenter une méthode \var{BlackScholesModel::shift\_asset} et le calcul des delta.
+\end{question}
+
+
+\section{Simulation de la couverture}
+\label{couverture}
+
+Pour les praticiens de la finance, parmi les critères qui interviennent dans le
+choix d'un modèle plutôt qu'un autre, la répartition du {\it P\&L} (Profit and
+Loss, i.e. erreur de couverture) joue un rôle tout à fait central. Un modèle est
+jugé sur sa bonne capacité à couvrir les produits exotiques.
+
+\paragraph{Calcul de P\&L.}
+
+Dans cette partie, nous allons supposer dans un premier temps avoir à disposition des
+trajectoires de marché sur une grille de temps $0 = \tau_0 < \cdots < \tau_H = T$ de pas
+$T/H$. On suppose d'une part que les paramètres de modèles associés à ces trajectoires de
+marché sont connus et que la grille régulière $\{\tau_0, \dots, \tau_H \}$ des
+observations du marché satisfait $\{t_0, \dots, t_N\} \subset \{\tau_0, \dots, \tau_H \}$.
+
+Le long de cette trajectoire, calculer le prix et le delta à chaque date
+$\tau_i$ et construire le portefeuille de couverture.  Notons $p_i$ et
+$\delta_i$ les prix et deltas calculés le long de cette trajectoire à la date
+$\tau_i$ alors l'évolution de la part investie au taux sans risque s'écrit.
+\begin{equation*}
+  \begin{cases}
+    V_0 & = p_0 - \delta_0 \cdot S_0\\
+  V_{i} & = V_{i-1} * \expp{\frac{r * T}{H}} -
+  (\delta_{i} - \delta_{i-1}) \cdot S_{\tau_{i}}, \quad i=1,\dots,H
+\end{cases}
+\end{equation*}
+L'erreur de couverture est donnée par $P\&L = V_{H} + \delta_H \cdot S_{\tau_H}
+- \var{payoff}$.
+
+\begin{question}
+  Implémenter une méthode de calcul de P\&L le long d'une trajectoire de marché.
+\end{question}
+
+\paragraph{Simulation d'un marché.}
+
+Dans le paragraphe précédent, nous supposions avoir à disposition des trajectoires de marché, ce qui correspond en pratique à l'utilisation de données réelles qui n'ont aucune raison de suivre un modèle de Black Scholes.
+
+Lors de la mise au point d'un outil de valorisation et de couverture, il est préférable de le tester d'abord sur des données de marché simulées pour lesquelles on connaît les paramètres et le modèle utilisé. Le but de cette partie est donc de simuler des données de marché dans le modèle de Black Scholes multi-dimensionnel. Le marché évolue sous la probabilité historique ou objective, la dynamique du modèle de marché s'écrit
+\begin{equation*}
+  S_t^d = S_0^d \expp{(\mu^d- {(\sigma^d)}^2/2) t + \sigma^d L^d W_t}, \quad d=1\dots D.
+\end{equation*}
+Le vecteur $\mu$ est connu sous le nom de tendance du modèle.
+
+\begin{question}
+  Ajouter le paramètre de tendance \var{trend} à la classe \var{BlackScholesModel} et implémenter une méthode \var{BlackScholesModel::simul\_market} renvoyant une simulation du marché (c'est à dire une simulation du modèle sous la probabilité historique) avec un nombre de dates \var{H}, typiquement on prendra une date par jour ou par semaine.
+\end{question}
+
+\paragraph{Problématique de gestion des dates.} Pour la mise en {\oe}uvre du portefeuille de couverture, deux grilles de discrétisation entrent en jeu: la grille de pas $T/N$ qui représente les dates de constatation du produit et la grille \textbf{plus fine} de pas $T/H$ des dates de rebalancement du portefeuille, voir Figure~\ref{fig:grid}.
+\vskip1em
+
+\begin{figure}[h!t]
+\begin{tikzpicture}
+  \draw[->] (-1,0) -- (13,0);
+  \foreach \i in {0,1,...,12}
+    { \draw (\i,-0.2) -- (\i,0.2);}
+  \foreach \i in {0,4,...,12}
+  { \draw[color=blue,thick] (\i,-0.5) -- (\i,0.5);}
+  \draw[<->] (0,-0.5) -- (1, -0.5);
+  \draw (0.5,-0.5) node[below]{$\frac{T}{H}$};
+  \draw[<->] (0,-1.5) -- (4, -1.5);
+  \draw (2,-1.5) node[below]{$\frac{T}{N}$};
+
+\end{tikzpicture}
+\caption{Exemple avec $H=12$ et $N=3$. \label{fig:grid}}
+\end{figure}
+
+\section{Paramètres du problème}
+\label{sec:parser}
+
+Les paramètres du problème sont spécifiés dans des fichiers \texttt{.json}. 
+
+Voici la liste des clés qui seront utilisées pour initialiser le problème.
+\begin{multicols}{2}
+\begin{center}
+  \begin{tabular}{l@{$\quad$}|@{$\quad$}c|@{$\quad$}c}
+    Clé & Type & Nom\\
+    \hline
+    option size & int & $d$ \\
+    spot & vector & $S_0$\\
+    maturity & float & $T$\\
+    volatility & vector & $\sigma$\\
+    interest rate & float & $r$ \\
+    correlation & float & $\rho$\\
+    trend & vector & $\mu$ \\
+  \end{tabular}
+
+  \begin{tabular}{l@{$\quad$}|@{$\quad$}c|@{$\quad$}c}
+    Clé & Type & Nom\\
+    \hline
+    strike & float & $K$\\
+    option type & string & \\
+    payoff coefficients & vector &$\lambda$ \\
+    timestep number & int &$N$ \\
+    hedging dates number & int &$H$ \\
+    fd step & float &$h$ \\
+    sample number & long  & $M$
+  \end{tabular}
+\end{center}
+\end{multicols}
+Si une clé attend un paramètre vectoriel et que le fichier ne contient qu'une seule valeur pour cette clé, alors cette valeur sera affectée à chacune des composantes du vecteur.
+
+
+\section{Produits à gérer}
+\label{sec:options}
+
+Voici la liste des options que votre pricer devra être capable d'évaluer (et de couvrir)
+\begin{itemize}
+\item Option panier (clé \verb!basket!)
+  \begin{equation*}
+    \left( \sum_{d=1}^D \lambda_d S_{T,d} - K \right)_+
+  \end{equation*}
+  où $\lambda_i \in \R$ et $K \in \R$. Le cas $K \le 0$ permet de considérer une
+  option de vente
+
+\item Option asiatique discrète (clé \verb!asian!)
+  \begin{equation*}
+    \left(\sum_{d=1}^D \lambda_d \inv{N+1} \sum_{i=0}^{N} S_{t_i,d} - K\right)_+
+  \end{equation*}
+
+\item Option performance sur panier (clé \verb!performance!)
+  \begin{equation*}
+    1 + \sum_{i=1}^N \left( \frac{\sum_{d=1}^D \lambda_d
+        S_{t_i,d}}{\sum_{d=1}^D \lambda_d
+        S_{t_{i-1},d}} - 1 \right)_+
+  \end{equation*}
+\end{itemize}
+
+\end{document}
