@@ -129,6 +129,7 @@ double monteCarloMeanPrecise(int nbSamples, double a, double T, double N, double
 
         pnl_vect_free(&bm);
     }
+    pnl_rng_free(&rng);
 
     return res / nbSamples;
 }

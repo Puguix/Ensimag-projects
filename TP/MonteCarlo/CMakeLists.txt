@@ -15,3 +15,13 @@ add_executable(tp1 tp1.cpp)
 target_link_libraries(tp1
     ${LIBS}
 )
+
+add_executable(tp2-1 tp2-1.cpp)
+target_link_libraries(tp2-1
+    ${LIBS}
+)
+
+add_executable(tp2-2 tp2-partie2/BSCall.cpp tp2-partie2/MonteCarlo.cpp tp2-partie2/main.cpp)
+target_link_libraries(tp2-2
+    ${LIBS}
+)
