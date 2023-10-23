@@ -30,3 +30,8 @@ add_executable(tp3 tp3/BSBarrier.cpp tp3/MonteCarlo.cpp tp3/main.cpp)
 target_link_libraries(tp3
     ${LIBS}
 )
+
+add_executable(tp4 tp4/main.cpp)
+target_link_libraries(tp4
+    ${LIBS}
+)
