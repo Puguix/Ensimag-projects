@@ -35,3 +35,8 @@ add_executable(tp4 tp4/main.cpp)
 target_link_libraries(tp4
     ${LIBS}
 )
+
+add_executable(tp5 tp5/main.cpp)
+target_link_libraries(tp5
+    ${LIBS}
+)

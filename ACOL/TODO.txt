@@ -1,0 +1,2 @@
+faire apparaitre les virements sur le compte destinataire
+implémenter les catégories de transactions

@@ -2,30 +2,34 @@
 
 Smaller projects
 
-**Analyse**
+### Analyse
 
 Mathematical analysis to learn markdown et latex.
 
-**C**
+### C
 
 Many exercices to practice C.
 
-**CEP**
+### CEP
 
 Few exercices in assembly.
 
-**Python**
+### Python
 
 Lots of differents exercices in Python to train.
 
-**SEPC**
+### SEPC
 
 3 Operating system and concurrent programming projects.
 
-**TL**
+### TL
 
 Language theory exercise to understand how to lex and parse texts.
 
-**Unix**
+### Unix
 
 Few exercices to learn about shell scripts.
+
+### Web
+
+Exercices to learn HTML CSS Javascript Ajax and Express.
