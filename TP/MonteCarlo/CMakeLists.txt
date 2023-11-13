@@ -40,3 +40,8 @@ add_executable(tp5 tp5/main.cpp)
 target_link_libraries(tp5
     ${LIBS}
 )
+
+add_executable(tp6 tp6/main.cpp tp6/BSScheme.cpp)
+target_link_libraries(tp6
+    ${LIBS}
+)

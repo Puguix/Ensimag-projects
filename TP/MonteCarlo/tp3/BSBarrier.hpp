@@ -3,7 +3,8 @@
 
 #include "pnl/pnl_vector.h"
 
-class BSBarrier {
+class BSBarrier
+{
 public:
     BSBarrier(double maturity, double volatility, double interest_rate, double spot, double strike, double barrier, int dates);
     double m_maturity;
@@ -41,6 +42,4 @@ private:
 
     /// Calculer la valeur de B_T à partir des incréments
     double compute_BT(const PnlVect *G);
-
 };
-
