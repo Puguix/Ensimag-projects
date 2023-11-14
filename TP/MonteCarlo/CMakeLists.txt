@@ -36,7 +36,7 @@ target_link_libraries(tp4
     ${LIBS}
 )
 
-add_executable(tp5 tp5/main.cpp)
+add_executable(tp5 tp5/main.cpp tp5/BSCall.cpp tp5/MonteCarlo.cpp)
 target_link_libraries(tp5
     ${LIBS}
 )
