@@ -45,3 +45,13 @@ add_executable(tp6 tp6/main.cpp tp6/BSScheme.cpp)
 target_link_libraries(tp6
     ${LIBS}
 )
+
+add_executable(tp7-1 tp7/AsianOption.cpp tp7/Heston.cpp tp7/mcpricer.cpp tp7/Model.cpp tp7/MonteCarlo.cpp tp7/MultiLevelMonteCarlo.cpp)
+target_link_libraries(tp7-1
+    ${LIBS}
+)
+
+add_executable(tp7-2 tp7/AsianOption.cpp tp7/Heston.cpp tp7/mlmcpricer.cpp tp7/Model.cpp tp7/MonteCarlo.cpp tp7/MultiLevelMonteCarlo.cpp)
+target_link_libraries(tp7-2
+    ${LIBS}
+)
