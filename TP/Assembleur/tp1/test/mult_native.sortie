@@ -1,0 +1,19 @@
+Test interactif
+Multiplication non-signée : Entrez le premier opérande
+8
+Multiplication non-signée : Entrez le deuxième opérande
+
+7
+Multiplication de 8 par 7:
+Résultat attendu : 56
+Résultat de mult_native: 56
+
+Tests supplémentaires
+Multiplication de 5 par 16:
+Résultat attendu : 80
+Résultat de mult_native: 80
+
+Multiplication de 20 par 54:
+Résultat attendu : 1080
+Résultat de mult_native: 1080
+

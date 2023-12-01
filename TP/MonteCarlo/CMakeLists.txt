@@ -55,3 +55,8 @@ add_executable(tp7-2 tp7/AsianOption.cpp tp7/Heston.cpp tp7/mlmcpricer.cpp tp7/M
 target_link_libraries(tp7-2
     ${LIBS}
 )
+
+add_executable(tp8 tp8/AsianOption.cpp tp8/BlackScholes.cpp tp8/main.cpp tp8/MonteCarlo.cpp)
+target_link_libraries(tp8
+    ${LIBS}
+)

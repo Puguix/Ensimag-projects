@@ -1,0 +1,5 @@
+Fonction tri_nain : Entrez la taille du tableau (max = 2500)
+40
+Test sur un tableau de taille 40
+Le tableau a une taille > 25, il ne sera pas affiché.
+Le tableau est trié, le nain a bien fait son travail.

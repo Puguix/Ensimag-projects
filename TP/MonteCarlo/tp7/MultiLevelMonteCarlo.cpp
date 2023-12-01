@@ -31,9 +31,20 @@ void MultiLevelMonteCarlo::run(double &prix, double &std_dev, int m, int L)
   PnlVect *pathFine = pnl_vect_new();
   PnlMat *Gcrude = pnl_mat_new();
   PnlMat *Gfine = pnl_mat_new();
-  // Treat Level 0
 
-  // TODO ici
+  // Treat Level 0 HERE TODO
+  long long Nl = nSamples(0, m, L);
+  double s0 = 0;
+  for (int i = 0; i < Nl; i++)
+  {
+    pnl_mat_rng_normal(Gfine, 1, 2, m_rng);
+
+    // Simulation of the fine model
+    m_mod->simul(pathFine, m_opt->m_maturity, 1, Gfine);
+    s0 += m_opt->payoff(pathFine);
+  }
+  s0 /= Nl;
+  prix += s0;
 
   // Loop on all the levels > 0
   for (int l = 1; l < L; l++)
@@ -57,7 +68,7 @@ void MultiLevelMonteCarlo::run(double &prix, double &std_dev, int m, int L)
     sum /= Nl;
     prix += sum;
   }
-  // prix /= L;
+  prix /= L;
 
   pnl_mat_free(&Gcrude);
   pnl_mat_free(&Gfine);

@@ -1,0 +1,21 @@
+Chaine : "Ensimag"
+Chaine inversee : "gamisnE"
+
+Chaine : ""
+Chaine inversee : ""
+
+Chaine : "a"
+Chaine inversee : "a"
+
+Chaine : "ab"
+Chaine inversee : "ba"
+
+Chaine : "abc"
+Chaine inversee : "cba"
+
+Chaine : "abcd"
+Chaine inversee : "dcba"
+
+Chaine : "abcde"
+Chaine inversee : "edcba"
+

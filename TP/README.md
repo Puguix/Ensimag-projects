@@ -4,7 +4,11 @@ Smaller projects
 
 ### Analyse
 
-Mathematical analysis to learn markdown et latex.
+Mathematical analysis to learn markdown and latex.
+
+### Assembleur  
+
+Small exercices in assembly
 
 ### C
 

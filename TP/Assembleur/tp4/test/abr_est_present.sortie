@@ -1,0 +1,32 @@
+Test pour l'arbre de l'énoncé:abr_est_present(0, abr) ? : non
+abr_est_present(1, abr) ? : oui
+abr_est_present(2, abr) ? : non
+abr_est_present(3, abr) ? : oui
+abr_est_present(4, abr) ? : oui
+abr_est_present(5, abr) ? : non
+abr_est_present(6, abr) ? : oui
+abr_est_present(7, abr) ? : oui
+abr_est_present(8, abr) ? : oui
+abr_est_present(9, abr) ? : non
+abr_est_present(10, abr) ? : oui
+abr_est_present(11, abr) ? : non
+abr_est_present(12, abr) ? : non
+abr_est_present(13, abr) ? : oui
+abr_est_present(14, abr) ? : oui
+
+Test pour l'arbre vide:abr_est_present(0, abr) ? : non
+abr_est_present(1, abr) ? : non
+abr_est_present(2, abr) ? : non
+abr_est_present(3, abr) ? : non
+abr_est_present(4, abr) ? : non
+abr_est_present(5, abr) ? : non
+abr_est_present(6, abr) ? : non
+abr_est_present(7, abr) ? : non
+abr_est_present(8, abr) ? : non
+abr_est_present(9, abr) ? : non
+abr_est_present(10, abr) ? : non
+abr_est_present(11, abr) ? : non
+abr_est_present(12, abr) ? : non
+abr_est_present(13, abr) ? : non
+abr_est_present(14, abr) ? : non
+
