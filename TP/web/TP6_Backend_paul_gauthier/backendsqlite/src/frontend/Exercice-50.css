@@ -1,0 +1,112 @@
+/* Styles for the general layout */
+
+body {
+    background-color: #ccc;
+    padding: 0.5ex 0.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    background-color: white;
+    margin: 0;
+    border-radius: 0.5em 0.5em 0 0;
+    padding: 0.5ex 2em;
+    text-align: center;
+    border: 1px solid #999;
+}
+
+#menu {
+    margin: 0;
+    padding: 0;
+    width: 10em;
+    float: left;
+    list-style-type: none;
+    display: inline-block;
+}
+
+#menu li {
+    background-color: #999;
+    padding: 0.5ex 0.5em;
+    border-radius: 0.5em 0 0 0.5em;
+    text-align: right;
+    font-weight: bold;
+    border: 1px solid #999;
+    border-right: none;
+    margin: 3ex 0 0;
+    cursor: pointer;
+}
+
+#menu li + li {
+    margin-top: 0.5ex;
+}
+
+#menu li.selected {
+    background-color: white;
+}
+
+#contents {
+    background-color: white;
+    margin: 0 0 0 10em;
+    border: 1px solid #999;
+    border-top-color: white;
+    padding: 1ex 1em;
+    overflow: auto;
+    border-radius: 0 0 0.5em;
+    min-height: 10ex;
+}
+
+/* Styles for objects */
+
+.model {
+    display: none;
+}
+
+#add .bookmark,
+#add .tag {
+    display: none;
+    margin-top: 2ex;
+}
+
+#add .bookmark.selected,
+#add .tag.selected {
+    display: block;
+}
+
+.item {
+    border: 1px solid #ccc;
+    border-radius: 0.3em;
+    margin: 0.5ex 0;
+    padding: 0.5ex 0.5em;
+    cursor: pointer;
+}
+
+.item.selected {
+    font-size: 110%;
+    border-color: #c90;
+}
+
+.item h2 {
+    display: inline-block;
+    width: 50%;
+    font-size: 100%;
+    margin: 0;
+}
+
+.item .description {
+    font-size: 90%;
+    font-style: italic;
+}
+
+.item .tags {
+    list-style-type: none;
+    padding: 0;
+}
+
+.item .tags li {
+    display: inline-block;
+    background-color: #ccc;
+    border-radius: 0.3em;
+    padding: 0.2ex 0.2em;
+    font-size: 90%;
+    margin: 0 1em 0.3ex 0;
+}
