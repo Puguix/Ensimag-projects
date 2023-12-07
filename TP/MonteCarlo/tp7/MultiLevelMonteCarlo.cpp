@@ -32,7 +32,7 @@ void MultiLevelMonteCarlo::run(double &prix, double &std_dev, int m, int L)
   PnlMat *Gcrude = pnl_mat_new();
   PnlMat *Gfine = pnl_mat_new();
 
-  // Treat Level 0 HERE TODO
+  // Treat Level 0 HERE TODO NOT GOOD
   long long Nl = nSamples(0, m, L);
   double s0 = 0;
   for (int i = 0; i < Nl; i++)

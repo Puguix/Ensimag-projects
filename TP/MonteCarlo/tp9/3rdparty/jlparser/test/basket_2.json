@@ -1,0 +1,19 @@
+{
+    "option size": 40,
+    "strike": 100.0,
+    "spot": [
+        100.0
+    ],
+    "maturity": 1.0,
+    "volatility": [
+        0.2
+    ],
+    "interest rate": 0.04879,
+    "correlation": 0.7,
+    "option type": "basket",
+    "payoff coefficients": [
+        0.025
+    ],
+    "timestep number": 1,
+    "sample number": 50000
+}

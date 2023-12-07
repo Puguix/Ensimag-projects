@@ -1,0 +1,14 @@
+BasedOnStyle: Mozilla
+AllowShortIfStatementsOnASingleLine: true
+AllowShortLoopsOnASingleLine: true
+AlwaysBreakAfterReturnType: None
+BinPackArguments: true
+BinPackParameters: true
+BreakBeforeBinaryOperators: All
+BreakBeforeTernaryOperators: true
+ColumnLimit: 0
+Cpp11BracedListStyle: false
+IndentWidth: 4
+SortIncludes: false
+SpaceBeforeParens: ControlStatements
+Standard: Cpp03

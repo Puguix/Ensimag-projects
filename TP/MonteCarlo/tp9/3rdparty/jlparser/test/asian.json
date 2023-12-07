@@ -1,0 +1,20 @@
+{
+    "model type": "bs",
+    "option size": 2,
+    "strike": 100.0,
+    "spot": [
+        100.0
+    ],
+    "maturity": 1.5,
+    "volatility": [
+        0.2
+    ],
+    "interest rate": 0.02,
+    "correlation": 0.0,
+    "option type": "asian",
+    "payoff coefficients": [
+        0.5
+    ],
+    "timestep number": 150,
+    "sample number": 50000
+}
