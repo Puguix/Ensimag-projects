@@ -1,0 +1,110 @@
+/* Styles pour le corps du document */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 10em;
+    margin-right: 10em;
+    padding-top: 1em;
+}
+
+/* Styles pour le menu */
+#menu {
+    background-color: #fa0;
+    border: 1px solid #930;
+}
+
+#menu ul {
+    list-style-type: none;
+}
+
+#menu li {
+    display: inline-block;
+    margin-right: 2em;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #930;
+    padding-left: 1em;
+}
+
+#menu a::before {
+    content: "\25A0";
+    display: inline-block;
+    margin-left: 5px;
+}
+
+/* Styles pour le contenu */
+#contents {
+    margin-top: 1em;
+    border-top: 1px solid #930;
+    border-right: 1px solid #930;
+    border-left: 1px solid #930;
+    border-bottom: 1px solid #930;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+/* Styles pour l'introduction */
+.introduction {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1 {
+    background-color: #fa0;
+    border: 1px solid #930;
+    padding: 1em;
+    width: 33%;
+    text-align: center;
+}
+
+.introduction p {
+    padding: 3em;
+    font-style: italic;
+    text-align: right;
+}
+
+/* Styles pour les sections h2 */
+#contents {
+    counter-reset: section;
+}
+
+#contents h2 {
+    margin-left: 2em;
+    text-decoration: underline;
+    position: relative;
+}
+
+#contents h2::before {
+    counter-increment: section;
+    content: counter(section) ". ";
+    position: absolute;
+    left: -1em;
+}
+
+/* Styles pour la section interface */
+#interface {
+    border-top: 2px solid #fa0;
+    padding-top: 1em;
+}
+
+/* Styles pour la conclusion */
+#conclusion {
+    background-color: #930;
+    float: right;
+    font-size: small;
+    position: relative;
+    color: white;
+}
+
+#conclusion p::before,
+#conclusion p::after {
+    content: "(";
+    position: absolute;
+}
+
+#conclusion p::after {
+    content: ")";
+    right: 0;
+}

@@ -1,0 +1,28 @@
+stages:
+    - lint # Étape de linting (vérification de la qualité du code)
+    - deploy # Étape de déploiement
+
+lint:
+    stage: lint # Étape de linting pour le javascript
+    image: node # Utilisation de Node.js pour le linting javascript
+    tags:
+        - docker # Utilisation de Docker
+    script:
+        - npm init @eslint/config # Création du ficheir de configuration du linter
+        - npx eslint *.js > js_report.txt # Analyse des fichiers javascript
+    artifacts:
+        when: always # Génération des artefacts à chaque exécution
+        paths:
+            - js_report.txt # Sauvegarde du rapport de linting
+
+pages:
+    stage: deploy # Étape de déploiement des pages
+    script:
+        - mkdir -p public # Création du répertoire "public"
+        - cp *.html public/ # Copie des fichiers HTML dans "public"
+        - cp *.png public/ # Copie des fichiers PNG dans "public"
+        - cp *.css public/ # Copie des fichiers CSS dans "public"
+        - cp *.js public/ # Copie des fichiers javascript dans "public"
+    artifacts:
+        paths:
+            - public # Conservation du répertoire "public" comme artefact

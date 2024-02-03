@@ -1,0 +1,329 @@
+#theme {
+  border: 3px solid black;
+  display: inline-block;
+  padding: 0.5ex 1em;
+  margin: 0.5ex 0.5em;
+}
+
+/* --------------------------------------------------------- */
+
+body.theme1 {
+  background-color: #ccc; /* couleur de la marge à droite et à gauche */
+  margin: 0;
+  padding: 0 3em; /* pour créer une marge à droite et une à gauche */
+  font-family: sans-serif;
+}
+
+/* fond blanc sous les textes */
+.theme1 #contents {
+  background-color: white;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+  padding: 1ex 1em;
+}
+
+/* Titre 1 : centr�, bleu */
+.theme1 h1 {
+  text-align: center;
+  color: #66f;
+}
+
+/* Titre 2 : italique bleue */
+.theme1 h2 {
+  color: #66f;
+  font-style: italic;
+}
+
+.theme1 p {
+  text-indent: 2em;     /* retrait de la première ligne du paragraphe */
+  text-align: justify;
+}
+
+/* la lettrine */
+.theme1 p::first-letter {
+  font-size: 150%;
+}
+
+/* trait horizontal pour séparer le pied de page */
+.theme1 .conclusion {
+  border-top: 1px solid #999;
+}
+
+/* le pied de page */
+.theme1 .conclusion p {
+  text-indent: 0;
+  font-size: 80%;
+  text-align: right;
+}
+
+/* pas de lettrine dans le pied de page */
+.theme1 .conclusion p::first-letter {
+  font-size: 100%;
+}
+
+/* menu non affiché */
+.theme1 #menu {
+  display: none;
+}
+
+/* boutons d'action */
+.theme1 #buttons {
+  display: table;
+  margin: 0 auto 1ex;
+}
+
+.theme1 #buttons ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.theme1 #buttons li {
+  display: inline-block;
+  margin: 0 1em;
+}
+
+/* --------------------------------------------------------- */
+
+/* préparer la numérotation des titres */
+body.theme2 {
+  counter-reset: titre 0;
+}
+
+/* Le menu : un bloc orange encardé de marron */
+.theme2 #menu {
+  border: 1px solid #930;
+  background-color: #fa0;
+  padding: 0.5ex 0.5em;
+}
+
+/* Ne pas afficher les puces dans cette liste */
+.theme2 #menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Afficher les items de la liste en ligne */
+.theme2 #menu li {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+/* Devant chaque item, créer un carré marron */
+.theme2 #menu li::before {
+  content: " ";
+  width: 0.5em;
+  height: 0.5em;
+  display: inline-block;
+  background-color: #930;
+  margin-right: 0.2em;
+  position: relative;
+  bottom: 0.1em;
+}
+
+/* Liens du menu */
+.theme2 #menu a {
+  text-decoration: none;
+  color: #930;
+  font-weight: bold;
+}
+
+/* Encadrer le contenu principal */
+.theme2 #contents {
+  border: 1px solid #930;
+  margin-top: 2ex;
+  padding: 1ex 1em 0;
+}
+
+/* Les paragraphes seront justifiés */
+.theme2 p {
+  text-align: justify;
+}
+
+/* Sauf l'introduction qui sera alignée à droite */
+.theme2 .introduction {
+  font-style: italic;
+  font-size: 90%;
+}
+
+.theme2 .introduction p {
+  text-align: right;
+}
+
+/* Titre 1 : flotte à gauche et est succédé de la mention 'From Wikipedia, the free encyclopedia' */
+.theme2 h1 {
+  float: left;
+  font-size: 245%;
+  border: 1px solid #930;
+  background-color: #fa0;
+  margin: 0 0.6em 2ex 0;
+  padding: 0.7ex 0.7em;
+  font-style: normal;
+  font-variant: small-caps;
+}
+
+.theme2 h1::after {
+  content: "From Wikipedia, the free encyclopedia";
+  font-size: 30%;
+  display: block;
+  font-variant: normal;
+}
+
+/* Aérer les espaces avant les sections */
+.theme2 .section {
+  clear: both;
+  margin: 2ex 0;
+}
+
+/* Créer des lignes horizonatles entre des sections */
+.theme2 .section + .section {
+  border-top: 1px solid #fa0;
+  padding-top: 2ex;
+}
+
+/* Titre 2 : avec un compteur */
+.theme2 h2::before {
+  content: counter(titre) ". ";
+  counter-increment: titre;
+}
+
+.theme2 h2 {
+  text-decoration: underline;
+  margin: 0 0 0 1em;
+}
+
+/* Accrocher le pied de page à droite, en bas du contenu principal */
+.theme2 #conclusion p {
+  float: right;
+  background-color: #930;
+  color: #fff;
+  font-size: 80%;
+  margin: 0;
+  padding: 0.2ex 0.2em;
+}
+
+.theme2 #conclusion p::before {
+  content: "(";
+}
+
+.theme2 #conclusion p::after {
+  content: ")";
+}
+
+/* ---------------------------------------------------------- */
+
+/* LE MENU */
+
+/* Le menu flotte à gauche, avec une bordure arrondie */
+.theme3 #menu {
+  float: left;
+  background-color: #00f;
+  border-radius: 0.5em;
+  border: 1px outset #336;
+  padding: 0.5ex 0.2em 1ex;
+  font-family: sans-serif;
+}
+
+/* On insère l'en-tête "Menu" du menu */
+.theme3 #menu::before {
+  content: "Menu";
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  display: table;
+  margin: 0 auto;
+  font-variant: small-caps;
+  font-size: 90%;
+  letter-spacing: 0.1em;
+  padding-bottom: 0.6ex;
+}
+
+/* Les items du menu sont affichés sans les puces */
+.theme3 #menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5ex 0.5em;
+  background-color: white;
+}
+
+.theme3 #menu li {
+  padding: 0.3ex 0.3em;
+}
+
+/* une ligne entre les items consécutifs */
+.theme3 #menu li + li {
+  border-top: 1px solid #ccc;
+}
+
+/* petite décoration avant chaque item */
+.theme3 #menu li::before {
+  content: " ";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  border: 1px solid #00f;
+  border-radius: 0 0.6em;
+  background-color: #00f;
+  margin-right: 0.5em;
+}
+
+.theme3 #menu a {
+  color: black;
+  text-decoration: none;
+}
+
+/* LE CONTENU */
+
+/* Marge gauche suffisante pour laisser le menu tout seul dans la colonne de gauche */
+.theme3 #contents {
+  margin-left: 10em;
+  position: relative;
+}
+
+/* Titre 1 : affiché en transparence par-dessus le reste */
+.theme3 h1 {
+  position: absolute;
+  z-index: 2;
+  opacity: 0.3;
+  font-size: 10em;
+  margin: 0;
+  text-align: center;
+}
+
+/* L'introduction : un fond bleuté et l'interligne réduit */
+.theme3 .introduction p {
+  margin-left: 2em;
+  margin-right: 2em;
+  background-color: #ccf;
+  padding: 1ex 1em;
+  line-height: 80%;
+}
+
+/* Limiter la hauteur du contenu de la secode section */
+.theme3 .section + .section p {
+  height: 6ex;
+  overflow: auto;
+}
+
+/* décaler la première section vers le bas */
+.theme3 .section {
+  margin-top: 20ex;
+}
+
+/* remonter la seconde section juste sous l'introduction */
+.theme3 .section + .section {
+  margin-top: 0;
+  position: absolute;
+  top: 6ex;
+}
+
+/* avec display:table, le pied de page a une largeur réduite,
+ d'où le trait horizontal au-dessus qui ne fait pas la largeur de la page */
+.theme3 .conclusion {
+  display: table;
+  margin-left: auto;
+  border-top: 1px solid #ccc;
+  margin-top: 3ex;
+  padding-top: 0;
+}

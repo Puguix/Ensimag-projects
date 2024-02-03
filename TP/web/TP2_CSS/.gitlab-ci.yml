@@ -1,0 +1,27 @@
+stages:
+    - lint # Étape de linting (vérification de la qualité du code)
+    - deploy # Étape de déploiement
+
+lintcss:
+    stage: lint # Étape de linting pour le CSS
+    image: node # Utilisation de Node.js pour le linting CSS
+    tags:
+        - docker # Utilisation de Docker
+    script:
+        - npx csslint *.css > css_report.txt # Analyse des fichiers CSS
+    artifacts:
+        when: always # Génération des artefacts à chaque exécution
+        paths:
+            - css_report.txt # Sauvegarde du rapport de linting
+
+pages:
+    stage: deploy # Étape de déploiement des pages
+    script:
+        - mkdir -p public # Création du répertoire "public"
+        - cp *.html public/ # Copie des fichiers HTML dans "public"
+        - cp *.png public/ # Copie des fichiers PNG dans "public"
+        - cp *.css public/ # Copie des fichiers CSS dans "public"
+    artifacts:
+        paths:
+            - public # Conservation du répertoire "public" comme artefact
+

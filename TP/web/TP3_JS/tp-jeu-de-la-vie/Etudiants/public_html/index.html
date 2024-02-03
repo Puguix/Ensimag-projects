@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <style type="text/css">
+            html,
+            body {
+                margin: 0;
+                overflow: hidden;
+                height: 100%;
+            }
+
+            /* Scale canvas with resize attribute to full size */
+            canvas[resize] {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <!-- Load the Paper.js library -->
+        <script type="text/javascript" src="js/paper-full.js"></script>
+        <!-- Load external PaperScript and associate it with myCanvas -->
+        <script type="text/javascript" src="js/myScript.js"></script>
+        <title>Java Core : Le jeu de la vie</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" resize="true"></canvas>
+    </body>
+</html>

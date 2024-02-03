@@ -6,6 +6,10 @@ Some of the projects I worked on during my school years in ENSIMAG
 
 Small project in Analyse and object oriented software conception
 
+# Better Than Yesterday
+
+A web project in react native and node. I made a social media designed to motivate people improving in all aspects in life.
+
 ### CEP
 
 Processor design and operation project in VHDL where we implemented some CPU instructions.

@@ -1,0 +1,52 @@
+#commands {
+  width: 20em;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#commands ul,
+#lifo {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#commands li {
+  margin: 1ex 1em;
+}
+
+#commands #peek-area {
+  margin: 3ex 3em 0 1em;
+  border: 3px double brown;
+  padding: 0.5ex 0.5em;
+  font-size: 130%;
+  color: brown;
+  min-height: 3ex;
+  line-height: 3ex;
+  text-align: center;
+}
+
+#contents {
+  margin-left: 22em;
+}
+
+#lifo {
+  border-bottom: 1px solid black;
+  display: inline-block;
+}
+
+#lifo::before {
+  content: "Top";
+}
+
+#lifo li {
+  min-height: 3ex;
+  line-height: 3ex;
+  text-align: center;
+  border: 1px solid black;
+  display: block;
+  width: 12em;
+  padding: 1ex 1em;
+  border-bottom: none;
+}

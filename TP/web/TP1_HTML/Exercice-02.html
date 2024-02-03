@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>TP 1, Exo 2</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <h1>
+            Colloque &laquo;&nbsp;Applis web &nbsp;&raquo; du 18 au 19 octobre
+            2021
+        </h1>
+        <!-- Formulaire -->
+        <div>
+            <form method="POST" action="URL">
+                Pour vous inscrire, veuillez indiquer les informations
+                suivantes:
+                <!-- liste -->
+                <ul>
+                    <li>Nom<input type="text" name="nom" value="nom" /></li>
+                    <li>
+                        Prénom<input type="text" name="prénom" value="prenom" />
+                    </li>
+                    <li>
+                        Adresse de Facturation
+                        <textarea name="comment" rows="5" cols="40"></textarea>
+                    </li>
+                    <li>
+                        Date d'arrivée
+                        <input type="date" name="arrivée" value="date" /> Date
+                        de départ<input
+                            type="date"
+                            name="départ"
+                            value="date"
+                        />
+                    </li>
+
+                    <li>
+                        Votre statut<br />
+                        <input
+                            type="radio"
+                            name="statut"
+                            value="conférencier"
+                        />Conférencier
+                        <input
+                            type="radio"
+                            name="statut"
+                            value="chercheur"
+                        />Chercheur
+                        <input
+                            type="radio"
+                            name="statut"
+                            value="industriel"
+                        />Industriel
+                    </li>
+                    <li>
+                        Réservation souhaitée <br />
+                        <input
+                            type="checkbox"
+                            name="réservation"
+                            value="dej1"
+                        />Déjeuner Jour 1
+                        <input
+                            type="checkbox"
+                            name="réservation"
+                            value="dej2"
+                        />Déjeuner Jour 2
+                        <input
+                            type="checkbox"
+                            name="réservation"
+                            value="diner1"
+                        />Diner Jour 1
+                        <input
+                            type="checkbox"
+                            name="réservation"
+                            value="diner2"
+                        />Diner Jour 2
+                    </li>
+                </ul>
+                <!-- submit -->
+                <p><input type="submit" value="S'inscrire!" /></p>
+            </form>
+        </div>
+    </body>
+</html>

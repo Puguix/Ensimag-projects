@@ -1,0 +1,11 @@
+/* on affiche le titre selon l'énoncé */
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* on supprime l'arborescence */
+tr span {
+    display: none;
+}

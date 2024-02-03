@@ -1,0 +1,73 @@
+/* Styles pour le menu */
+#menu {
+    counter-reset: section; /* Réinitialisation du compteur pour les sections */
+    background-color: #02b; /* Couleur de fond */
+    width: 100%; /* Largeur pleine */
+    color: white; /* Couleur du texte */
+}
+
+#menu::before {
+    content: "\2630"; /* Affichage du symbole de menu */
+}
+
+#menu ul {
+    /* display: none; */ /* Pas réussi à faire que ca soit visible ou pas */
+    margin-top: 10px;
+    background-color: #777;
+    color: #eee;
+}
+
+#menu li {
+    text-align: center;
+    list-style: none;
+    margin-left: 2em;
+    position: relative;
+}
+
+#menu li::before {
+    counter-increment: section; /* Incrémentation du compteur pour chaque élément li */
+    content: counter(section) "- "; /* Affichage du numéro de section */
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Styles pour les titres h1 et h2 */
+h1,
+h2 {
+    text-align: center;
+}
+
+/* Styles pour le contenu */
+#contents {
+    counter-reset: section; /* Réinitialisation du compteur pour les sections */
+}
+
+#contents h1,
+#contents h2 {
+    margin-left: 2em;
+    position: relative;
+}
+
+#contents h1::before,
+#contents h2::before {
+    counter-increment: section; /* Incrémentation du compteur pour chaque titre h1 et h2 */
+    content: counter(section) "- "; /* Affichage du numéro de section */
+}
+
+/* Styles pour les sections */
+.section {
+    border-top: 1px solid black;
+}
+
+/* Styles pour la conclusion */
+#conclusion {
+    width: 100%;
+    background-color: black;
+    text-align: right;
+    font-size: small;
+    position: relative;
+    color: #777;
+}

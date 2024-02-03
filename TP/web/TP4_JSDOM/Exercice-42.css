@@ -1,0 +1,24 @@
+#commands {
+  padding-bottom: 1ex;
+  border-bottom: 2px solid black;
+  margin-bottom: 1ex;
+}
+
+#commands ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+#commands li {
+  display: inline-block;
+  margin-right: 2em;
+}
+
+#contents {
+  background-color: #ccc;
+  padding: 1ex 1em;
+}
+
+#contents dt {
+  text-decoration: underline;
+}

@@ -1,0 +1,50 @@
+{
+    "name": "backendsqlite",
+    "version": "1.0.0",
+    "description": "backendsqlite is the ultimate backend solution",
+    "main": "src/server.js",
+    "scripts": {
+        "setup": "npm install && npm run doc && npm run updatedb",
+        "updatedb": "node src/util/updatedb.js",
+        "doc": "node src/util/swagger.js",
+        "start": "npm install && npm run doc && npm run updatedb  && node src/server.js",
+        "startdev": "npm run doc && nodemon src/server.js",
+        "test": "DB=bmttest.sqlite npm run updatedb && DB=bmttest.sqlite jest"
+    },
+    "keywords": [
+        "express",
+        "backend",
+        "backendsqlite"
+    ],
+    "license": "UNLICENSED",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "cookie-parser": "^1.4.4",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-custom-error": "^1.8.4",
+        "has-keys": "^0.1.0",
+        "helmet": "^3.21.2",
+        "http-status": "^1.3.2",
+        "jws": "^4.0.0",
+        "mandatoryenv": "^1.1.1",
+        "mariadb": "^2.1.1",
+        "module-alias": "^2.2.2",
+        "morgan": "^1.9.1",
+        "rotating-file-stream": "^1.4.6",
+        "sequelize": "^5.19.2",
+        "sqlite3": "^5.0.5",
+        "swagger-autogen": "^2.18.8",
+        "swagger-ui-express": "^4.3.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.32.0",
+        "eslint-config-standard": "^16.0.3",
+        "eslint-plugin-cypress": "^2.12.1",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^5.2.0",
+        "jest": "^27.4.7",
+        "supertest": "^6.2.2"
+    }
+}

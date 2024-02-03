@@ -1,0 +1,15 @@
+stages:
+    - lint
+    - deploy
+    - test
+
+jobcypress:
+    stage: test
+    tags:
+        - docker # Comme on utilise une image pour isoler on doit utiliser un runner docker
+    image: cypress/base:16.18.1 # Image fournie par cypress avec ce qu'il faut
+    script:
+        - npm i # Installe ce qui est décrit dans package.json
+        - ./node_modules/.bin/serve & # Lance le serveur
+        - npx cypress run # Lance les tests
+#    - kill -9 $(ps | grep node | awk '{print $1}') # Cette ligne pourrait permettre de tuer serve

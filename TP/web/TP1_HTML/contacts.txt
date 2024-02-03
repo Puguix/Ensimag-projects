@@ -1,0 +1,100 @@
+Noah ; Lefebvre ; 06.39.00.27.73 ;Noah.Lefebvre@free.fr ;13 rue de la colline;38000;Grenoble
+Jules ; Dumont ; 05.82.41.67.81 ;Jules.Dumont@laposte.net ;25 chemin du vieux chêne;38400;Grenoble
+Enzo ; Bonnet ; 02.35.52.52.01 ;Enzo.Bonnet@yahoo.fr ;79 rue de la piscine;38400;Grenoble
+Adam ; Dumont ; 07.72.49.98.46 ;Adam.Dumont@laposte.net ;57 rue de la piscine;74000;Annecy
+Emma ; Bertrand ; 07.00.20.14.17 ;Emma.Bertrand@grenoble-inp.org ;57 rue de la piscine;75000;Paris
+Raphaël ; Lefevre ; 07.11.02.39.54 ;Raphael.Lefevre@orange.fr ;90 avenue du général De Gaulle;74000;Annecy
+Paul ; Gautier ; 04.76.10.94.98 ;Paul.Gautier@free.fr ;75 rue de la colline;38400;Grenoble
+Liam ; Joly ; 06.34.21.56.76 ;Liam.Joly@free.fr ;80 chemin du vieux chêne;31000;Toulouse
+Ethan ; Denis ; 03.72.94.00.48 ;Ethan.Denis@laposte.net ;100 chemin du vieux chêne;13000;Marseille
+Enzo ; Lefebvre ; 02.98.32.74.84 ;Enzo.Lefebvre@orange.fr ;80 chemin du vieux chêne;69000;Lyon
+Camille ; Leroy ; 02.92.81.50.17 ;Camille.Leroy@hotmail.com ;82 rue de la piscine;75000;Paris
+Liam ; Bernard ; 04.33.99.55.66 ;Liam.Bernard@gmail.com ; 2 rue de la colline;31000;Toulouse
+Ethan ; Petit ; 08.24.77.47.47 ;Ethan.Petit@grenoble-inp.org ;49 chemin du vieux chêne;74000;Annecy
+Manon ; Legrand ; 07.43.01.63.55 ;Manon.Legrand@laposte.net ;22 avenue du général De Gaulle;69000;Lyon
+Noah ; Durand ; 08.41.87.29.63 ;Noah.Durand@laposte.net ;31 chemin du vieux chêne;69000;Lyon
+Camille ; Dupont ; 03.22.12.83.30 ;Camille.Dupont@orange.fr ;65 avenue du général De Gaulle;69000;Lyon
+Léna ; Gerard ; 01.47.90.05.90 ;Lena.Gerard@free.fr ; 4 chemin du vieux chêne;74000;Annecy
+Lina ; Mathieu ; 03.56.04.24.33 ;Lina.Mathieu@laposte.net ;19 avenue du général De Gaulle;13000;Marseille
+Noah ; Roussel ; 04.64.12.59.13 ;Noah.Roussel@free.fr ;95 rue de la colline;69000;Lyon
+Camille ; Morin ; 04.29.86.59.63 ;Camille.Morin@yahoo.fr ;62 avenue du général De Gaulle;75000;Paris
+Gabin ; Leroy ; 07.17.99.36.24 ;Gabin.Leroy@hotmail.com ;88 rue de la piscine;75000;Paris
+Anna ; Bonnet ; 08.30.83.91.51 ;Anna.Bonnet@free.fr ;56 rue de la colline;13000;Marseille
+Lina ; Perrin ; 08.66.47.06.11 ;Lina.Perrin@yahoo.fr ;90 rue de la piscine;75000;Paris
+Chloé ; Lefebvre ; 03.25.47.32.93 ;Chloe.Lefebvre@gmail.com ;93 rue de la piscine;74000;Annecy
+Chloé ; Laurent ; 02.34.58.97.97 ;Chloe.Laurent@grenoble-inp.org ;15 rue de la colline;75000;Paris
+Inès ; Perrin ; 06.16.04.97.35 ;Ines.Perrin@hotmail.com ;40 rue de la colline;74000;Annecy
+Manon ; Sanchez ; 07.49.56.66.82 ;Manon.Sanchez@orange.fr ;88 chemin du vieux chêne;69000;Lyon
+Chloé ; Moreau ; 03.31.98.55.29 ;Chloe.Moreau@gmail.com ;39 rue de la colline;69000;Lyon
+Louis ; Guerin ; 03.55.08.87.56 ;Louis.Guerin@grenoble-inp.org ;85 rue de la colline;74000;Annecy
+Tom ; Dupont ; 02.22.03.84.72 ;Tom.Dupont@free.fr ;33 chemin du vieux chêne;13000;Marseille
+Anna ; Duval ; 08.57.30.59.33 ;Anna.Duval@free.fr ;43 chemin du vieux chêne;13000;Marseille
+Enzo ; Lemaire ; 07.65.94.61.41 ;Enzo.Lemaire@yahoo.fr ;10 avenue du général De Gaulle;31000;Toulouse
+Ethan ; Garnier ; 07.93.75.74.60 ;Ethan.Garnier@orange.fr ;74 rue de la colline;75000;Paris
+Camille ; Legrand ; 04.43.34.87.78 ;Camille.Legrand@gmail.com ;66 avenue du général De Gaulle;69000;Lyon
+Gabin ; Gerard ; 08.52.14.64.38 ;Gabin.Gerard@orange.fr ; 1 chemin du vieux chêne;31000;Toulouse
+Emma ; Nicolas ; 02.17.46.15.02 ;Emma.Nicolas@laposte.net ;70 rue de la piscine;69000;Lyon
+Adam ; Martinez ; 03.25.72.58.12 ;Adam.Martinez@gmail.com ;98 rue de la piscine;74000;Annecy
+Sacha ; Nicolas ; 08.45.20.64.46 ;Sacha.Nicolas@hotmail.com ;63 rue de la piscine;13000;Marseille
+Gabin ; Dupont ; 07.26.30.58.86 ;Gabin.Dupont@gmail.com ;48 rue de la piscine;74000;Annecy
+Ethan ; Bonnet ; 03.24.20.90.46 ;Ethan.Bonnet@orange.fr ;24 chemin du vieux chêne;75000;Paris
+Léna ; Martin ; 05.37.49.95.94 ;Lena.Martin@orange.fr ;62 chemin du vieux chêne;31000;Toulouse
+Nolan ; Duval ; 05.28.100.04.54 ;Nolan.Duval@free.fr ;40 avenue du général De Gaulle;13000;Marseille
+Tom ; Lefebvre ; 01.01.89.30.85 ;Tom.Lefebvre@hotmail.com ;76 avenue du général De Gaulle;31000;Toulouse
+Lucas ; Moreau ; 05.16.31.68.64 ;Lucas.Moreau@gmail.com ; 6 rue de la piscine;74000;Annecy
+Emma ; Martinez ; 04.31.100.39.47 ;Emma.Martinez@yahoo.fr ;77 rue de la piscine;69000;Lyon
+Lucas ; David ; 07.25.17.95.44 ;Lucas.David@hotmail.com ;40 rue de la colline;31000;Toulouse
+Chloé ; Lambert ; 06.19.23.77.87 ;Chloe.Lambert@laposte.net ;11 chemin du vieux chêne;75000;Paris
+Arthur ; Faure ; 07.88.48.94.60 ;Arthur.Faure@free.fr ;47 chemin du vieux chêne;75000;Paris
+Alice ; Mercier ; 02.35.06.38.61 ;Alice.Mercier@laposte.net ;71 avenue du général De Gaulle;75000;Paris
+Julia ; Clement ; 05.94.93.70.96 ;Julia.Clement@gmail.com ;75 rue de la colline;69000;Lyon
+Lou ; Mathieu ; 07.49.57.06.20 ;Lou.Mathieu@orange.fr ;83 avenue du général De Gaulle;31000;Toulouse
+Arthur ; Guerin ; 02.90.52.100.79 ;Arthur.Guerin@free.fr ;55 avenue du général De Gaulle;69000;Lyon
+Louise ; Bernard ; 04.49.10.63.08 ;Louise.Bernard@gmail.com ;72 avenue du général De Gaulle;38400;Grenoble
+Camille ; Fournier ; 07.10.40.13.55 ;Camille.Fournier@yahoo.fr ;79 rue de la piscine;69000;Lyon
+Léna ; Roux ; 02.10.79.10.41 ;Lena.Roux@hotmail.com ;54 rue de la piscine;69000;Lyon
+Noah ; Martinez ; 08.47.78.49.64 ;Noah.Martinez@free.fr ;71 rue de la colline;13000;Marseille
+Nathan ; Boyer ; 03.97.39.87.42 ;Nathan.Boyer@hotmail.com ;17 rue de la piscine;69000;Lyon
+Louise ; Roussel ; 06.06.41.24.63 ;Louise.Roussel@gmail.com ;79 chemin du vieux chêne;13000;Marseille
+Liam ; Lefebvre ; 08.60.45.29.92 ;Liam.Lefebvre@laposte.net ;30 rue de la colline;31000;Toulouse
+Gabin ; David ; 02.20.89.21.57 ;Gabin.David@hotmail.com ;52 rue de la colline;31000;Toulouse
+Enzo ; Henry ; 04.23.01.46.06 ;Enzo.Henry@hotmail.com ;33 avenue du général De Gaulle;75000;Paris
+Tom ; Leroy ; 04.66.34.36.00 ;Tom.Leroy@hotmail.com ;22 avenue du général De Gaulle;74000;Annecy
+Adam ; Richard ; 04.60.57.54.47 ;Adam.Richard@hotmail.com ; 5 avenue du général De Gaulle;13000;Marseille
+Gabriel ; Mathieu ; 06.81.02.89.56 ;Gabriel.Mathieu@gmail.com ;96 rue de la piscine;75000;Paris
+Gabin ; Girard ; 03.13.28.74.77 ;Gabin.Girard@gmail.com ;73 chemin du vieux chêne;31000;Toulouse
+Nathan ; Gautier ; 05.32.41.63.87 ;Nathan.Gautier@grenoble-inp.org ;59 avenue du général De Gaulle;75000;Paris
+Liam ; David ; 07.32.64.08.69 ;Liam.David@hotmail.com ;19 rue de la colline;75000;Paris
+Paul ; Lefebvre ; 02.77.54.03.08 ;Paul.Lefebvre@free.fr ;99 rue de la colline;38400;Grenoble
+Louise ; Robin ; 08.14.60.92.08 ;Louise.Robin@free.fr ; 1 rue de la colline;13000;Marseille
+Emma ; Leroy ; 07.78.100.40.62 ;Emma.Leroy@laposte.net ;95 rue de la colline;38400;Grenoble
+Noah ; Garnier ; 07.55.36.76.77 ;Noah.Garnier@free.fr ;59 rue de la piscine;69000;Lyon
+Jade ; Petit ; 03.32.48.50.02 ;Jade.Petit@laposte.net ;48 avenue du général De Gaulle;69000;Lyon
+Camille ; Martin ; 07.27.12.66.72 ;Camille.Martin@gmail.com ;38 avenue du général De Gaulle;38400;Grenoble
+Lina ; Robert ; 06.05.54.37.56 ;Lina.Robert@yahoo.fr ;49 chemin du vieux chêne;13000;Marseille
+Nolan ; Mathieu ; 03.63.23.22.71 ;Nolan.Mathieu@hotmail.com ;10 chemin du vieux chêne;69000;Lyon
+Nolan ; Lambert ; 02.99.00.67.89 ;Nolan.Lambert@hotmail.com ;88 chemin du vieux chêne;13000;Marseille
+Léa ; Richard ; 05.08.17.79.04 ;Lea.Richard@grenoble-inp.org ;39 rue de la colline;74000;Annecy
+Arthur ; Chevalier ; 01.32.31.60.23 ;Arthur.Chevalier@yahoo.fr ;38 chemin du vieux chêne;38400;Grenoble
+Tom ; Girard ; 08.08.04.19.42 ;Tom.Girard@grenoble-inp.org ;32 avenue du général De Gaulle;13000;Marseille
+Alice ; Lemaire ; 02.79.63.61.27 ;Alice.Lemaire@gmail.com ;25 rue de la piscine;13000;Marseille
+Ambre ; Morin ; 02.39.36.76.18 ;Ambre.Morin@laposte.net ;52 rue de la piscine;31000;Toulouse
+Camille ; Andre ; 04.23.77.70.15 ;Camille.Andre@gmail.com ;57 rue de la piscine;75000;Paris
+Louise ; Roux ; 03.40.11.20.76 ;Louise.Roux@gmail.com ;91 chemin du vieux chêne;13000;Marseille
+Manon ; David ; 07.56.68.58.69 ;Manon.David@laposte.net ;52 rue de la colline;38400;Grenoble
+Sacha ; Laurent ; 05.70.39.87.67 ;Sacha.Laurent@hotmail.com ;21 rue de la piscine;13000;Marseille
+Mila ; Clement ; 07.100.81.57.59 ;Mila.Clement@yahoo.fr ;18 avenue du général De Gaulle;38400;Grenoble
+Ambre ; Clement ; 08.93.91.94.52 ;Ambre.Clement@yahoo.fr ;14 rue de la colline;13000;Marseille
+Ethan ; Sanchez ; 05.21.89.24.97 ;Ethan.Sanchez@free.fr ;48 chemin du vieux chêne;69000;Lyon
+Lou ; Boyer ; 01.20.37.50.55 ;Lou.Boyer@free.fr ;70 rue de la colline;13000;Marseille
+Rose ; Fontaine ; 06.09.97.49.04 ;Rose.Fontaine@grenoble-inp.org ;62 rue de la piscine;38400;Grenoble
+Louise ; Laurent ; 01.68.49.55.00 ;Louise.Laurent@gmail.com ;34 rue de la colline;38400;Grenoble
+Hugo ; Simon ; 07.95.12.36.64 ;Hugo.Simon@free.fr ;76 rue de la colline;31000;Toulouse
+Lina ; Simon ; 07.33.23.49.38 ;Lina.Simon@grenoble-inp.org ;41 avenue du général De Gaulle;38400;Grenoble
+Ambre ; Moreau ; 07.03.100.38.68 ;Ambre.Moreau@gmail.com ;27 avenue du général De Gaulle;13000;Marseille
+Alice ; Lefebvre ; 05.79.20.79.35 ;Alice.Lefebvre@free.fr ;59 avenue du général De Gaulle;38400;Grenoble
+Camille ; Simon ; 01.10.32.62.63 ;Camille.Simon@grenoble-inp.org ;34 rue de la piscine;74000;Annecy
+Chloé ; Roussel ; 04.69.75.72.80 ;Chloe.Roussel@hotmail.com ;30 avenue du général De Gaulle;75000;Paris
+Inès ; Sanchez ; 06.27.23.09.07 ;Ines.Sanchez@gmail.com ;99 rue de la colline;69000;Lyon
+Léo ; Dubois ; 04.72.91.44.77 ;Leo.Dubois@yahoo.fr ;83 avenue du général De Gaulle;74000;Annecy
+Chloé ; Thomas ; 02.37.95.28.68 ;Chloe.Thomas@hotmail.com ;49 rue de la piscine;13000;Marseille

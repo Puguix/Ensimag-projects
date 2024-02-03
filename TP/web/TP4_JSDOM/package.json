@@ -1,0 +1,15 @@
+{
+  "name": "tp4_jsdom_paul_gauthier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Exercice-41.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^13.4.0",
+    "serve": "^14.2.1"
+  }
+}

@@ -1,0 +1,38 @@
+# Job pour exposer l'API sur Scalingo
+# URL d'exposition de l'API : https://monAppliChezScalingo.osc-fr1.scalingo.io/
+scalingo:
+    stage: deploy
+    tags:
+        - docker
+    variables:
+        #SCALINGO_API_TOKEN
+        SCALINGO_APP_NAME: betterthanyesterday # le nom de votre appli chez scalingo
+        SCALINGO_REGION: osc-fr1 # l'instance de scalingo sur laquelle votre appli est déployée
+        GIT_DEPTH: 0
+        PROJECT_DIR: backend # Le répertoire dans le dépôt où est le backend
+    image: ruby:3.1.3 # car dpl est codé en Ruby
+    script:
+        # Installer scalingo CLI
+        - curl -O https://cli-dl.scalingo.com/install && bash install
+        # Pour indiquer sur le dépôt distant où est le backend
+        # (s'il est à la racine du projet ceci est facultatif, et il est possible de le faire une fois pour toute directement dans l'interface web de scalingo)
+        - scalingo --app=$SCALINGO_APP_NAME env-set PROJECT_DIR=$PROJECT_DIR
+        # Se connecter à scalingo avec le token d'authentification
+        - scalingo login --api-token $SCALINGO_API_TOKEN
+        # Créer une paire de clé ssh pour faire les manips git sur le dépôt scalingo
+        - mkdir -p ~/.dpl
+        - ssh-keygen -t rsa -N "" -C $HOSTNAME -f ~/.dpl/id_rsa
+        # Ajouter à scalingo la clé publique créée précédemment
+        # - scalingo keys-remove dpl_tmp_key # On la supprime au préalable au cas où elle aurait déjà été ajoutée
+        - scalingo keys-add dpl_tmp_key ~/.dpl/id_rsa.pub
+        # Initialiser le dépôt scalingo distant (en forçant si ce n'est pas le première fois)
+        - scalingo --app $SCALINGO_APP_NAME git-setup --remote scalingo-dpl --force
+        # Pousser la version du backend sur le dépôt scalingo (ce qui va provoquer son déploiement)
+        - "GIT_SSH_COMMAND='ssh -o StrictHostKeyChecking=no -i ~/.dpl/id_rsa' git push scalingo-dpl HEAD:refs/heads/main -f"
+        # Supprimer la clé temporaire ajoutée
+        - scalingo keys-remove dpl_tmp_key
+    # la variable SCALINGO_API_TOKEN contient le token que vous avez généré chez scalingo via le menu `User Settings > API tokens`
+    #
+    # Afin que la variable SCALINGO_API_TOKEN n'apparaissent pas en clair sur notre dépôt public gitlab, on définit cette variable via
+    # le menu `Settings > CI/CD > Variables` et on la masque dans le résultat des logs des jobs en lui appliquant la propriété "Masked"
+    # Plus de détails sur https://docs.gitlab.com/ee/ci/variables/index.html.

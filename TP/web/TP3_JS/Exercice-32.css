@@ -1,0 +1,75 @@
+body {
+  background-color: #ccc; /* couleur de la marge � droite et � gauche */
+  margin: 0;
+  padding: 0 3em; /* pour cr�er une marge � droite et une � gauche */
+  font-family: sans-serif;
+}
+
+/* fond blanc sous les textes */
+#contents {
+  background-color: white;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+  padding: 1ex 1em;
+}
+
+/* Titre 1 : centr�, bleu */
+h1 {
+  text-align: center;
+  color: #66f;
+}
+
+/* Titre 2 : italique bleue */
+h2 {
+  color: #66f;
+  font-style: italic;
+}
+
+p {
+  text-indent: 2em;     /* retrait de la premi�re ligne du paragraphe */
+  text-align: justify;
+}
+
+/* la lettrine */
+p::first-letter {
+  font-size: 150%;
+}
+
+/* trait horizontal pour s�parer le pied de page */
+.conclusion {
+  border-top: 1px solid #999;
+}
+
+/* le pied de page */
+.conclusion p {
+  text-indent: 0;
+  font-size: 80%;
+  text-align: right;
+}
+
+/* pas de lettrine dans le pied de page */
+.conclusion p::first-letter {
+  font-size: 100%;
+}
+
+/* menu non affich� */
+#menu {
+  display: none;
+}
+
+/* boutons d'action */
+#buttons {
+  display: table;
+  margin: 0 auto 1ex;
+}
+
+#buttons ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+#buttons li {
+  display: inline-block;
+  margin: 0 1em;
+}

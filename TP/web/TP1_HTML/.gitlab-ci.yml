@@ -1,0 +1,21 @@
+build:
+    stage: build
+    image: python
+    script:
+        - python Exercice-03.py
+
+verify:
+    stage: test
+    image: node
+    script:
+        - npx htmlhint *.html
+
+pages:
+    stage: deploy
+    script:
+        - mkdir -p public # Création du répertoire public
+        - cp Exercice-01.html public/index.html
+        - cp Exercice-02.html public/
+    artifacts:
+        paths:
+            - public
