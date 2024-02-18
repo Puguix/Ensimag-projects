@@ -1,0 +1,85 @@
+.popup-blackjack-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75); /* Assombrir l'arrière-plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* S'assurer que le popup est au-dessus des autres éléments */
+  }
+  
+  .popup-blackjack-content {
+    background: #000; /* Arrière-plan noir pour le popup */
+    border-radius: 15px; /* Coins arrondis */
+    padding: 2em;
+    width: 500px; /* Largeur spécifique pour le popup */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre portée pour un effet 3D */
+    text-align: center;
+    position: relative;
+  }
+  
+  .popup-blackjack-close-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+  }
+  
+  .popup-blackjack-title {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 0.5em;
+  }
+  
+  .popup-blackjack-input {
+    font-size: 1em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+  }
+  
+  .popup-blackjack-confirm-button {
+    background-color: orange; /* Un orange vif pour le bouton de confirmation */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Coins arrondis pour le bouton */
+    padding: 0.5em 1em;
+    font-size: 1em;
+    cursor: pointer;
+    margin-top: 0.5em;
+  }
+  
+  .popup-blackjack-confirm-button:hover {
+    background-color: #e69500; /* Un orange plus foncé pour l'effet hover */
+  }
+  
+  .popup-blackjack-instruction {
+    color: #bbb; /* Gris clair pour le texte d'instruction */
+    font-size: 0.8em;
+    margin-top: 1em;
+  }
+
+  .popup-blackjack-error {
+    color: red;
+    margin-top: 1em;
+  }
+  
+  /* Gestion de la responsivité */
+  @media (max-width: 600px) {
+    .popup-blackjack-content {
+      width: 90%;
+      padding: 1em;
+    }
+  
+    .popup-blackjack-title, .popup-blackjack-instruction {
+      font-size: 1em;
+    }
+      
+  }
+  

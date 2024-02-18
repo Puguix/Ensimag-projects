@@ -1,0 +1,1 @@
+INSERT INTO PLAYER(email, password, surname) VALUES('test@gmail.com', 'password', 'test');

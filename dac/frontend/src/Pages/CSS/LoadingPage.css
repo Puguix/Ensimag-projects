@@ -1,0 +1,24 @@
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    position: relative;
+}
+
+.loading-spinner {
+    width: 250px; /* Adjust size as needed */
+    height: 250px; /* Adjust size as needed */
+    border: 3px solid #f3f3f3; /* Light grey border */
+    border-top: 3px solid #ff4a02; /* Blue border on top */
+    border-radius: 50%; /* Make it a circle */
+    animation: spin 3s linear infinite; /* Apply rotation animation */
+    position: relative; /* Adjust if necessary, could be 'absolute' if you need explicit layering */
+    top: 300px;
+    z-index: 2; /* Ensure this is above the SVG background */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); } /* Start rotation from 0 degrees */
+    100% { transform: rotate(360deg); } /* Rotate to 360 degrees */
+}

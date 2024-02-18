@@ -1,0 +1,100 @@
+.how-to-play-blackjack-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.how-to-play-blackjack-content {
+    background-color: #fff;
+    background-image: url('../../Assets/chips_bckground.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 20px;
+    border-radius: 0px;
+    width: 80%;
+    max-width: 600px;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto; /* Permet le défilement vertical*/
+    max-height: 90vh; /* Empêche le popup de dépasser la hauteur de l'écran */
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.5em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.popup-header {
+  font-size: 2em;
+  color: #ff6600;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.popup-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: green;
+}
+
+.popup-text {
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+.bet-payouts-section {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.bet-payouts-title {
+  font-weight: bold;
+  color: #333;
+}
+
+.bet-payouts-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bet-payouts-item {
+  margin-bottom: 5px;
+}
+
+.bet-payouts-item::before {
+  content: attr(data-label) ": ";
+  font-weight: bold;
+}
+.popup-close-button {
+background-color: #ff6600;
+color: #fff;
+font-size: 1em;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+margin-top: 20px;
+}
+
+.popup-close-button:hover {
+background-color: #ff9900;
+}

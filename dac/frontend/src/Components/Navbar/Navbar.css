@@ -1,0 +1,123 @@
+
+.navbar {
+    background-color: #ff6600;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Assure une répartition équilibrée des éléments */
+}
+
+.nav-logo a {
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 60px;
+    color: white;
+    font-family: "cooper";
+}
+.nav-logo a:hover {
+    color: #8c3f03; /* Changement de couleur au survol */
+}
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1; /* Permet aux liens de bien se répartir */
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    font-family: "FuturaBook";
+    font-weight: lighter;
+    font-size: 40px;
+    color: white;
+    transition: color 0.3s ease; /* Transition douce pour l'effet de survol */
+}
+
+.nav-menu li a:hover {
+    color: #8c3f03; /* Changement de couleur au survol */
+}
+
+.nav-logout-profile-chips {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-right: 30px;
+}
+
+.nav-logout-profile-chips button {
+    border: none;
+    border-radius: 8px;
+    height: 60px;
+    width: 200px;
+    color: #ff6600;
+    background-color: white;
+    font-family: "FuturaMedium";
+    font-weight: 700;
+    font-size: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour le survol */
+}
+
+.nav-logout-profile-chips button:hover {
+    background-color: #ff6600; /* Assombrissement au survol */
+    color: #fff; /* Couleur du texte inversée au survol */
+}
+
+.nav-logout-profile-chips img {
+    vertical-align: text-bottom;
+    height: 65px;
+    width: 65px;
+    transition: filter 0.3s ease; /* Transition douce pour l'effet de survol */
+    filter: invert(93%) sepia(100%) saturate(0%) hue-rotate(248deg) brightness(106%) contrast(106%);
+}
+.nav-logout-profile-chips .wallet-link{
+    font-family: "FuturaMedium";
+    font-size: 45px;
+    color: white;
+}
+
+/* .nav-logout-profile-chips img:hover {
+    filter: brightness(1.2);*/
+    /*background-color: #fff; /* Rend l'icône plus lumineuse au survol */
+/*} */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .nav-logo a {
+        font-size: 30px; /* Ajustement de la taille pour les petits écrans */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-menu li a {
+        font-size: 20px; /* Taille de police réduite pour les liens */
+        padding: 10px; /* Plus d'espace autour des liens */
+    }
+
+    .nav-logout-profile-chips {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-logout-profile-chips button,
+    .nav-logout-profile-chips a,
+    .nav-logout-profile-chips img {
+        font-size: 20px; /* Taille de police réduite pour les éléments */
+        width: 100%; /* Utilisation de toute la largeur disponible */
+    }
+
+    .nav-logout-profile-chips img {
+        height: 40px; /* Taille d'image réduite */
+        width: 40px;
+    }
+}

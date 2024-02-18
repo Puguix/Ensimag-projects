@@ -14,9 +14,17 @@ A web project in react native and node. I made a social media designed to motiva
 
 Processor design and operation project in VHDL where we implemented some CPU instructions.
 
+### DAC
+
+Distributed application conception. A project with a frontend in React and a backend made with java spring-boot. We made a online casino.
+
 ### Database
 
 A database system management project. We had to create a database for a small Uber like.
+
+### Ethique
+
+Assigning ESG grades to company then building a portfolio to track the inflation with ESG and crisis risk constraints.
 
 ### Java Project
 

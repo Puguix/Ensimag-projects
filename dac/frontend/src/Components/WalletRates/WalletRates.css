@@ -1,0 +1,43 @@
+.wallet-rates-container {
+    background-color: #fff; /* or any other background */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* slight shadow for depth */
+    border-color: black;
+    border: 2px;
+}
+
+.wallet-rates-container h3 {
+    color: #ff4500; /* your brand's orange */
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.rates-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 10px; /* spacing between grid items */
+}
+
+.rate-item {
+    background-color: #dcdbdb; /* light grey background for each rate item */
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    color: #333; /* dark text for contrast */
+    font-weight: bold;
+}
+
+.coin{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 3px;
+}
+
+/* Adjust the grid layout on smaller screens if necessary */
+@media (max-width: 600px) {
+    .rates-grid {
+        grid-template-columns: 1fr; /* stack the items on smaller screens */
+    }
+}

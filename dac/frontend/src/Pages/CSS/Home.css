@@ -1,0 +1,48 @@
+.App-home {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fait en sorte que le conteneur prenne toute la hauteur de la fenêtre */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centrer le contenu verticalement */
+  align-items: center; /* Centrer le contenu horizontalement */
+}
+
+.App-home img {
+  width: 100%;
+  height: 100vh; /* S'assure que l'image couvre toute la hauteur de la fenêtre */
+  object-fit: cover; /* S'assure que l'image couvre tout l'espace sans être déformée */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Place l'image derrière le contenu */
+}
+
+.link-to-login {
+  position: relative; /* Position relative pour s'assurer qu'elle est positionnée par rapport au conteneur .App-home */
+  background-color: #ff6600;
+  padding: 1rem 2rem; /* Utiliser padding pour un meilleur contrôle de la taille */
+  border-radius: 15px;
+  box-shadow: 10px 10px white;
+  color: white;
+  font-size: calc(10px + 2vmin); /* Utilise vmin pour une taille qui s'adapte aux différentes tailles d'écran */
+  border: none;
+  text-align: center;
+  text-decoration: none; /* Enlever le soulignement des liens */
+  font-weight: 500;
+  z-index: 10;
+}
+
+.link-to-login a {
+  color: inherit; /* Hérite la couleur de .link-to-login */
+  text-decoration: none; /* Enlever le soulignement des liens */
+  display: block; /* S'assure que le lien remplit le bouton pour toute la surface cliquable */
+}
+
+/* Styles pour les écrans plus petits (responsive) */
+@media (max-width: 768px) {
+  .link-to-login {
+    width: 50%; /* Augmenter la largeur pour les petits écrans */
+    font-size: calc(8px + 3vmin); /* Augmenter la taille du texte pour les petits écrans */
+  }
+}

@@ -1,0 +1,81 @@
+.blackjack-game {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 80%;
+    height: 50%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px 20px;
+  }
+  
+  .card {
+    height: 96px;
+    margin: 0 5px;
+  }
+  .dealer-hand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+  .player-hand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+  
+  .hand-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .bet-amount {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .bet-amount img {
+    margin-left: 10px;
+    height: 20px;
+  }
+  
+  .game-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+  }
+  
+  .hit-button,
+  .stand-button {
+    flex: 1;
+    min-width: 100px; 
+    margin: 0 5px;
+    background-color: orange;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .hit-button:hover,
+  .stand-button:hover {
+    background-color: #ff8c00;
+  }
+  

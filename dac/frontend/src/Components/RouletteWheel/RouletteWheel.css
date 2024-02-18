@@ -1,0 +1,36 @@
+.roulette-wheel-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.roulette-wheel-images{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.roulette-wheel-image{
+    width: 500px;
+    margin: 20px 10px;
+    z-index:1;
+}
+.roulette-ball{
+    position: absolute;
+    width: 500px;
+    margin: 20px 10px;
+    z-index: 500;
+}
+
+.spin-roulette{
+    background-color: #ff6600;
+    color: white;
+    font-size: 35px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+.active {
+    background-color: #ff6600;
+}

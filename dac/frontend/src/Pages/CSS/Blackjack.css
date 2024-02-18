@@ -1,0 +1,75 @@
+.blackjack-content{
+    background-image: url("../../Assets/chips_bckground.png");
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 1500px;
+    left: 0;
+    top: 0;
+    align-items: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 100px;
+}
+
+
+.blackjack-game{
+    background-image: url("../../Assets/blackjack\ table.png");
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 50%;
+    left: 0;
+    top: 0;
+    align-items: center;
+    background-size: 100%;
+    background-repeat: repeat-y;
+    margin: 10px 20px;
+}
+
+.blackjack-title {
+    color: #e65c00;
+    margin-top: 20px;
+}
+
+.blackjack-content .how-to-play-button {
+    background-color: #e4782f;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block; 
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    text-align: center;
+    margin-left: 0;
+    margin-top: 20px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-right: auto;
+}
+
+.blackjack-content .how-to-play-button:hover {
+    background-color: #e65c00;
+}
+
+
+.blackjack-content .play-button {
+    background-color: #e4782f;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.blackjack-content .play-button:hover {
+    background-color: #e65c00;
+}

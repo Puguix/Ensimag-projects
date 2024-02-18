@@ -1,0 +1,268 @@
+.roulette-table-content{
+    position: relative;
+    width: 100%;
+}
+.roulette-table-bets{
+    z-index:1;
+    display: grid;
+    grid-template-columns: [first] 10px [line2] 100px [line3] 10px [line4] 100px [line5] 10px [line6] 100px [line7] 10px [line8] 100px [line9] 10px [line10] 100px [line11] 10px [line12] 100px [line13] 10px [line14] 100px [line15] 10px [line16] 100px [line17] 10px [line18] 100px [line19] 10px [line20] 100px [line21] 10px [line22] 100px [line23] 10px [line24] 100px [line25] 10px [line26] 100px [line27] 10px [line28] 150px [line29] 10px [end];
+    grid-template-rows: [row1-start] 10px [row1-end row2-start] 70px [row2-end row3-start] 10px [row3-end row4-start] 70px [row4-end row5-start] 10px [row5-end row6-start] 70px [row6-end row7-start] 10px [row7-end row8-start] 70px [row8-end row9-start] 10px [row9-end row10-start] 70px [row10-end row11-start] 10px [row11-end];
+}
+
+.inside-0{
+    background-color: rgb(41, 185, 41);
+    grid-column-start: line2;
+    grid-column-end: line3;
+    grid-row-start: row2-start;
+    grid-row-end: row6-end;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-dozen{
+    grid-column-start: line4;
+    grid-column-end: line11;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-dozen{
+    grid-column-start: line12;
+    grid-column-end: line19;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.third-dozen{
+    grid-column-start: line20;
+    grid-column-end: line27;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.low{
+    grid-column-start: line4;
+    grid-column-end: line7;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.even{
+    grid-column-start: line8;
+    grid-column-end: line11;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red-outside{
+    background-color: rgb(192, 4, 4);
+    grid-column-start: line12;
+    grid-column-end: line15;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.black-outside{
+    background-color: black;
+    grid-column-start: line16;
+    grid-column-end: line19;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.odd{
+    grid-column-start: line20;
+    grid-column-end: line23;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.high{
+    grid-column-start: line24;
+    grid-column-end: line27;
+    color: white;
+    font-size: 50px;
+    font-size: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red{
+    background-color: rgb(192, 4, 4);
+    color: white;
+    font-size: 50px;
+    font-size: 600; 
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.black{
+    background-color: black;
+    color: white;
+    font-size: 50px;
+    font-size: 600; 
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.first-four{
+    background-color: #ff6600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.street{
+    background-color: #ff6600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.split {
+    background-color: #ff6600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.corner{
+    background-color: #ff6600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sixline{
+    background-color: #ff6600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.column {
+    color:white;
+    font-size: 50px;
+    font-size: 600; 
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test-coin{                                 
+    width:60px;
+    position: absolute;
+    z-index: 100000;
+}
+
+.empty{
+    background-color: #ff6600;
+}
+
+.roulette-bet{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.roulette-bet-chip{
+    display: flex;
+    justify-content: center;
+    gap:50px;
+    border-radius: 12px;
+    border: 5px solid #ff6600;
+    width: fit-content;
+    padding: 10px 10px;
+    align-items: center;
+}
+.chip-five, .chip-ten, .chip-fifty{
+    width: 100px;
+    height: 100px;
+}
+
+.active {
+    border-radius: 60px;
+    border: 10px solid yellow;
+}
+.bet-buttons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.bet-buttons button{
+    border: none;
+    border-radius: 8px;
+    background-color: #ff6600;
+    color: white;
+    font-size: 40px;
+    padding: 10px 25px;
+}
+
+.available-chips{
+    color: white;
+    margin-top: 15px;
+    font-size: 35px;
+}
