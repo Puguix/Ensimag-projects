@@ -1,0 +1,46 @@
+{
+	"BatchSize": 3,
+	"SerializedLayers": [
+		{
+			"Bias": [
+				0.0,
+				0.0
+			],
+			"Weights": [
+				[
+					0.10672779910028796,
+					-0.11105156952488728
+				],
+				[
+					0.9160209591485391,
+					-0.9747823070686068
+				]
+			],
+			"ActivatorType": "LeakyReLU",
+			"GradientAdjustmentParameters": {
+				"LearningRate": 1.0,
+				"Type": "FixedLearningRate"
+			},
+			"Type": "Standard"
+		},
+		{
+			"Bias": [
+				0.0
+			],
+			"Weights": [
+				[
+					-0.3790600869925435
+				],
+				[
+					-0.14144346015097604
+				]
+			],
+			"ActivatorType": "LeakyReLU",
+			"GradientAdjustmentParameters": {
+				"LearningRate": 1.0,
+				"Type": "FixedLearningRate"
+			},
+			"Type": "Standard"
+		}
+	]
+}

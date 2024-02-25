@@ -1,0 +1,34 @@
+﻿<Window x:Class="BooleanFunctionTester.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BooleanFunctionTester"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Click to load network" Margin="10" VerticalAlignment="Center" FontSize="18"/>
+            <Button VerticalAlignment="Center" Margin="10" Command="{Binding LoadCommand}" Padding="5" FontSize="18">Load</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <TextBlock Text="First argument: " Margin="10" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding UserInput.FirstArgument}" VerticalAlignment="Center" Margin="10" Width="30" FontSize="18"/>
+            <TextBlock Text="second argument: " Margin="10" VerticalAlignment="Center" FontSize="18"/>
+            <TextBox Text="{Binding UserInput.SecondArgument}" VerticalAlignment="Center" Margin="10" Width="30" FontSize="18"/>
+            <Button VerticalAlignment="Center" Margin="10" Padding="5" FontSize="18" Command="{Binding EvaluateCommand}">Evaluate</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <TextBlock Text="Network evaluation: " Margin="10" VerticalAlignment="Center" FontSize="18"/>
+            <TextBlock Text="{Binding NetworkEvaluation}" VerticalAlignment="Center" Margin="10" FontSize="18"/>
+            <TextBlock Text=" ( raw output: " VerticalAlignment="Center" Margin="10" FontSize="18"/>
+            <TextBlock Text="{Binding NetworkRawOutput}" VerticalAlignment="Center" Margin="10" FontSize="18"/>
+            <TextBlock Text=")" VerticalAlignment="Center" FontSize="18"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProviders\DataProviders.csproj" />
+    <ProjectReference Include="..\NeuralNetwork.Common\NeuralNetwork.Common.csproj" />
+    <ProjectReference Include="..\NeuralNetwork\NeuralNetwork.csproj" />
+    <ProjectReference Include="..\Trainer\Trainer.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-beta.71" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Configuration\GradientAccelerators\AdamConfig.xaml.cs" />
+    <Compile Remove="Configuration\GradientAccelerators\AdamConfigViewModel.cs" />
+    <Compile Remove="Configuration\GradientAccelerators\IAcceleratorConfigViewModel.cs" />
+    <Compile Remove="Configuration\GradientAccelerators\NoAcceleratorConfig.xaml.cs" />
+    <Compile Remove="Configuration\GradientAccelerators\NoAcceleratorConfigViewModel.cs" />
+    <Compile Remove="Configuration\HiddenLayerCharacteristicsView.xaml.cs" />
+    <Compile Remove="Configuration\HiddenLayerCharacteristicsViewModel.cs" />
+    <Compile Remove="Configuration\HiddenLayerConfigView.xaml.cs" />
+    <Compile Remove="Configuration\HiddenLayersConfigViewModel.cs" />
+    <Compile Remove="Configuration\MainConfigView.xaml.cs" />
+    <Compile Remove="Configuration\MainConfigViewModel.cs" />
+    <Compile Remove="Configuration\NetworkConfigView.xaml.cs" />
+    <Compile Remove="Configuration\NetworkConfigViewModel.cs" />
+    <Compile Remove="Configuration\TestConfigView.xaml.cs" />
+    <Compile Remove="Configuration\TestConfigViewModel.cs" />
+    <Compile Remove="Configuration\TrainingConfigView.xaml.cs" />
+    <Compile Remove="Configuration\TrainingConfigViewModel.cs" />
+    <Compile Remove="Services\AcceleratorInfo.cs" />
+    <Compile Remove="Services\ActivatorInfo.cs" />
+    <Compile Remove="Services\AvailableAcceleratorsService.cs" />
+    <Compile Remove="Services\AvailableActivatorsService.cs" />
+    <Compile Remove="Services\AvailableCostFunctionsService.cs" />
+    <Compile Remove="Services\AvailableEvaluationFunctionsService.cs" />
+    <Compile Remove="Services\CostFunctionInfo.cs" />
+    <Compile Remove="Services\EvaluationFunctionFactory.cs" />
+    <Compile Remove="Services\EvaluationFunctionInfo.cs" />
+    <Page Remove="Configuration\GradientAccelerators\AdamConfig.xaml" />
+    <Page Remove="Configuration\GradientAccelerators\NoAcceleratorConfig.xaml" />
+    <Page Remove="Configuration\HiddenLayerCharacteristicsView.xaml" />
+    <Page Remove="Configuration\HiddenLayerConfigView.xaml" />
+    <Page Remove="Configuration\MainConfigView.xaml" />
+    <Page Remove="Configuration\NetworkConfigView.xaml" />
+    <Page Remove="Configuration\TestConfigView.xaml" />
+    <Page Remove="Configuration\TrainingConfigView.xaml" />
+  </ItemGroup>
+</Project>

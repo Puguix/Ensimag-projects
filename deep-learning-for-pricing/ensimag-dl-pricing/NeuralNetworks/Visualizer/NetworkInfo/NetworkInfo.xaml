@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="Visualizer.NetworkInfo.NetworkInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Visualizer.NetworkInfo"
+             xmlns:acc="clr-namespace:Visualizer.NetworkInfo.GradientAccelerators"
+             xmlns:adjust="clr-namespace:NeuralNetwork.Common.GradientAdjustmentParameters;assembly=NeuralNetwork.Common"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <DataTemplate x:Key="LayerTemplate">
+            <local:StandardLayerInfo />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type adjust:FixedLearningRateParameters}">
+            <acc:NoAccelerator />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type adjust:AdamParameters}">
+            <acc:Adam />
+        </DataTemplate>
+        <Style x:Key="AlternatingListBoxItemStyle" TargetType="{x:Type ListBoxItem}">
+            <Style.Triggers>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="LightCyan"></Setter>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="LightGray"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Margin="10">
+            <TextBlock Text="Summary" FontSize="20" Margin="0" />
+            <TextBlock FontSize="14">
+                <Run Text="Batch size: " />
+                <Run Text="{Binding BatchSize, Mode=OneWay}" />
+            </TextBlock>
+            <TextBlock FontSize="14">
+                <Run Text="Number of layers: " />
+                <Run Text="{Binding LayerNb, Mode=OneWay}" />
+            </TextBlock>
+        </StackPanel>
+        <TextBlock Text="Layers" FontSize="16" Margin="10" Grid.Row="1" />
+        <ListBox ItemsSource="{Binding Layers}" Margin="10" ScrollViewer.VerticalScrollBarVisibility="Visible" Grid.Row="2"
+                 AlternationCount="2" ItemContainerStyle="{StaticResource AlternatingListBoxItemStyle}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <ContentControl ContentTemplate="{StaticResource LayerTemplate}" Content="{Binding}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

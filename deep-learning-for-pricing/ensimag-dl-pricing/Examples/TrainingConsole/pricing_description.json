@@ -1,0 +1,6 @@
+{
+	"EpochNb" : 10,
+	"ProviderType" : "PricingData",
+	"ValidationStep" : 4,
+	"Shuffle" : true
+}

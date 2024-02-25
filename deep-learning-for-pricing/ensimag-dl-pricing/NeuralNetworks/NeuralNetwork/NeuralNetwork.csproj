@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataShuffler\**" />
+    <Compile Remove="EvaluationFunctions\**" />
+    <Compile Remove="LossFunctions\**" />
+    <Compile Remove="NetworkHandlers\**" />
+    <EmbeddedResource Remove="DataShuffler\**" />
+    <EmbeddedResource Remove="EvaluationFunctions\**" />
+    <EmbeddedResource Remove="LossFunctions\**" />
+    <EmbeddedResource Remove="NetworkHandlers\**" />
+    <None Remove="DataShuffler\**" />
+    <None Remove="EvaluationFunctions\**" />
+    <None Remove="LossFunctions\**" />
+    <None Remove="NetworkHandlers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="GradientAlgorithms\MomentumAlgorithms.cs" />
+    <Compile Remove="NetworkBuilders\StandardLayerConfig.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeuralNetwork.Common\NeuralNetwork.Common.csproj" />
+  </ItemGroup>
+
+</Project>

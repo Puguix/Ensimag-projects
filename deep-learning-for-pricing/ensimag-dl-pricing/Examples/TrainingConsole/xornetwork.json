@@ -1,0 +1,82 @@
+{
+    "BatchSize": 2,
+    "SerializedLayers": [
+        {
+            "Bias": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "Weights": [
+                [
+                    1.6436588646024963,
+                    -1.924764623010417,
+                    0.516954287941867
+                ],
+                [
+                    1.2911116156533176,
+                    -1.1474526574557014,
+                    -0.7631290369444973
+                ]
+            ],
+            "ActivatorType": "LeakyReLu",
+            "GradientAdjustmentParameters": {
+                "LearningRate": 0.1,
+                "Type": "FixedLearningRate"
+            },
+            "Type": "Standard"
+        },
+        {
+            "Bias": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "Weights": [
+                [
+                    0.5548262051399134,
+                    -2.0455762849627694,
+                    0.6069652871835396
+                ],
+                [
+                    0.3155084293214273,
+                    1.660097095022822,
+                    -0.0718220618831423
+                ],
+                [
+                    -0.6550307898167389,
+                    1.4725785085107648,
+                    0.8437034075304995
+                ]
+            ],
+            "ActivatorType": "LeakyReLu",
+            "GradientAdjustmentParameters": {
+                "LearningRate": 0.1,
+                "Type": "FixedLearningRate"
+            },
+            "Type": "Standard"
+        },
+        {
+            "Bias": [
+                0.0
+            ],
+            "Weights": [
+                [
+                    0.9186271940165158
+                ],
+                [
+                    0.18144499223519814
+                ],
+                [
+                    -0.6895021659500051
+                ]
+            ],
+            "ActivatorType": "LeakyReLu",
+            "GradientAdjustmentParameters": {
+                "LearningRate": 0.1,
+                "Type": "FixedLearningRate"
+            },
+            "Type": "Standard"
+        }
+    ]
+}

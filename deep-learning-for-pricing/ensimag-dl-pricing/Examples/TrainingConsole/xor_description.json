@@ -1,0 +1,6 @@
+{
+	"EpochNb" : 10,
+	"ProviderType" : "XorData",
+	"ValidationStep" : 4,
+	"Shuffle" : true
+}

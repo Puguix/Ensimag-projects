@@ -1,0 +1,6 @@
+{
+	"EpochNb": 100,
+	"ProviderType": "AndData",
+	"ValidationStep": 10,
+	"Shuffle": true
+}
