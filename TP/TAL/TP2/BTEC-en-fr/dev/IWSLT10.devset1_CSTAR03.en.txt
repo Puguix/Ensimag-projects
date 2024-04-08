@@ -1,0 +1,506 @@
+DEV1_CSTAR03_001\01\I have a throbbing pain.
+DEV1_CSTAR03_002\01\It is August fifteenth.
+DEV1_CSTAR03_003\01\Could you send this to Japan?
+DEV1_CSTAR03_004\01\The rate is one hundred twenty dollars a night.
+DEV1_CSTAR03_005\01\What newspapers do you have?
+DEV1_CSTAR03_006\01\How do I use a safe deposit box?
+DEV1_CSTAR03_007\01\Where is the boarding gate?
+DEV1_CSTAR03_008\01\Are these all your personal effects?
+DEV1_CSTAR03_009\01\This is instant miso soup.
+DEV1_CSTAR03_010\01\We will land in three hours.
+DEV1_CSTAR03_011\01\Where is the bus stop for city hall?
+DEV1_CSTAR03_012\01\I feel much better now.
+DEV1_CSTAR03_013\01\I hate green peppers.
+DEV1_CSTAR03_014\01\Can you recommend an instructor?
+DEV1_CSTAR03_015\01\How long does it take on foot?
+DEV1_CSTAR03_016\01\I'm sorry, we have to turn down your offer.
+DEV1_CSTAR03_017\01\When's the check in time?
+DEV1_CSTAR03_018\01\I'm sorry.
+DEV1_CSTAR03_019\01\Can I open my safe-deposit box anytime?
+DEV1_CSTAR03_020\01\I have a terrible headache.
+DEV1_CSTAR03_021\01\Can I get there by bus?
+DEV1_CSTAR03_022\01\Ten days.
+DEV1_CSTAR03_023\01\Please recommend a good general practitioner.
+DEV1_CSTAR03_024\01\I'll have today's special.
+DEV1_CSTAR03_025\01\Is this yours?
+DEV1_CSTAR03_026\01\Are there any messages for me?
+DEV1_CSTAR03_027\01\I recommend this wine.
+DEV1_CSTAR03_028\01\May I try on this cotton sweater?
+DEV1_CSTAR03_029\01\I'd like to get off at Thirteenth Street. Would you tell me when we get there?
+DEV1_CSTAR03_030\01\How much is the fare?
+DEV1_CSTAR03_031\01\Oh, my goodness.
+DEV1_CSTAR03_032\01\I'll take you there.
+DEV1_CSTAR03_033\01\I'd like a twin room with a bath please.
+DEV1_CSTAR03_034\01\Can you change yen into dollars?
+DEV1_CSTAR03_035\01\A robber.
+DEV1_CSTAR03_036\01\A Mr. Sato is calling.
+DEV1_CSTAR03_037\01\Three glasses of melon juice, please.
+DEV1_CSTAR03_038\01\Roast chicken, please.
+DEV1_CSTAR03_039\01\Are there any Japanese-speaking flight attendants?
+DEV1_CSTAR03_040\01\Yes, sir. Hold on, please.
+DEV1_CSTAR03_041\01\Can I park here for a while?
+DEV1_CSTAR03_042\01\Thanks for waiting. Here's your room key. You are on the third floor, room three fourteen.
+DEV1_CSTAR03_043\01\He bought some clothes and gave them to me as a present.
+DEV1_CSTAR03_044\01\Where is the most famous department store?
+DEV1_CSTAR03_045\01\Just an open pack of cigarettes.
+DEV1_CSTAR03_046\01\What is that woman over there eating?
+DEV1_CSTAR03_047\01\Take two tablets after every meal.
+DEV1_CSTAR03_048\01\Where's the ticket office?
+DEV1_CSTAR03_049\01\I'm with my girlfriend.
+DEV1_CSTAR03_050\01\How much do I take at once?
+DEV1_CSTAR03_051\01\I will go and get it.
+DEV1_CSTAR03_052\01\Your name and your room number, please.
+DEV1_CSTAR03_053\01\I have no time.
+DEV1_CSTAR03_054\01\I want to make a reservation on JAL flight zero zero five to Tokyo on the twelfth.
+DEV1_CSTAR03_055\01\Do you have a Japanese guidebook?
+DEV1_CSTAR03_056\01\Could you send these to Japan?
+DEV1_CSTAR03_057\01\I said I don't need it.
+DEV1_CSTAR03_058\01\By LT, please.
+DEV1_CSTAR03_059\01\The bellboy will show you your room. Where is your baggage?
+DEV1_CSTAR03_060\01\Our state has the lowest tax.
+DEV1_CSTAR03_061\01\Please join us.
+DEV1_CSTAR03_062\01\Check, please.
+DEV1_CSTAR03_063\01\Yes, well, that's our specialty.
+DEV1_CSTAR03_064\01\What's this charge for?
+DEV1_CSTAR03_065\01\My air conditioner isn't working.
+DEV1_CSTAR03_066\01\I'm on my way to Chicago from Minneapolis.
+DEV1_CSTAR03_067\01\Will you punch me in?
+DEV1_CSTAR03_068\01\Which way is immigration?
+DEV1_CSTAR03_069\01\This is very beautiful.
+DEV1_CSTAR03_070\01\It would be difficult to say, but probably Rome. By all means, Rome.
+DEV1_CSTAR03_071\01\I'd like to buy some duty-free items. Please show me some watches.
+DEV1_CSTAR03_072\01\I'm boring.
+DEV1_CSTAR03_073\01\How much is it?
+DEV1_CSTAR03_074\01\No, we don't carry much cash in this country. We use traveler's checks.
+DEV1_CSTAR03_075\01\Where is the police station?
+DEV1_CSTAR03_076\01\One moment, please. Yes, Ms. Minami, a single room for four nights.
+DEV1_CSTAR03_077\01\Well, it's not so serious.
+DEV1_CSTAR03_078\01\Where is the ladies' room?
+DEV1_CSTAR03_079\01\Take this baggage to the bus terminal, please.
+DEV1_CSTAR03_080\01\Will I need to have immunization shots to enter your country?
+DEV1_CSTAR03_081\01\The Simpson's.
+DEV1_CSTAR03_082\01\Where is the ATM?
+DEV1_CSTAR03_083\01\You should take a taxi.
+DEV1_CSTAR03_084\01\Is there someplace around here to buy something to drink?
+DEV1_CSTAR03_085\01\How much is it?
+DEV1_CSTAR03_086\01\Would it be possible to check in earlier?
+DEV1_CSTAR03_087\01\A glass of white wine, please.
+DEV1_CSTAR03_088\01\It's fifty cents.
+DEV1_CSTAR03_089\01\Tell me how to use this, please.
+DEV1_CSTAR03_090\01\Is this seat taken?
+DEV1_CSTAR03_091\01\I'll bring it up now, madam.
+DEV1_CSTAR03_092\01\I'd like some coffee.
+DEV1_CSTAR03_093\01\Hello. Is this Miss Ono?
+DEV1_CSTAR03_094\01\Work hard, and you will be promoted.
+DEV1_CSTAR03_095\01\I'd like to see that camera on the shelf.
+DEV1_CSTAR03_096\01\Will you show me that watch?
+DEV1_CSTAR03_097\01\That's so true.
+DEV1_CSTAR03_098\01\I would like to exchange yen to dollars, please.
+DEV1_CSTAR03_099\01\Please don't x-ray this.
+DEV1_CSTAR03_100\01\The tire is flat.
+DEV1_CSTAR03_101\01\Do you have a store in Japan where I can get this repaired?
+DEV1_CSTAR03_102\01\I'd like to have these pictures enlarged.
+DEV1_CSTAR03_103\01\I would like to put my valuables in the safe deposit box.
+DEV1_CSTAR03_104\01\Sorry, but we're closed tomorrow.
+DEV1_CSTAR03_105\01\My blood type is B.
+DEV1_CSTAR03_106\01\I want something with shorter sleeves.
+DEV1_CSTAR03_107\01\Do you have any convertibles?
+DEV1_CSTAR03_108\01\A menu, please.
+DEV1_CSTAR03_109\01\I'd like to change my flight from July eighth to July ninth.
+DEV1_CSTAR03_110\01\We'd like a table in a quiet corner.
+DEV1_CSTAR03_111\01\Take care.
+DEV1_CSTAR03_112\01\Does he speak Japanese?
+DEV1_CSTAR03_113\01\More bags, please.
+DEV1_CSTAR03_114\01\Where's the United Airlines counter?
+DEV1_CSTAR03_115\01\Nice to meet you.
+DEV1_CSTAR03_116\01\I have two older sisters and one younger brother.
+DEV1_CSTAR03_117\01\No-smoking, please.
+DEV1_CSTAR03_118\01\I can't stand any more of this.
+DEV1_CSTAR03_119\01\It's just around the corner.
+DEV1_CSTAR03_120\01\Let me by, please.
+DEV1_CSTAR03_121\01\We'll wait in the bar. Will you call us please?
+DEV1_CSTAR03_122\01\But it's dirty.
+DEV1_CSTAR03_123\01\No, it's made from bread.
+DEV1_CSTAR03_124\01\I think it's too far to walk from here.
+DEV1_CSTAR03_125\01\How many are there in your party?
+DEV1_CSTAR03_126\01\I want to reconfirm this ticket.
+DEV1_CSTAR03_127\01\Please wait here for a few minutes.
+DEV1_CSTAR03_128\01\I wonder why CDs are so much cheaper there.
+DEV1_CSTAR03_129\01\I would like the most popular Vietnamese dish, please.
+DEV1_CSTAR03_130\01\More coffee, please.
+DEV1_CSTAR03_131\01\My eyes are bloodshot.
+DEV1_CSTAR03_132\01\My friend had a traffic accident.
+DEV1_CSTAR03_133\01\May I put my seat back?
+DEV1_CSTAR03_134\01\Thanks.
+DEV1_CSTAR03_135\01\Two hot dogs to go, please.
+DEV1_CSTAR03_136\01\One round-trip ticket to Vichy, please.
+DEV1_CSTAR03_137\01\Get help, quick.
+DEV1_CSTAR03_138\01\I have no appetite.
+DEV1_CSTAR03_139\01\Just as at the Vernal Equinox, we hold a mass for our ancestors.
+DEV1_CSTAR03_140\01\Do you have any flights to Tokyo in the early morning?
+DEV1_CSTAR03_141\01\Thank you for calling, sir.
+DEV1_CSTAR03_142\01\This is not my coat.
+DEV1_CSTAR03_143\01\Can you give me a discount?
+DEV1_CSTAR03_144\01\No, I'd also like to get a dress cleaned. And I want to get a stain out of another dress.
+DEV1_CSTAR03_145\01\I'll get a new one when I return to Japan.
+DEV1_CSTAR03_146\01\Are Japanese dogs big?
+DEV1_CSTAR03_147\01\I'd like to sit next to my friend.
+DEV1_CSTAR03_148\01\To go to an opera festival.
+DEV1_CSTAR03_149\01\Is there a mirror?
+DEV1_CSTAR03_150\01\What's the phone number?
+DEV1_CSTAR03_151\01\They are all well, thanks.
+DEV1_CSTAR03_152\01\No way.
+DEV1_CSTAR03_153\01\Great.
+DEV1_CSTAR03_154\01\I want to get off at the Saks Fifth Avenue bus stop. Would you tell me when we get there?
+DEV1_CSTAR03_155\01\I want to cash a traveler's check.
+DEV1_CSTAR03_156\01\What day is it today?
+DEV1_CSTAR03_157\01\Half, please.
+DEV1_CSTAR03_158\01\Okay, but what's "Stealing Home"?
+DEV1_CSTAR03_159\01\Russian dressing.
+DEV1_CSTAR03_160\01\You should transfer to the Chuo Line.
+DEV1_CSTAR03_161\01\I lost my traveler's checks.
+DEV1_CSTAR03_162\01\When is the next delivery?
+DEV1_CSTAR03_163\01\Here you are.
+DEV1_CSTAR03_164\01\I'd like to call Tokyo, Japan. What time is it now in Tokyo?
+DEV1_CSTAR03_165\01\You listen to me.
+DEV1_CSTAR03_166\01\Where's the toiletry department?
+DEV1_CSTAR03_167\01\Excuse me. Could you tell me how to get to the Getty Museum?
+DEV1_CSTAR03_168\01\I work in the marketing department at Wow Chemicals.
+DEV1_CSTAR03_169\01\Yes.
+DEV1_CSTAR03_170\01\I'll try some pie.
+DEV1_CSTAR03_171\01\Can I use this cart for free?
+DEV1_CSTAR03_172\01\Could you look for it, please?
+DEV1_CSTAR03_173\01\That man is stubborn.
+DEV1_CSTAR03_174\01\Where? Where are you?
+DEV1_CSTAR03_175\01\Do you have a fax machine?
+DEV1_CSTAR03_176\01\Congratulations on your promotion.
+DEV1_CSTAR03_177\01\No. I am not.
+DEV1_CSTAR03_178\01\I'd like to look around first. Thank you.
+DEV1_CSTAR03_179\01\Tell me where the closest station is, please.
+DEV1_CSTAR03_180\01\Like what, for example?
+DEV1_CSTAR03_181\01\Did you see who did it?
+DEV1_CSTAR03_182\01\The same for me.
+DEV1_CSTAR03_183\01\Ninety-nine dollars in one-dollar bills.
+DEV1_CSTAR03_184\01\Where is the nearest subway station?
+DEV1_CSTAR03_185\01\How many stops are there between here and the Museum of Modern Art?
+DEV1_CSTAR03_186\01\Please take me to the Vacation Hotel.
+DEV1_CSTAR03_187\01\Where is the Japanese Embassy?
+DEV1_CSTAR03_188\01\When's the next bus to Baltimore?
+DEV1_CSTAR03_189\01\Do you have a magazine or something?
+DEV1_CSTAR03_190\01\Menu, please.
+DEV1_CSTAR03_191\01\Where's the nearest dentist?
+DEV1_CSTAR03_192\01\Good-bye.
+DEV1_CSTAR03_193\01\Do you have anything that's quick?
+DEV1_CSTAR03_194\01\Do you have this in black?
+DEV1_CSTAR03_195\01\I left something in the room.
+DEV1_CSTAR03_196\01\Have you ever seen a Japanese movie?
+DEV1_CSTAR03_197\01\Which would you like, coffee or tea?
+DEV1_CSTAR03_198\01\Where can I buy accessories?
+DEV1_CSTAR03_199\01\Where is the ticket office?
+DEV1_CSTAR03_200\01\So, where is the dining room?
+DEV1_CSTAR03_201\01\Oh, the rates range from about ninety dollars to a hundred and fifty, plus tax.
+DEV1_CSTAR03_202\01\Please call the police.
+DEV1_CSTAR03_203\01\Can I continue my trip?
+DEV1_CSTAR03_204\01\My name is Taro Yamada.
+DEV1_CSTAR03_205\01\Then I'd like ten ninety cent stamps and two ninety five cent stamps.
+DEV1_CSTAR03_206\01\Where is the stationery section?
+DEV1_CSTAR03_207\01\Kids are walking around in costumes.
+DEV1_CSTAR03_208\01\When should I bring it, sir?
+DEV1_CSTAR03_209\01\Please convert dollars into pounds.
+DEV1_CSTAR03_210\01\Let me check your vaccination certificate.
+DEV1_CSTAR03_211\01\Thank you very much.
+DEV1_CSTAR03_212\01\You get it, right?
+DEV1_CSTAR03_213\01\Please show me a lighter one.
+DEV1_CSTAR03_214\01\Shall we order it?
+DEV1_CSTAR03_215\01\Are you sure the flight time is twelve hours?
+DEV1_CSTAR03_216\01\I'd like my hair dyed.
+DEV1_CSTAR03_217\01\Could I see Mr. Adams?
+DEV1_CSTAR03_218\01\She's not a diplomat, is she?
+DEV1_CSTAR03_219\01\Point me to a good coffeehouse.
+DEV1_CSTAR03_220\01\Do you sell duty-free items?
+DEV1_CSTAR03_221\01\I have heartburn.
+DEV1_CSTAR03_222\01\This is all my personal luggage.
+DEV1_CSTAR03_223\01\Yes.
+DEV1_CSTAR03_224\01\Our last order is at ten.
+DEV1_CSTAR03_225\01\I'll put you through.
+DEV1_CSTAR03_226\01\Please fix it or exchange it.
+DEV1_CSTAR03_227\01\Today's program is folk songs.
+DEV1_CSTAR03_228\01\I'd like to reserve a seat by the window.
+DEV1_CSTAR03_229\01\Please change this into dollars.
+DEV1_CSTAR03_230\01\Would you like insurance?
+DEV1_CSTAR03_231\01\He's not in right now.
+DEV1_CSTAR03_232\01\There's a problem with my right eye.
+DEV1_CSTAR03_233\01\Is there a hotel around here?
+DEV1_CSTAR03_234\01\What number are you calling?
+DEV1_CSTAR03_235\01\What time is check-out?
+DEV1_CSTAR03_236\01\Sign here, please.
+DEV1_CSTAR03_237\01\I would like a seat next to my daughter, please.
+DEV1_CSTAR03_238\01\It was fantastic. Thanks.
+DEV1_CSTAR03_239\01\Stop here, please.
+DEV1_CSTAR03_240\01\I'm going home on the seventeenth. Please send it to Japan after that.
+DEV1_CSTAR03_241\01\What time does that ferry leave?
+DEV1_CSTAR03_242\01\I want to play golf.
+DEV1_CSTAR03_243\01\That movie was interesting, wasn't it?
+DEV1_CSTAR03_244\01\I don't think this restaurant is expensive.
+DEV1_CSTAR03_245\01\Here it is.
+DEV1_CSTAR03_246\01\I don't remember what happened.
+DEV1_CSTAR03_247\01\No, nothing that I know of.
+DEV1_CSTAR03_248\01\How long is the tour?
+DEV1_CSTAR03_249\01\May I see the menu?
+DEV1_CSTAR03_250\01\Please. Show me shoes, please.
+DEV1_CSTAR03_251\01\Here's a plate. Help yourself.
+DEV1_CSTAR03_252\01\May I have the check, please.
+DEV1_CSTAR03_253\01\The sleeves are too narrow.
+DEV1_CSTAR03_254\01\Where is the crafts shop?
+DEV1_CSTAR03_255\01\The night is still young.
+DEV1_CSTAR03_256\01\To the department store.
+DEV1_CSTAR03_257\01\Hello. Reception desk?
+DEV1_CSTAR03_258\01\What time does it begin?
+DEV1_CSTAR03_259\01\I want to call my home.
+DEV1_CSTAR03_260\01\Uhh. Give me a Tab.
+DEV1_CSTAR03_261\01\Where can I get a map of the subway lines?
+DEV1_CSTAR03_262\01\How do I fill in this declaration form?
+DEV1_CSTAR03_263\01\Can I have a medical certificate?
+DEV1_CSTAR03_264\01\Please bring my breakfast to my room.
+DEV1_CSTAR03_265\01\Are you ready to order?
+DEV1_CSTAR03_266\01\Beer, please.
+DEV1_CSTAR03_267\01\Just a moment. I'll put you through.
+DEV1_CSTAR03_268\01\How many days will it take before it gets to Japan?
+DEV1_CSTAR03_269\01\Here you are. How was everything today?
+DEV1_CSTAR03_270\01\Would you like French fries?
+DEV1_CSTAR03_271\01\I don't feel anything. Are you sure it's on?
+DEV1_CSTAR03_272\01\Do you have anything cheaper?
+DEV1_CSTAR03_273\01\I'd like to make a reservation for a hotel, please.
+DEV1_CSTAR03_274\01\Four thirty. Please don't be late.
+DEV1_CSTAR03_275\01\They pinch my toes.
+DEV1_CSTAR03_276\01\I'd like a comb.
+DEV1_CSTAR03_277\01\Yes. Let me see that blouse over there.
+DEV1_CSTAR03_278\01\I asked for five.
+DEV1_CSTAR03_279\01\Do I pay on the bus?
+DEV1_CSTAR03_280\01\Is it machine washable?
+DEV1_CSTAR03_281\01\I'm worried about my crow's-feet.
+DEV1_CSTAR03_282\01\Yes, of course.
+DEV1_CSTAR03_283\01\May I sit there?
+DEV1_CSTAR03_284\01\That's all.
+DEV1_CSTAR03_285\01\I usually get up at seven.
+DEV1_CSTAR03_286\01\Do you know of a good restaurant near here?
+DEV1_CSTAR03_287\01\I prefer to sit in the back of the plane.
+DEV1_CSTAR03_288\01\I'd like to return a car.
+DEV1_CSTAR03_289\01\Here is my claim tag.
+DEV1_CSTAR03_290\01\When are there seats available?
+DEV1_CSTAR03_291\01\Do I need a reservation?
+DEV1_CSTAR03_292\01\I can't do that. It's already discounted.
+DEV1_CSTAR03_293\01\It's very kind of you to invite me, but I'm very sorry I have a previous engagement on that evening. Please ask me again some other time.
+DEV1_CSTAR03_294\01\I'd like a present for my mother.
+DEV1_CSTAR03_295\01\How would you like the money?
+DEV1_CSTAR03_296\01\Would you take a picture of me?
+DEV1_CSTAR03_297\01\What is that?
+DEV1_CSTAR03_298\01\I think there is a mistake in the bill.
+DEV1_CSTAR03_299\01\Do you have anything a little bit smaller?
+DEV1_CSTAR03_300\01\Can I have a fifty franc telephone card?
+DEV1_CSTAR03_301\01\Do you have a morning tour?
+DEV1_CSTAR03_302\01\The Center Hotel.
+DEV1_CSTAR03_303\01\I'd like to return the car at San Francisco Airport.
+DEV1_CSTAR03_304\01\Where can I buy the ticket?
+DEV1_CSTAR03_305\01\Excuse me. A napkin, quickly please.
+DEV1_CSTAR03_306\01\Can I buy it duty-free?
+DEV1_CSTAR03_307\01\How do I turn the top light on?
+DEV1_CSTAR03_308\01\I wanna make a collect call to Eddie Mascone from Jack Walsh.
+DEV1_CSTAR03_309\01\What's the phone number?
+DEV1_CSTAR03_310\01\Anything is fine.
+DEV1_CSTAR03_311\01\You've really got to do something about it.
+DEV1_CSTAR03_312\01\Do you accept this credit card?
+DEV1_CSTAR03_313\01\This chicken is undercooked.
+DEV1_CSTAR03_314\01\How much is the fare to the Savoy Hotel?
+DEV1_CSTAR03_315\01\Is there a lounge car on that train?
+DEV1_CSTAR03_316\01\What time do you close?
+DEV1_CSTAR03_317\01\Let me take you there.
+DEV1_CSTAR03_318\01\Are you off tomorrow?
+DEV1_CSTAR03_319\01\Where can I buy postcards?
+DEV1_CSTAR03_320\01\I'll take that room.
+DEV1_CSTAR03_321\01\Simply speaking, it's a sirloin steak with sauce.
+DEV1_CSTAR03_322\01\What is the reason for the return?
+DEV1_CSTAR03_323\01\The officer over there can help you.
+DEV1_CSTAR03_324\01\No, not unless you have an account with us.
+DEV1_CSTAR03_325\01\Where's the bus stop?
+DEV1_CSTAR03_326\01\Where can I get some stamps?
+DEV1_CSTAR03_327\01\Excuse me?
+DEV1_CSTAR03_328\01\How much is the difference between first class and second class?
+DEV1_CSTAR03_329\01\Are there any other persons who will drive?
+DEV1_CSTAR03_330\01\Is the fare to the airport fixed or metered?
+DEV1_CSTAR03_331\01\How much for one night?
+DEV1_CSTAR03_332\01\I've got a stomachache.
+DEV1_CSTAR03_333\01\Is there a beauty salon in that hotel?
+DEV1_CSTAR03_334\01\Wow. He's very handsome.
+DEV1_CSTAR03_335\01\Thanks for inviting me to the party.
+DEV1_CSTAR03_336\01\It's all personal goods.
+DEV1_CSTAR03_337\01\How long will it take?
+DEV1_CSTAR03_338\01\Fill it up, please.
+DEV1_CSTAR03_339\01\What kind of business are you in?
+DEV1_CSTAR03_340\01\May I help you?
+DEV1_CSTAR03_341\01\Yes, there is.
+DEV1_CSTAR03_342\01\I feel sick.
+DEV1_CSTAR03_343\01\Is there a snack bar on the train?
+DEV1_CSTAR03_344\01\We'll arrive at the Honolulu International Airport in thirty minutes.
+DEV1_CSTAR03_345\01\I'll be checking out, so please prepare my bill.
+DEV1_CSTAR03_346\01\I'd like a travel guide.
+DEV1_CSTAR03_347\01\Fine. Wait here. I'll get the car and pull up by the door.
+DEV1_CSTAR03_348\01\Do you have a hotel doctor?
+DEV1_CSTAR03_349\01\Which line for Houston?
+DEV1_CSTAR03_350\01\I didn't drink this.
+DEV1_CSTAR03_351\01\It must be my lucky day.
+DEV1_CSTAR03_352\01\What is today's date?
+DEV1_CSTAR03_353\01\No, not at all.
+DEV1_CSTAR03_354\01\Are these good seats?
+DEV1_CSTAR03_355\01\Please sign here.
+DEV1_CSTAR03_356\01\I'm going to the Savoy Hotel.
+DEV1_CSTAR03_357\01\Are there any night tours?
+DEV1_CSTAR03_358\01\Where can I find a big department store?
+DEV1_CSTAR03_359\01\Please call a taxi.
+DEV1_CSTAR03_360\01\I was hit by a car.
+DEV1_CSTAR03_361\01\Where is the swimsuit department?
+DEV1_CSTAR03_362\01\How much is the green fee?
+DEV1_CSTAR03_363\01\With cream and sugar, please.
+DEV1_CSTAR03_364\01\Yes. Here it is.
+DEV1_CSTAR03_365\01\Smith and Grand Law Offices. May I help you?
+DEV1_CSTAR03_366\01\It's east.
+DEV1_CSTAR03_367\01\It's too cold.
+DEV1_CSTAR03_368\01\I don't know my size.
+DEV1_CSTAR03_369\01\Where is the telephone?
+DEV1_CSTAR03_370\01\I've had enough.
+DEV1_CSTAR03_371\01\Can I have my hair cut, please?
+DEV1_CSTAR03_372\01\Is it made in Australia? I don't want Japanese kangaroos.
+DEV1_CSTAR03_373\01\I can't move by myself.
+DEV1_CSTAR03_374\01\I wonder if this is your stapler.
+DEV1_CSTAR03_375\01\That's for room service.
+DEV1_CSTAR03_376\01\I don't like you.
+DEV1_CSTAR03_377\01\How long does it take to have them reissued?
+DEV1_CSTAR03_378\01\How much is it per day?
+DEV1_CSTAR03_379\01\I really don't care for this anyway.
+DEV1_CSTAR03_380\01\What a letdown.
+DEV1_CSTAR03_381\01\Can I get a discount?
+DEV1_CSTAR03_382\01\Yes, sir.
+DEV1_CSTAR03_383\01\I don't have an appetite.
+DEV1_CSTAR03_384\01\May I drop the car off at my destination?
+DEV1_CSTAR03_385\01\Can I see the car before I rent it?
+DEV1_CSTAR03_386\01\Which would you like, tea or coffee?
+DEV1_CSTAR03_387\01\I just don't know how to thank you.
+DEV1_CSTAR03_388\01\I have a severe pain in my stomach.
+DEV1_CSTAR03_389\01\Is this okay?
+DEV1_CSTAR03_390\01\Fourteen days.
+DEV1_CSTAR03_391\01\You see those machines?
+DEV1_CSTAR03_392\01\What are the duty free procedures?
+DEV1_CSTAR03_393\01\I want to check out one day early.
+DEV1_CSTAR03_394\01\Can I get there by tonight?
+DEV1_CSTAR03_395\01\Where's the dining room?
+DEV1_CSTAR03_396\01\Where are you from?
+DEV1_CSTAR03_397\01\What time would best suit you?
+DEV1_CSTAR03_398\01\What's the purpose of your visit?
+DEV1_CSTAR03_399\01\What's this?
+DEV1_CSTAR03_400\01\How much extra is it?
+DEV1_CSTAR03_401\01\It leaves at eleven thirty.
+DEV1_CSTAR03_402\01\We'd like this and this, please.
+DEV1_CSTAR03_403\01\I have never played tennis.
+DEV1_CSTAR03_404\01\The tour bus left me.
+DEV1_CSTAR03_405\01\I'd like to return it. Could I have a refund, please?
+DEV1_CSTAR03_406\01\Ah, here you are.
+DEV1_CSTAR03_407\01\Please send a bellboy for my baggage.
+DEV1_CSTAR03_408\01\Room service, please.
+DEV1_CSTAR03_409\01\Please take care of yourself.
+DEV1_CSTAR03_410\01\Would you give me a wake-up call at eight tomorrow morning?
+DEV1_CSTAR03_411\01\Who is it?
+DEV1_CSTAR03_412\01\I'd like a twin room.
+DEV1_CSTAR03_413\01\Could you bring me more blankets?
+DEV1_CSTAR03_414\01\We'd better hurry.
+DEV1_CSTAR03_415\01\Where is the household goods department?
+DEV1_CSTAR03_416\01\See you.
+DEV1_CSTAR03_417\01\All right.
+DEV1_CSTAR03_418\01\Do you have a larger room?
+DEV1_CSTAR03_419\01\Where do I get off for city hall?
+DEV1_CSTAR03_420\01\Okay.
+DEV1_CSTAR03_421\01\Where should I leave the cart?
+DEV1_CSTAR03_422\01\Can I help you?
+DEV1_CSTAR03_423\01\What are your hobbies?
+DEV1_CSTAR03_424\01\Not good.
+DEV1_CSTAR03_425\01\Would you carry my suitcase to my room, please?
+DEV1_CSTAR03_426\01\Could we have a spoon, please?
+DEV1_CSTAR03_427\01\Do you have some jasmine tea?
+DEV1_CSTAR03_428\01\May I use a flash?
+DEV1_CSTAR03_429\01\Please replace it.
+DEV1_CSTAR03_430\01\Excuse me, waiter.
+DEV1_CSTAR03_431\01\I've lost my passport.
+DEV1_CSTAR03_432\01\I would like to buy some key chains.
+DEV1_CSTAR03_433\01\Where is that in Japan?
+DEV1_CSTAR03_434\01\Just a hair cut, please.
+DEV1_CSTAR03_435\01\Yes, we can. May I have your name?
+DEV1_CSTAR03_436\01\Mr. Robinson.
+DEV1_CSTAR03_437\01\I'm really sorry.
+DEV1_CSTAR03_438\01\May I help you? Are you looking for anything special?
+DEV1_CSTAR03_439\01\What was that announcement they just made?
+DEV1_CSTAR03_440\01\So, I have to stay here tonight don't I? Can you reserve a hotel room for me?
+DEV1_CSTAR03_441\01\Medium, please.
+DEV1_CSTAR03_442\01\The food was very delicious.
+DEV1_CSTAR03_443\01\Nice to meet you, too. I'm Sachiyo.
+DEV1_CSTAR03_444\01\Where can I catch a taxi?
+DEV1_CSTAR03_445\01\The view was breathtaking.
+DEV1_CSTAR03_446\01\Does the tour bus have a restroom?
+DEV1_CSTAR03_447\01\I have absolutely no recollection of saying something like that.
+DEV1_CSTAR03_448\01\How long does it take from the hotel to downtown?
+DEV1_CSTAR03_449\01\Do you accept this card?
+DEV1_CSTAR03_450\01\Do I need to make an appointment to see a doctor?
+DEV1_CSTAR03_451\01\What credit cards do you honor?
+DEV1_CSTAR03_452\01\You see.
+DEV1_CSTAR03_453\01\Could you get me a bigger size?
+DEV1_CSTAR03_454\01\I'm sorry, we don't accept credit cards.
+DEV1_CSTAR03_455\01\I have severe hives.
+DEV1_CSTAR03_456\01\Do I have to transfer to get there?
+DEV1_CSTAR03_457\01\Where can I check in?
+DEV1_CSTAR03_458\01\One Johnny Walker Black straight up.
+DEV1_CSTAR03_459\01\How often do you travel?
+DEV1_CSTAR03_460\01\How much does it cost to send this to Japan?
+DEV1_CSTAR03_461\01\By air mail, please.
+DEV1_CSTAR03_462\01\What did you just say?
+DEV1_CSTAR03_463\01\That's not too long.
+DEV1_CSTAR03_464\01\May I recline my seat now?
+DEV1_CSTAR03_465\01\Just a minute.
+DEV1_CSTAR03_466\01\I'll see if twenty and twenty-one are available.
+DEV1_CSTAR03_467\01\I have to get to Long Beach today.
+DEV1_CSTAR03_468\01\I think his outfits are so practical.
+DEV1_CSTAR03_469\01\Who are you going to meet?
+DEV1_CSTAR03_470\01\This is your seat reservation ticket.
+DEV1_CSTAR03_471\01\How do I get there?
+DEV1_CSTAR03_472\01\Track three.
+DEV1_CSTAR03_473\01\Oh no. Could you tell them to be quiet then?
+DEV1_CSTAR03_474\01\My room number is five eleven.
+DEV1_CSTAR03_475\01\What's this horse's name?
+DEV1_CSTAR03_476\01\That will be four hundred dollars altogether. How would you like to pay?
+DEV1_CSTAR03_477\01\Could we have a table by the window, please?
+DEV1_CSTAR03_478\01\This is pure silk, so please handle it carefully.
+DEV1_CSTAR03_479\01\Please say it again.
+DEV1_CSTAR03_480\01\Do you have a table for six?
+DEV1_CSTAR03_481\01\I have traveler's insurance.
+DEV1_CSTAR03_482\01\Police.
+DEV1_CSTAR03_483\01\I've locked myself out.
+DEV1_CSTAR03_484\01\Where can I find feminine napkins?
+DEV1_CSTAR03_485\01\What time are we arriving in New York?
+DEV1_CSTAR03_486\01\Can I get there on foot?
+DEV1_CSTAR03_487\01\I want to be your friend.
+DEV1_CSTAR03_488\01\How long will it keep?
+DEV1_CSTAR03_489\01\Boarding for Delta Airlines flight six two three is delayed.
+DEV1_CSTAR03_490\01\I'm crazy about modern jazz.
+DEV1_CSTAR03_491\01\How much in all?
+DEV1_CSTAR03_492\01\Take me to a hospital, please.
+DEV1_CSTAR03_493\01\She's cute.
+DEV1_CSTAR03_494\01\Thank you very much for the great meal.
+DEV1_CSTAR03_495\01\I'd like to get these clothes cleaned.
+DEV1_CSTAR03_496\01\What's the exchange rate for yen today?
+DEV1_CSTAR03_497\01\Where is the post office?
+DEV1_CSTAR03_498\01\If you can't stop, it would be better to fall.
+DEV1_CSTAR03_499\01\I like jazz.
+DEV1_CSTAR03_500\01\Thank you.
+DEV1_CSTAR03_501\01\I would recommend a necklace.
+DEV1_CSTAR03_502\01\I'm planning to go to Liverpool.
+DEV1_CSTAR03_503\01\I'll have Breakfast B.
+DEV1_CSTAR03_504\01\Is there a flea market open today?
+DEV1_CSTAR03_505\01\Do you know where I can find a Japanese speaking doctor?
+DEV1_CSTAR03_506\01\Where can I rent a car?

@@ -1,0 +1,4 @@
+models/
+*.clean.txt
+*.tok.txt
+predictions/

@@ -1,0 +1,51 @@
+# Where the samples will be written
+save_data: ./BTEC-en-fr/BTEC-en-fr
+
+# Where the vocab(s) will be written
+src_vocab: ./BTEC-en-fr/BTEC-en-fr/vocab.src
+tgt_vocab: ./BTEC-en-fr/BTEC-en-fr/vocab.tgt
+
+# Prevent overwriting existing files in the folder
+overwrite: False
+
+# Corpus opts:
+data:
+    train:
+        path_src: ./BTEC-en-fr/train/IWSLT10_BTEC.train.fr.tok.txt
+        path_tgt: ./BTEC-en-fr/train/IWSLT10_BTEC.train.en.tok.txt
+    valid:
+        path_src: ./BTEC-en-fr/dev/IWSLT10.devset1_CSTAR03.fr.tok.txt
+        path_tgt: ./BTEC-en-fr/dev/IWSLT10.devset1_CSTAR03.en.tok.txt
+
+# CHEMINS
+save_model: ./models/base/model
+
+# ENCODEUR - DECODEUR
+encoder_type: brnn
+enc_layers: 1
+dec_layers: 1
+
+rnn_type: LSTM
+dec_rnn_size: 256
+enc_rnn_size: 256
+
+# ATTENTION
+global_attention: mlp
+
+# BATCH
+batch_size: 32
+
+# STEPS
+save_checkpoint_steps: 2003
+train_steps: 2003
+valid_steps: 501
+
+# GPU (à décommenter si vous voulez utiliser votre carte graphique)
+# world_size: 1
+# gpu_ranks: [0]
+
+# LOG & TENSORBOARD
+report_every: 20
+log_file: ./models/base/train.log
+#tensorboard: 'true'
+#tensorboard_log_dir: data/en-fr_TP/tensorboard_log

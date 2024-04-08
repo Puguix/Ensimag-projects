@@ -1,0 +1,469 @@
+TEST_IWSLT09_001\01\Au secours!
+TEST_IWSLT09_002\01\Pouvez-vous nettoyer ma chambre?
+TEST_IWSLT09_003\01\C'est le contrat d'achat de mes chèques de voyage.
+TEST_IWSLT09_004\01\Pouvez-vous conduire plus lentement, s'il vous plaît?
+TEST_IWSLT09_005\01\Je voudrais parler à Monsieur Smith.
+TEST_IWSLT09_006\01\Avez-vous un menu?
+TEST_IWSLT09_007\01\Quel genre de cuir est-ce?
+TEST_IWSLT09_008\01\Oui, mais je crains de ne pas pouvoir parler anglais.
+TEST_IWSLT09_009\01\Merci. Combien ça coûte?
+TEST_IWSLT09_010\01\Les adolescents japonais aiment les jeux vidéos.
+TEST_IWSLT09_011\01\Combien de temps devrons-nous attendre?
+TEST_IWSLT09_012\01\Aurons-nous du temps libre pendant le voyage?
+TEST_IWSLT09_013\01\Une petite voiture à deux portes, s'il vous plaît.
+TEST_IWSLT09_014\01\Qui est en train de parler, s'il vous plaît?
+TEST_IWSLT09_015\01\C'est trop brillant.
+TEST_IWSLT09_016\01\Pouvez-vous me recommander une bonne boîte de nuit?
+TEST_IWSLT09_017\01\Toutes les dix minutes.
+TEST_IWSLT09_018\01\J'ai la nausée.
+TEST_IWSLT09_019\01\Je voudrais manger de la vraie nourriture indienne.
+TEST_IWSLT09_020\01\Pouvez-vous garder mes sacs ici jusqu'à cinq heure?
+TEST_IWSLT09_021\01\Très bien Monsieur. Un instant s'il vous plaît. Puis-je avoir votre signature ici?
+TEST_IWSLT09_022\01\Avez-vous des petites voitures?
+TEST_IWSLT09_023\01\Pardonnez-moi, puis-je passer?
+TEST_IWSLT09_024\01\Quels sont les liens que vous entretenez avec la personne à qui vous rendez visite?
+TEST_IWSLT09_025\01\Veuillez démarrer le compteur, s'il vous plaît.
+TEST_IWSLT09_026\01\Celui-ci ou celui-là?
+TEST_IWSLT09_027\01\C'est trop petit pour moi.
+TEST_IWSLT09_028\01\Je vais prendre la même chose, s'il vous plaît.
+TEST_IWSLT09_029\01\Deux dollars, s'il vous plaît.
+TEST_IWSLT09_030\01\Ça prend à peu près deux minutes en train.
+TEST_IWSLT09_031\01\Je voudrais jouer au golf.
+TEST_IWSLT09_032\01\Je suis végétarien.
+TEST_IWSLT09_033\01\Voulez-vous que je vous aide?
+TEST_IWSLT09_034\01\Nous aimerions une table près de la fenêtre, s'il vous plaît.
+TEST_IWSLT09_035\01\Vous le trouverez à votre droite.
+TEST_IWSLT09_036\01\La population totale du Japon est d'environ cent trente millions d'habitants.
+TEST_IWSLT09_037\01\Pourriez-vous arriver plus tôt?
+TEST_IWSLT09_038\01\Puis-je payer par carte de crédit?
+TEST_IWSLT09_039\01\J'ai la nausée.
+TEST_IWSLT09_040\01\Est-ce que les toilettes sont libres?
+TEST_IWSLT09_041\01\Merci pour votre aide. C'est pour vous.
+TEST_IWSLT09_042\01\Vous l'avez bien en main.
+TEST_IWSLT09_043\01\Non, je suis un touriste.
+TEST_IWSLT09_044\01\Ça alors, un appareil photo japonais coûte moins cher ici qu'au Japon.
+TEST_IWSLT09_045\01\Est-ce que je dois réserver?
+TEST_IWSLT09_046\01\Nous aimerions une bouteille de vin rouge.
+TEST_IWSLT09_047\01\Pas vraiment.
+TEST_IWSLT09_048\01\Où se trouve le service des objets trouvés?
+TEST_IWSLT09_049\01\Excusez-moi, puis-je avoir une carte de débarquement?
+TEST_IWSLT09_050\01\Et quel est l'objet de votre visite?
+TEST_IWSLT09_051\01\Allongez-vous ici et déboutonnez votre chemise.
+TEST_IWSLT09_052\01\Ce sont des silencieux.
+TEST_IWSLT09_053\01\C'est parfait, merci.
+TEST_IWSLT09_054\01\Quelle est la soupe du jour?
+TEST_IWSLT09_055\01\De rien.
+TEST_IWSLT09_056\01\Où se trouve le monument?
+TEST_IWSLT09_057\01\Je rappellerai.
+TEST_IWSLT09_058\01\Voulez-vous un billet ouvert ou avez-vous des dates fixes?
+TEST_IWSLT09_059\01\Est-ce que je peux louer des raquettes et des balles?
+TEST_IWSLT09_060\01\C'est pour mon ami. Il a trente ans.
+TEST_IWSLT09_061\01\Combien de temps allez-vous rester?
+TEST_IWSLT09_062\01\J'aimerais aller à l'église.
+TEST_IWSLT09_063\01\Le vol QF vingt et un pour Tokyo, s'il vous plaît.
+TEST_IWSLT09_064\01\Avez-vous de la sauce de salade au bleu?
+TEST_IWSLT09_065\01\Je fais un régime.
+TEST_IWSLT09_066\01\C'est le trois, trois quatre cinq six, un deux trois quatre neuf.
+TEST_IWSLT09_067\01\Le vendeur responsable est absent. Pouvez-vous patienter un instant?
+TEST_IWSLT09_068\01\Voudriez-vous tenter l'oden?
+TEST_IWSLT09_069\01\Je m'intéresse à l'histoire des Etats-Unis.
+TEST_IWSLT09_070\01\Quel est l'objet de votre visite?
+TEST_IWSLT09_071\01\Avez-vous des fruits?
+TEST_IWSLT09_072\01\Voilà dix dollars. Gardez la monnaie.
+TEST_IWSLT09_073\01\Excusez-moi? Pouvez-vous me dire à quelle heure est le premier train pour Boston?
+TEST_IWSLT09_074\01\Combien coûte un aller simple pour New York?
+TEST_IWSLT09_075\01\Avec des glaçons.
+TEST_IWSLT09_076\01\Merci infiniment pour tout.
+TEST_IWSLT09_077\01\Il est remarquable.
+TEST_IWSLT09_078\01\Pourrais-je avoir un café ou un thé?
+TEST_IWSLT09_079\01\Le tour de taille doit être raccourci de trois centimètres.
+TEST_IWSLT09_080\01\Je viens juste de mettre de l'argent dans ce distributeur mais rien n'en est sorti.
+TEST_IWSLT09_081\01\Je m'apelle Ueda. J'ai fait une réservation.
+TEST_IWSLT09_082\01\Y a-t-il un bureau de change?
+TEST_IWSLT09_083\01\Pouvez-vous signer, s'il vous plaît?
+TEST_IWSLT09_084\01\Veuillez ouvrir ce sac, s'il vous plaît.
+TEST_IWSLT09_085\01\Je veux voir Greenwich Village.
+TEST_IWSLT09_086\01\Quel est le prochain arrêt?
+TEST_IWSLT09_087\01\Quelle sorte de bagage avez-vous perdu?
+TEST_IWSLT09_088\01\Qu'est-ce qui lui prend?
+TEST_IWSLT09_089\01\Le Japon est un pays insulaire. Il est constitué de quatre îles principales et d'une multitude d'autres petites îles.
+TEST_IWSLT09_090\01\Combien coûte l'entrée?
+TEST_IWSLT09_091\01\Quel est le taux de change?
+TEST_IWSLT09_092\01\Que quelqu'un appelle la police!
+TEST_IWSLT09_093\01\J'étais impatient de vous rencontrer.
+TEST_IWSLT09_094\01\Je voudrais des sels de bain.
+TEST_IWSLT09_095\01\Il fait moins trois degrés centigrade.
+TEST_IWSLT09_096\01\Vous connaissez beaucoup de monde.
+TEST_IWSLT09_097\01\Un café s'il vous plaît.
+TEST_IWSLT09_098\01\Puis-je avoir un dessert, s'il vous plaît?
+TEST_IWSLT09_099\01\Pouvez-vous réparer cet appareil photo? Il ne charge pas correctement.
+TEST_IWSLT09_100\01\Rangez-vous.
+TEST_IWSLT09_101\01\Le taux d'augmentation du chiffre d'affaires a atteint une moyenne de vingt-cinq pourcent depuis la sortie du produit.
+TEST_IWSLT09_102\01\De quel aéroport vais-je partir?
+TEST_IWSLT09_103\01\Où se trouve l'ambassade japonaise?
+TEST_IWSLT09_104\01\Avez-vous un guide des évènements qui se passent dans cette ville?
+TEST_IWSLT09_105\01\Combien ça coûte?
+TEST_IWSLT09_106\01\Je voudrais une voiture non fumeuse.
+TEST_IWSLT09_107\01\Pouvez-vous m'indiquer le chemin vers un arrêt de bus?
+TEST_IWSLT09_108\01\Devons-nous attendre pour une table?
+TEST_IWSLT09_109\01\Pour quand pouvez-vous raccourcir cette jupe?
+TEST_IWSLT09_110\01\Voilà votre pourboire.
+TEST_IWSLT09_111\01\C'est un souvenir de ma mère.
+TEST_IWSLT09_112\01\Pouvez-vous me montrer le guichet des correspondances sur la carte, s'il vous plaît?
+TEST_IWSLT09_113\01\Je serai là dans environ cinq minutes.
+TEST_IWSLT09_114\01\Puis-je payer en yen japonais?
+TEST_IWSLT09_115\01\Quel est votre budget?
+TEST_IWSLT09_116\01\Comment puis-je me rendre au musée?
+TEST_IWSLT09_117\01\Pourriez-vous m'appeler un taxi?
+TEST_IWSLT09_118\01\Ça vous dirait, une cigarette?
+TEST_IWSLT09_119\01\Veuillez m'appeler le matin, s'il vous plaît.
+TEST_IWSLT09_120\01\Je vais vérifier.
+TEST_IWSLT09_121\01\Quel genre d'excursions de nuit avez-vous?
+TEST_IWSLT09_122\01\Je voudrais l'avoir à huit heure.
+TEST_IWSLT09_123\01\Ce fut une journée très fatiguante.
+TEST_IWSLT09_124\01\Aidez-moi à sortir de la voiture, s'il vous plaît.
+TEST_IWSLT09_125\01\Bonjour. Je m'appelle Kimio Mori.
+TEST_IWSLT09_126\01\De l'eau, s'il vous plaît.
+TEST_IWSLT09_127\01\Où se trouve la pharmacie?
+TEST_IWSLT09_128\01\J'ai bien aimé le film. Merci de m'avoir invité.
+TEST_IWSLT09_129\01\Quand puis-je acheter le billet?
+TEST_IWSLT09_130\01\En avez-vous d'autres?
+TEST_IWSLT09_131\01\C'est un cadeau pour ma petite amie.
+TEST_IWSLT09_132\01\Accepteriez-vous de diner avec moi ce soir?
+TEST_IWSLT09_133\01\Dépêchez-vous, s'il vous plaît.
+TEST_IWSLT09_134\01\Rechargez les piles, s'il vous plaît.
+TEST_IWSLT09_135\01\Avez-vous passé le TOEFL au Japon?
+TEST_IWSLT09_136\01\Quel genre de voyages avez-vous?
+TEST_IWSLT09_137\01\Je me suis foulé la cheville.
+TEST_IWSLT09_138\01\J'ai laissé mon sac dans un bus.
+TEST_IWSLT09_139\01\C'était vraiment sympa.
+TEST_IWSLT09_140\01\Jusqu'où?
+TEST_IWSLT09_141\01\Je voudrais des haricots verts et des épinards.
+TEST_IWSLT09_142\01\Leurs habits ne sont pas vraiment différents de ceux des Américains ou des Européens.
+TEST_IWSLT09_143\01\Est-ce qu'il y a des visites avec un guide anglophone?
+TEST_IWSLT09_144\01\Deux verres de vin rouge, s'il vous plaît.
+TEST_IWSLT09_145\01\Pouvez-vous regarder un autre vol pour moi, s'il vous plaît?
+TEST_IWSLT09_146\01\Je voudrais rester seulement ce soir.
+TEST_IWSLT09_147\01\Puis-je vous aider?
+TEST_IWSLT09_148\01\Pouvez-vous prendre la pose avec moi?
+TEST_IWSLT09_149\01\J'ai l'estomac dérangé.
+TEST_IWSLT09_150\01\Savez-vous où je peux prendre des cours?
+TEST_IWSLT09_151\01\Je vais à JFK.
+TEST_IWSLT09_152\01\Le mont Fuji culmine à trois mille sept cent soixante-seize mètres.
+TEST_IWSLT09_153\01\Combien coûte le bagage supplémentaire, s'il vous plaît?
+TEST_IWSLT09_154\01\Combien coûte le billet retour pour Atlanta en première classe?
+TEST_IWSLT09_155\01\La station de ski est assez loin.
+TEST_IWSLT09_156\01\Avez-vous des tickets d'excursion?
+TEST_IWSLT09_157\01\J'ai acheté la mauvaise marque.
+TEST_IWSLT09_158\01\A quelle heure part la navette vers la ville?
+TEST_IWSLT09_159\01\Pouvez-vous me dire comment aller à la gare?
+TEST_IWSLT09_160\01\C'est vrai.
+TEST_IWSLT09_161\01\Veuillez remplir ce formulaire, s'il vous plaît.
+TEST_IWSLT09_162\01\Non, mais j'ai envie de vomir. Je pense que j'ai trop mangé hier soir.
+TEST_IWSLT09_163\01\Vous pensez qu'on arrivera à l'heure prévue?
+TEST_IWSLT09_164\01\Ce siège est-il pris?
+TEST_IWSLT09_165\01\Combien de temps dure la halte?
+TEST_IWSLT09_166\01\Où puis-je faire une réservation?
+TEST_IWSLT09_167\01\Avez-vous un vin de pays?
+TEST_IWSLT09_168\01\Parle-moi de l'entraînement de boxe.
+TEST_IWSLT09_169\01\Puis-je avoir le nom de votre fille, s'il vous plaît?
+TEST_IWSLT09_170\01\Ça ne tient pas.
+TEST_IWSLT09_171\01\A quelle heure faut-il rendre la chambre?
+TEST_IWSLT09_172\01\Je m'en vais d'ici.
+TEST_IWSLT09_173\01\Nous allons diner à sept heure.
+TEST_IWSLT09_174\01\L'embarquement a commencé.
+TEST_IWSLT09_175\01\Je suis étudiant en économie, je me spécialise dans cette matière.
+TEST_IWSLT09_176\01\Elle était petite avec des cheveux blonds.
+TEST_IWSLT09_177\01\Ça vous va?
+TEST_IWSLT09_178\01\Grâce à votre aide, ce fut un grand succès.
+TEST_IWSLT09_179\01\Je me demandais si je pouvais réserver un taxi pour demain?
+TEST_IWSLT09_180\01\Bonjour, je m'appelle Junko. Je travaille pour le département des relations publiques. Je suis nouveau ici.
+TEST_IWSLT09_181\01\Je suis désolé mais je suis pressé.
+TEST_IWSLT09_182\01\Je n'ai pas commandé ça.
+TEST_IWSLT09_183\01\Pourriez-vous envoyer ceci au Japon?
+TEST_IWSLT09_184\01\Je voudrais commander quelque chose auprès du service d'étage.
+TEST_IWSLT09_185\01\Que diriez-vous d'un dessert?
+TEST_IWSLT09_186\01\Quand est-ce que part le prochain bus pour Seattle?
+TEST_IWSLT09_187\01\Quel est le taux de change là-bas?
+TEST_IWSLT09_188\01\Très bien. J'ai hâte de vous voir.
+TEST_IWSLT09_189\01\Veuillez annuler ma carte s'il vous plaît.
+TEST_IWSLT09_190\01\Vous êtes Madame Hearn, n'est-ce pas?
+TEST_IWSLT09_191\01\Veuillez vous arrêter au prochain croisement, s'il vous plaît.
+TEST_IWSLT09_192\01\Puis-je avoir une cigarette?
+TEST_IWSLT09_193\01\Je vois. Avez-vous de la documentation?
+TEST_IWSLT09_194\01\Où sont les ascenseurs?
+TEST_IWSLT09_195\01\Je voudrais des mouchoirs.
+TEST_IWSLT09_196\01\D'où venez-vous?
+TEST_IWSLT09_197\01\Est-ce que le vol United Airlines numéro huit cinq trois est à l'heure?
+TEST_IWSLT09_198\01\Merci.
+TEST_IWSLT09_199\01\Votre déclaration de douanes, s'il vous plaît.
+TEST_IWSLT09_200\01\Où dois-je changer de bus?
+TEST_IWSLT09_201\01\En voiture!
+TEST_IWSLT09_202\01\Vous vous êtes trompé en me rendant la monnaie.
+TEST_IWSLT09_203\01\Je suis débutant. Puis-je me joindre à vous?
+TEST_IWSLT09_204\01\Trois, trois sept neuf trois, huit quatre sept un?
+TEST_IWSLT09_205\01\Est-ce que vous l'avez dans des couleurs différentes?
+TEST_IWSLT09_206\01\Excusez-moi, ce siège est-il pris?
+TEST_IWSLT09_207\01\La ligne est occupée.
+TEST_IWSLT09_208\01\J'ai tendance à prendre du poids.
+TEST_IWSLT09_209\01\C'est trop sombre.
+TEST_IWSLT09_210\01\Puis-je échanger ce billet pour un billet en première classe?
+TEST_IWSLT09_211\01\C'est un petit peu tôt.
+TEST_IWSLT09_212\01\Non, vous n'avez pas droit à une réduction avec cette carte.
+TEST_IWSLT09_213\01\Oui, Madame. Pouvez-vous écrire le total et signer ici, s'il vous plaît?
+TEST_IWSLT09_214\01\J'ai mal aux oreilles.
+TEST_IWSLT09_215\01\Je voudrais faire une réservation pour deux pour dix-neuf heure.
+TEST_IWSLT09_216\01\Désolé.
+TEST_IWSLT09_217\01\Comment vont les affaires?
+TEST_IWSLT09_218\01\Je suis désolé mais il n'y a plus de place pour cette excursion.
+TEST_IWSLT09_219\01\Deux Pepsi Light, s'il vous plaît.
+TEST_IWSLT09_220\01\Ces écouteurs n'ont pas l'air de fonctionner.
+TEST_IWSLT09_221\01\Je n'arrive pas à trouver la bonne traduction.
+TEST_IWSLT09_222\01\Combien de temps dure le vol?
+TEST_IWSLT09_223\01\J'aimerais voir des bagues en rubis.
+TEST_IWSLT09_224\01\Je ne trouve pas mon siège.
+TEST_IWSLT09_225\01\J'aimerais un vin demi-sec, s'il vous plaît.
+TEST_IWSLT09_226\01\Puis-je fumer?
+TEST_IWSLT09_227\01\Les cuisines chinoise, française et italienne sont aussi populaires.
+TEST_IWSLT09_228\01\De rien.
+TEST_IWSLT09_229\01\Qui est-ce?
+TEST_IWSLT09_230\01\Pourquoi pleures-tu?
+TEST_IWSLT09_231\01\Comment puis-je payer le cours?
+TEST_IWSLT09_232\01\Puis-je commander un verre de vin rouge?
+TEST_IWSLT09_233\01\Je pense que c'est ma place.
+TEST_IWSLT09_234\01\Partageons-le.
+TEST_IWSLT09_235\01\Merci. C'est pour vous.
+TEST_IWSLT09_236\01\Combien au total?
+TEST_IWSLT09_237\01\C'est un appareil photo reflex Fujica à un objectif.
+TEST_IWSLT09_238\01\J'étais dans ma chambre.
+TEST_IWSLT09_239\01\Qu'est ce qui se passe ce soir?
+TEST_IWSLT09_240\01\Combien coûte la course d'ici jusqu'à l'hôtel Fiat?
+TEST_IWSLT09_241\01\Quelqu'un a arraché mon sac à main.
+TEST_IWSLT09_242\01\C'est mon ami.
+TEST_IWSLT09_243\01\C'est combien pour une journée?
+TEST_IWSLT09_244\01\J'aime beaucoup cet endroit.
+TEST_IWSLT09_245\01\Y a-t-il des téléphones publiques près d'ici?
+TEST_IWSLT09_246\01\Quels sont vos passe-temps?
+TEST_IWSLT09_247\01\Est-ce qu'on peut aller là-bas?
+TEST_IWSLT09_248\01\Y a-t-il une visite guidée?
+TEST_IWSLT09_249\01\Trente-cinq D.
+TEST_IWSLT09_250\01\Je vais prendre ça.
+TEST_IWSLT09_251\01\Juste un verre d'eau, s'il vous plaît.
+TEST_IWSLT09_252\01\En voiture non fumeur, s'il vous plaît.
+TEST_IWSLT09_253\01\J'ai fait une réservation pour aujourd'hui.
+TEST_IWSLT09_254\01\J'ai perdu la clé de la chambre.
+TEST_IWSLT09_255\01\Un plan touristique, s'il vous plaît.
+TEST_IWSLT09_256\01\Est-ce que ce bus va en ville?
+TEST_IWSLT09_257\01\La garantie est-elle valide au Japon?
+TEST_IWSLT09_258\01\Puis-je avoir une autre couverture, s'il vous plaît?
+TEST_IWSLT09_259\01\Devrais-je porter une veste?
+TEST_IWSLT09_260\01\Bonjour. Je m'appelle Ichiro Tanaka et j'ai fait une réservation pour trois nuits à partir de ce soir.
+TEST_IWSLT09_261\01\Je dois y aller maintenant.
+TEST_IWSLT09_262\01\Bonjour, je suis bien à Northwest Airlines?
+TEST_IWSLT09_263\01\Je ne me rappelle pas ce qui s'est passé.
+TEST_IWSLT09_264\01\C'est à quelle distance d'ici?
+TEST_IWSLT09_265\01\C'est vrai.
+TEST_IWSLT09_266\01\Un Pepsi, s'il vous plaît.
+TEST_IWSLT09_267\01\Veuillez remplir ce formulaire, s'il vous plaît. Vous paierez par carte ou en liquide?
+TEST_IWSLT09_268\01\Combien ça prendra de temps si on l'envoie par bateau?
+TEST_IWSLT09_269\01\Il ne me reste plus de chips.
+TEST_IWSLT09_270\01\Puis-je avoir un ticket de remontée mécanique pour la journée?
+TEST_IWSLT09_271\01\Sept heure, chambre sept cent vingt. Très bien, Monsieur. Bonne nuit.
+TEST_IWSLT09_272\01\Je voudrais commander.
+TEST_IWSLT09_273\01\Je me suis foulé le poignet.
+TEST_IWSLT09_274\01\Y a-t-il une piscine dans l'hôtel?
+TEST_IWSLT09_275\01\Quel type de place voulez-vous?
+TEST_IWSLT09_276\01\Arrêtez-vous ici, s'il vous plaît.
+TEST_IWSLT09_277\01\Vous prenez les chèques de voyage?
+TEST_IWSLT09_278\01\A quatre heure et demie.
+TEST_IWSLT09_279\01\Je ne suis pas marié.
+TEST_IWSLT09_280\01\Vous prenez les chèques de voyage?
+TEST_IWSLT09_281\01\Je pense que j'ai de la fièvre.
+TEST_IWSLT09_282\01\Donnez-moi un reçu, s'il vous plaît.
+TEST_IWSLT09_283\01\Où est-ce que ça a été fait?
+TEST_IWSLT09_284\01\Non.
+TEST_IWSLT09_285\01\Puis-je acheter des chips avec une carte de crédit?
+TEST_IWSLT09_286\01\A quelle heure le spectacle commence-t-il?
+TEST_IWSLT09_287\01\C'est déchiré.
+TEST_IWSLT09_288\01\Vous devez voir un spécialiste.
+TEST_IWSLT09_289\01\Enchanté.
+TEST_IWSLT09_290\01\Oui.
+TEST_IWSLT09_291\01\C'est trop serré.
+TEST_IWSLT09_292\01\Je voudrais sortir à Kensington.
+TEST_IWSLT09_293\01\J'ai eu un accident de la route.
+TEST_IWSLT09_294\01\Quel est le plat du jour?
+TEST_IWSLT09_295\01\Vous y êtes arrivé?
+TEST_IWSLT09_296\01\Y a-t-il des points de repère?
+TEST_IWSLT09_297\01\Une place en section fumeur vous conviendrait-elle?
+TEST_IWSLT09_298\01\Très bien. Il y a des avions qui partent à neuf heure et demie le matin jusqu'à six heure et quart le soir.
+TEST_IWSLT09_299\01\Pouvez-vous faire un autre trou dans la ceinture, s'il vous plaît?
+TEST_IWSLT09_300\01\Puis-je voir une liste de vos taux?
+TEST_IWSLT09_301\01\Ce poisson est rare au Japon.
+TEST_IWSLT09_302\01\Ça prendra environ trois semaines.
+TEST_IWSLT09_303\01\Où dois-je poster cette lettre?
+TEST_IWSLT09_304\01\Quelle boîte de nuit nous plairait?
+TEST_IWSLT09_305\01\Où ressentez-vous la douleur?
+TEST_IWSLT09_306\01\Ça vous fera cinq dollars et soixante-neuf cents.
+TEST_IWSLT09_307\01\Ce pourcentage est beaucoup plus élevé que les chiffres des précédentes études pour seize autres produits.
+TEST_IWSLT09_308\01\Quel est le montant minimum d'achat pour lequel je peux demander une exonération de taxes?
+TEST_IWSLT09_309\01\Puis-je avoir votre nom?
+TEST_IWSLT09_310\01\Y a-t-il une cuisine?
+TEST_IWSLT09_311\01\Un instant, s'il vous plaît.
+TEST_IWSLT09_312\01\Où se trouve la banque la plus proche?
+TEST_IWSLT09_313\01\A part, s'il vous plaît.
+TEST_IWSLT09_314\01\Le mécanisme de chargement ne fonctionne pas.
+TEST_IWSLT09_315\01\J'ai un appartement.
+TEST_IWSLT09_316\01\Où se trouve le comptoir d'embarquement de Japan Airlines?
+TEST_IWSLT09_317\01\Voyagez-vous seul?
+TEST_IWSLT09_318\01\Excusez-moi.
+TEST_IWSLT09_319\01\Merci beaucoup.
+TEST_IWSLT09_320\01\Je suis désolé, je suis en retard.
+TEST_IWSLT09_321\01\La lumière ne fonctionne pas.
+TEST_IWSLT09_322\01\Bonjour. Combien y a-t-il de personnes à votre fête?
+TEST_IWSLT09_323\01\Avez-vous des timbres?
+TEST_IWSLT09_324\01\Combien de temps met-on pour aller à la gare en taxi?
+TEST_IWSLT09_325\01\J'aime le surf. Connaissez-vous un bon endroit pour surfer?
+TEST_IWSLT09_326\01\Je vous attendrai à la sortie sud.
+TEST_IWSLT09_327\01\Avez-vous de la Ginger Ale?
+TEST_IWSLT09_328\01\Je vous en prie, asseyez-vous.
+TEST_IWSLT09_329\01\C'est une belle chemise.
+TEST_IWSLT09_330\01\Je vous en prie, faites comme bon vous semble.
+TEST_IWSLT09_331\01\Quel est le problème?
+TEST_IWSLT09_332\01\Merci de me dire où je dois descendre.
+TEST_IWSLT09_333\01\Bien sûr, c'est tout à fait possible. Voici le formulaire que vous devez remplir pour votre coffre-fort.
+TEST_IWSLT09_334\01\Ça va prendre longtemps à préparer?
+TEST_IWSLT09_335\01\Nous allons prendre votre température.
+TEST_IWSLT09_336\01\Je le prends.
+TEST_IWSLT09_337\01\Pouvez-vous changer ma roue de secours, s'il vous plaît?
+TEST_IWSLT09_338\01\Le taux de change est de cent vingt yen pour un dollar.
+TEST_IWSLT09_339\01\Je n'en suis pas sûr.
+TEST_IWSLT09_340\01\Ça ne va pas vraiment mieux mais ne vous inquiétez pas, je me gargarise aussi souvent que possible.
+TEST_IWSLT09_341\01\D'où appelez-vous?
+TEST_IWSLT09_342\01\Pouvez-vous enlever cette tache?
+TEST_IWSLT09_343\01\Deux. J'aimerais prendre ceci avec moi comme bagage à main.
+TEST_IWSLT09_344\01\Dois-je payer un supplément pour ce bagage?
+TEST_IWSLT09_345\01\Vous descendez cette allée, sur votre droite.
+TEST_IWSLT09_346\01\Additions séparées, s'il vous plaît.
+TEST_IWSLT09_347\01\Vous aimez?
+TEST_IWSLT09_348\01\La douche est-elle disponible tout le temps?
+TEST_IWSLT09_349\01\A quoi correspond cette somme qui nous a été facturée, s'il vous plaît?
+TEST_IWSLT09_350\01\J'en suis heureux.
+TEST_IWSLT09_351\01\Il y a un arrêt de taxi là-bas, de l'autre côté de la route.
+TEST_IWSLT09_352\01\Pouvez-vous m'aider avec mes bagages, s'il vous plaît?
+TEST_IWSLT09_353\01\Avez-vous le temps après ça?
+TEST_IWSLT09_354\01\Merci beaucoup.
+TEST_IWSLT09_355\01\Ce sont des effets personnels.
+TEST_IWSLT09_356\01\Comment allez-vous?
+TEST_IWSLT09_357\01\Mon tour de doigt en taille japonaise est neuf.
+TEST_IWSLT09_358\01\Je suis désolé. J'ai quelque chose à faire ce jour-là.
+TEST_IWSLT09_359\01\Puis-je avoir un plan de la ville?
+TEST_IWSLT09_360\01\Pouvez-vous appeler un médecin, s'il vous plaît?
+TEST_IWSLT09_361\01\Ça fait un bail, n'est-ce pas?
+TEST_IWSLT09_362\01\Je me suis beaucoup amusé.
+TEST_IWSLT09_363\01\C'est trente dollars par personne.
+TEST_IWSLT09_364\01\Pouvez-vous prendre un message?
+TEST_IWSLT09_365\01\Prenons-nous le bus?
+TEST_IWSLT09_366\01\Je voudrais un hamburger et une petite portion de frites, s'il vous plaît.
+TEST_IWSLT09_367\01\Combien ça coûte?
+TEST_IWSLT09_368\01\Quel genre de boissons sans alcool avez-vous?
+TEST_IWSLT09_369\01\Veuillez faire une copie et réduisez-la de quinze pourcent, s'il vous plaît.
+TEST_IWSLT09_370\01\Où se trouve la station de métro la plus proche?
+TEST_IWSLT09_371\01\Non, nous aimerions une table dans le hall.
+TEST_IWSLT09_372\01\De quelle taille était votre sac?
+TEST_IWSLT09_373\01\Oui, le voilà.
+TEST_IWSLT09_374\01\Regardez comme ce paysage est beau!
+TEST_IWSLT09_375\01\Quel est le meilleur moment pour vous appeler?
+TEST_IWSLT09_376\01\Y a-t-il une laverie automatique?
+TEST_IWSLT09_377\01\J'ai un rhume.
+TEST_IWSLT09_378\01\Je voudrais voir le match de cricket.
+TEST_IWSLT09_379\01\Je vois. Merci.
+TEST_IWSLT09_380\01\Je voudrais que l'argent soit envoyé de la T Bank au Japon.
+TEST_IWSLT09_381\01\Vous en reprendrez?
+TEST_IWSLT09_382\01\Y a-t-il du courrier pour moi?
+TEST_IWSLT09_383\01\Oui.
+TEST_IWSLT09_384\01\C'est trois pourcent.
+TEST_IWSLT09_385\01\J'aimerais qu'on me fasse une coupe.
+TEST_IWSLT09_386\01\D'où venez-vous?
+TEST_IWSLT09_387\01\Je n'en suis pas sûr.
+TEST_IWSLT09_388\01\Pouvez-vous me faire la monnaie sur ce billet de cent dollars?
+TEST_IWSLT09_389\01\J'ai été touché assez sérieusement ici.
+TEST_IWSLT09_390\01\Dites-moi quand on sera arrivé.
+TEST_IWSLT09_391\01\Appelez la police s'il vous plaît.
+TEST_IWSLT09_392\01\Merci. J'ai apprécié mon séjour.
+TEST_IWSLT09_393\01\Non.
+TEST_IWSLT09_394\01\Est-ce que ça inclut une visite à Disneyland?
+TEST_IWSLT09_395\01\Puis-je avoir une carte d'entrée?
+TEST_IWSLT09_396\01\Pouvez-vous mettre un ruban, s'il vous plaît?
+TEST_IWSLT09_397\01\Je voudrais un chapelet.
+TEST_IWSLT09_398\01\La chambre d'à côté est trop bruyante.
+TEST_IWSLT09_399\01\Pouvez-vous m'aider à trouver mon autre valise?
+TEST_IWSLT09_400\01\Avez-vous de l'huile solaire?
+TEST_IWSLT09_401\01\Appelez la police.
+TEST_IWSLT09_402\01\Pouvez-vous vérifier la chambre?
+TEST_IWSLT09_403\01\Je voudrais réserver une chambre pour ce soir.
+TEST_IWSLT09_404\01\A quelle distance d'ici se trouve Chicago?
+TEST_IWSLT09_405\01\Je le ferai, c'est promis. N'oublie pas de m'écrire s'il te plaît.
+TEST_IWSLT09_406\01\Un café, s'il vous plaît.
+TEST_IWSLT09_407\01\Je n'ai rien à déclarer.
+TEST_IWSLT09_408\01\Vous avez la grippe.
+TEST_IWSLT09_409\01\Quel endroit recommandez-vous le plus?
+TEST_IWSLT09_410\01\Quelqu'un est en train de se noyer là-bas.
+TEST_IWSLT09_411\01\Certainement, Monsieur. Nous en avons ici. Quelle pointure faites-vous?
+TEST_IWSLT09_412\01\Trente-deux pièces de vingt-cinq cents et le reste en pièces d'un dollar, s'il vous plaît.
+TEST_IWSLT09_413\01\A franchement parler, je n'ai jamais joué à des jeux d'argent. Quel est le jeu le plus populaire que même un débutant apprécierait?
+TEST_IWSLT09_414\01\Je me sens un peu mieux. Merci.
+TEST_IWSLT09_415\01\Puis-je prendre des photos ici?
+TEST_IWSLT09_416\01\Est-ce qu'il peut être prêt pour vendredi?
+TEST_IWSLT09_417\01\Est-ce que c'est exonéré d'impôts?
+TEST_IWSLT09_418\01\Je m'appelle Taro Tanaka.
+TEST_IWSLT09_419\01\L'addition, s'il vous plaît.
+TEST_IWSLT09_420\01\Des Buffalo chicken wings? Etes-vous de Buffalo?
+TEST_IWSLT09_421\01\Je ne me sens pas bien.
+TEST_IWSLT09_422\01\Veuillez garder mes bagages jusqu'à l'heure de l'embarquement, s'il vous plaît.
+TEST_IWSLT09_423\01\Je suis vraiment honoré par la gentillesse et l'attention que vous m'avez portées aujourd'hui.
+TEST_IWSLT09_424\01\Je vais prendre un steak.
+TEST_IWSLT09_425\01\Deux gaufres.
+TEST_IWSLT09_426\01\Je paie maintenant?
+TEST_IWSLT09_427\01\Vous pouvez en acheter un à la gare.
+TEST_IWSLT09_428\01\Au secours.
+TEST_IWSLT09_429\01\Avez-vous une chambre libre pour ce soir?
+TEST_IWSLT09_430\01\Il vaut mieux sortir à Madison Square Garden et prendre un taxi ou bien marcher à partir de là.
+TEST_IWSLT09_431\01\Je voudrais un billet aller retour.
+TEST_IWSLT09_432\01\Où allez-vous?
+TEST_IWSLT09_433\01\Nous trouvons qu'il y a de plus en plus de demandes de ce type.
+TEST_IWSLT09_434\01\Je vais payer en liquide.
+TEST_IWSLT09_435\01\J'ai perdu mon billet d'avion.
+TEST_IWSLT09_436\01\J'aimerais envoyer ce colis au Japon par bateau.
+TEST_IWSLT09_437\01\Comment dois-je le prendre?
+TEST_IWSLT09_438\01\Une chambre simple, s'il vous plaît.
+TEST_IWSLT09_439\01\Puis-je déposer la voiture à Los Angeles?
+TEST_IWSLT09_440\01\Nous voudrions un hôtel près du centre-ville avec des chambres doubles pour moins de quatre-vingts dollars.
+TEST_IWSLT09_441\01\Quelle est la salade du jour?
+TEST_IWSLT09_442\01\Merci, pareil pour vous.
+TEST_IWSLT09_443\01\Je voudrais passer un appel à l'international, s'il vous plaît.
+TEST_IWSLT09_444\01\Je me sens perdu et impuissant parce que le cours va trop vite pour moi.
+TEST_IWSLT09_445\01\J'ai une lettre de crédit.
+TEST_IWSLT09_446\01\Non, par avion. Combien de temps ça prendra pour arriver au Japon?
+TEST_IWSLT09_447\01\Quinze dollars pour les femmes et vingt dollars pour les hommes.
+TEST_IWSLT09_448\01\Je n'en mangerai plus.
+TEST_IWSLT09_449\01\Ça fait combien au total?
+TEST_IWSLT09_450\01\Combien de temps dure cette excursion?
+TEST_IWSLT09_451\01\Mince. Que faites-vous ici?
+TEST_IWSLT09_452\01\Nous vous les rapporterons dans quinze minutes. Est-ce que ça vous va?
+TEST_IWSLT09_453\01\Nous n'avons pas de réservation. Il y en a deux à notre soirée. Pouvons-nous avoir une table?
+TEST_IWSLT09_454\01\Faites-vous des réductions pour les voyageurs?
+TEST_IWSLT09_455\01\Je voudrais annuler un billet pour le vol cinq cent cinq de PanAm de huit heure moins le quart.
+TEST_IWSLT09_456\01\Combien?
+TEST_IWSLT09_457\01\Puis-je l'échanger pour autre chose?
+TEST_IWSLT09_458\01\Je le rappellerai.
+TEST_IWSLT09_459\01\Je suis désolé, je n'y arrive pas.
+TEST_IWSLT09_460\01\Un café s'il vous plaît.
+TEST_IWSLT09_461\01\Veuillez contacter la police.
+TEST_IWSLT09_462\01\J'ai perdu ma carte de transit.
+TEST_IWSLT09_463\01\Est-ce ouvert aux débutants?
+TEST_IWSLT09_464\01\Ne touchez pas au corail.
+TEST_IWSLT09_465\01\Avez-vous une location de vélo?
+TEST_IWSLT09_466\01\Il n'y a pas l'eau chaude.
+TEST_IWSLT09_467\01\Elle a gagné le marathon.
+TEST_IWSLT09_468\01\Quelle heure est-il maintenant?
+TEST_IWSLT09_469\01\Je suis désolé.
