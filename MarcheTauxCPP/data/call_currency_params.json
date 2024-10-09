@@ -1,0 +1,47 @@
+{
+  "Currencies": [
+    {
+      "id": "eur",
+      "InterestRate": 0.02,
+      "Volatility": 0
+    },
+    {
+      "id": "yen",
+      "InterestRate": 0.01,
+      "Volatility": 0.15,
+      "Spot": 140,
+      "Drift": 0.05
+    }
+  ],
+  "DomesticCurrencyId": "eur",
+  "Assets": [ ],
+  "NumberOfDaysInOneYear": 252,
+  "PortfolioRebalancingOracleDescription": {
+    "Type": "Fixed",
+    "Period": 1
+  },
+  "Option": {
+    "Type": "call_currency",
+    "FixingDatesInDays": {
+      "Type": "Grid",
+      "DatesInDays": [ 126 ]
+    },
+    "Strike": 142,
+    "MaturityInDays": 126
+  },
+  "Correlations": [
+    [ 1]
+  ],
+  "SampleNb": 100000,
+  "RelativeFiniteDifferenceStep": 0.01,
+  "benchmarkResults": {
+    "price": 5.7184654073244445,
+    "priceStdDev": 0.02868936167928242,
+    "deltas": [
+      0.508680310884232
+    ],
+    "deltaStdDev": [
+      0.0016927889040541189
+    ]
+  }
+}

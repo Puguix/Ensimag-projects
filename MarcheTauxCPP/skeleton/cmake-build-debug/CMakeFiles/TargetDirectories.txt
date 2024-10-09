@@ -1,0 +1,5 @@
+C:/Users/othma/Documents/projet-taux/projet/skeleton/cmake-build-debug/CMakeFiles/fx_hedging.dir
+C:/Users/othma/Documents/projet-taux/projet/skeleton/cmake-build-debug/CMakeFiles/test_json_reader.dir
+C:/Users/othma/Documents/projet-taux/projet/skeleton/cmake-build-debug/CMakeFiles/hedging.dir
+C:/Users/othma/Documents/projet-taux/projet/skeleton/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/othma/Documents/projet-taux/projet/skeleton/cmake-build-debug/CMakeFiles/rebuild_cache.dir

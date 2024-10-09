@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "FXHedging",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "fx_hedging::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fx_hedging-Debug-95b26a35e6433f7c186e.json",
+					"name" : "fx_hedging",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hedging::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hedging-Debug-c0f650e6d3fed0155dad.json",
+					"name" : "hedging",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_json_reader::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_json_reader-Debug-1f59538ebe8ee8300801.json",
+					"name" : "test_json_reader",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/othma/Documents/projet-taux/projet/skeleton/cmake-build-debug",
+		"source" : "C:/Users/othma/Documents/projet-taux/projet/skeleton"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

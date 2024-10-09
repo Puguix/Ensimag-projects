@@ -1,0 +1,51 @@
+{
+  "Currencies": [
+    {
+      "id": "eur",
+      "InterestRate": 0.04,
+      "Volatility": 0
+    },
+    {
+      "id": "us_dollar",
+      "InterestRate": 0.025,
+      "Volatility": 0.2,
+      "Spot": 1.3,
+      "Drift": 0.15
+    }
+  ],
+  "DomesticCurrencyId": "eur",
+  "Assets": [
+    {
+      "CurrencyId": "eur",
+      "Volatility": 0.2,
+      "Spot": 9,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "us_dollar",
+      "Volatility": 0.3,
+      "Spot": 10,
+      "Drift": 0.1
+    }
+  ],
+  "NumberOfDaysInOneYear": 252,
+  "PortfolioRebalancingOracleDescription": {
+    "Type": "Fixed",
+    "Period": 1
+  },
+  "Option": {
+    "Type": "foreign_asian",
+    "FixingDatesInDays": {
+      "Type": "Fixed",
+      "Period": 21
+    },
+    "MaturityInDays": 252
+  },
+  "Correlations": [
+    [ 1, 0.3, 0.3],
+    [ 0.3, 1, 0.3],
+    [ 0.3, 0.3, 1]
+  ],
+  "SampleNb": 50000,
+  "RelativeFiniteDifferenceStep": 0.1
+}

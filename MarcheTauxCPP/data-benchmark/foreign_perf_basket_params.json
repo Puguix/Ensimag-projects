@@ -1,0 +1,88 @@
+{
+  "Currencies": [
+    {
+      "id": "eur",
+      "InterestRate": 0.04,
+      "Volatility": 0
+    },
+    {
+      "id": "us_dollar",
+      "InterestRate": 0.025,
+      "Volatility": 0.18,
+      "Spot": 1,
+      "Drift": 0.1
+    },
+    {
+      "id": "pound",
+      "InterestRate": 0.035,
+      "Volatility": 0.23,
+      "Spot": 1,
+      "Drift": 0.08
+    }
+  ],
+  "DomesticCurrencyId": "eur",
+  "Assets": [
+    {
+      "CurrencyId": "eur",
+      "Volatility": 0.2,
+      "Spot": 5,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "us_dollar",
+      "Volatility": 0.3,
+      "Spot": 10,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "us_dollar",
+      "Volatility": 0.15,
+      "Spot": 10,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "pound",
+      "Volatility": 0.25,
+      "Spot": 10,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "pound",
+      "Volatility": 0.25,
+      "Spot": 10,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "pound",
+      "Volatility": 0.3,
+      "Spot": 10,
+      "Drift": 0.1
+    }
+  ],
+  "NumberOfDaysInOneYear": 252,
+  "PortfolioRebalancingOracleDescription": {
+    "Type": "Fixed",
+    "Period": 1
+  },
+  "Option": {
+    "Type": "foreign_perf_basket",
+    "FixingDatesInDays": {
+      "Type": "Grid",
+      "DatesInDays": [ 0, 63, 126 ]
+    },
+    "MaturityInDays": 126,
+    "Strike": 4
+  },
+  "Correlations": [
+    [ 1, 0.3, 0.3, 0.3, 0.3, 0.3, 0.2, -0.2],
+    [ 0.3, 1, 0.3, 0.3, 0.3, 0.3, 0.2, -0.2],
+    [ 0.3, 0.3, 1, 0.3, 0.3, 0.3, 0.2, -0.2],
+    [ 0.3, 0.3, 0.3, 1, 0.3, 0.3, 0.2, -0.2],
+    [ 0.3, 0.3, 0.3, 0.3, 1, 0.3, 0.2, -0.2],
+    [ 0.3, 0.3, 0.3, 0.3, 0.3, 1, 0.2, -0.2],
+    [ 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 1, -0.2],
+    [ -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, 1]
+  ],
+  "SampleNb": 50000,
+  "RelativeFiniteDifferenceStep": 0.1
+}

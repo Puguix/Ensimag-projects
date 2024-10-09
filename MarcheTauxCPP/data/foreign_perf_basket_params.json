@@ -1,0 +1,112 @@
+{
+  "Currencies": [
+    {
+      "id": "eur",
+      "InterestRate": 0.01,
+      "Volatility": 0
+    },
+    {
+      "id": "us_dollar",
+      "InterestRate": 0.015,
+      "Volatility": 0.18,
+      "Spot": 1,
+      "Drift": 0.03
+    },
+    {
+      "id": "pound",
+      "InterestRate": 0.015,
+      "Volatility": 0.18,
+      "Spot": 1,
+      "Drift": 0.04
+    }
+  ],
+  "DomesticCurrencyId": "eur",
+  "Assets": [
+    {
+      "CurrencyId": "eur",
+      "Volatility": 0.2,
+      "Spot": 5,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "us_dollar",
+      "Volatility": 0.3,
+      "Spot": 10,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "us_dollar",
+      "Volatility": 0.15,
+      "Spot": 10,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "pound",
+      "Volatility": 0.25,
+      "Spot": 10,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "pound",
+      "Volatility": 0.25,
+      "Spot": 10,
+      "Drift": 0.1
+    },
+    {
+      "CurrencyId": "pound",
+      "Volatility": 0.3,
+      "Spot": 10,
+      "Drift": 0.1
+    }
+  ],
+  "NumberOfDaysInOneYear": 252,
+  "PortfolioRebalancingOracleDescription": {
+    "Type": "Fixed",
+    "Period": 1
+  },
+  "Option": {
+    "Type": "foreign_perf_basket",
+    "FixingDatesInDays": {
+      "Type": "Grid",
+      "DatesInDays": [ 0, 63, 126 ]
+    },
+    "MaturityInDays": 126,
+    "Strike": 4
+  },
+  "Correlations": [
+    [ 1, 0.3, 0.3, 0.3, 0.3, 0.3, 0.2, -0.2],
+    [ 0.3, 1, 0.3, 0.3, 0.3, 0.3, 0.2, -0.2],
+    [ 0.3, 0.3, 1, 0.3, 0.3, 0.3, 0.2, -0.2],
+    [ 0.3, 0.3, 0.3, 1, 0.3, 0.3, 0.2, -0.2],
+    [ 0.3, 0.3, 0.3, 0.3, 1, 0.3, 0.2, -0.2],
+    [ 0.3, 0.3, 0.3, 0.3, 0.3, 1, 0.2, -0.2],
+    [ 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 1, -0.2],
+    [ -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, -0.2, 1]
+  ],
+  "SampleNb": 50000,
+  "RelativeFiniteDifferenceStep": 0.1,
+  "benchmarkResults": {
+    "price": 1.560800849635758,
+    "priceStdDev": 0.006959141655030221,
+    "deltas": [
+      -0.7616010061011502,
+      0.19171061891225466,
+      0.1729931721053205,
+      0.1609013075117181,
+      0.15808110232409373,
+      0.15897363901636719,
+      0.0,
+      0.0
+    ],
+    "deltaStdDev": [
+      0.0017545928915640486,
+      0.0012895519757422165,
+      0.0011638449407435332,
+      0.0009103400238386336,
+      0.0008853180568361721,
+      0.000878753557263989,
+      0.0,
+      0.0
+    ]
+}
+}

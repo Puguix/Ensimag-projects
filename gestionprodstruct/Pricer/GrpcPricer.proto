@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+
+service GrpcPricer {
+	rpc Hedging (HedgingInput) returns (HedgingOutput);
+    rpc PriceAndDeltas (PricingInput) returns (PricingOutput);
+	rpc Heartbeat (Empty) returns (ReqInfo);
+}
+
+message PricingInput {
+	repeated PastLines past = 1; // a sequence of lines containing the past data; represents a matrix
+	bool monitoringDateReached = 2; // if a new monitoring date has just been reached, then this parameter is true
+	double time = 3; // the mathematical time at which the pricer is invoked
+	string jsonFile = 4; //the param for the pricer
+}
+
+message PastLines {
+    repeated double value = 1;
+}
+
+message HedgingInput {
+	repeated PastLines past = 1; // a sequence of lines containing the past data; represents a matrix
+	bool monitoringDateReached = 2; // if a new monitoring date has just been reached, then this parameter is true
+	double time = 3; // the mathematical time at which the pricer is invoked
+	string jsonFile = 4; //the param for the pricer
+}
+
+
+
+message PricingOutput {
+	double price = 1;
+	repeated double deltas = 2;
+	double priceStdDev = 3;
+	repeated double deltasStdDev = 4;
+}
+
+message HedgingOutput {
+	string result = 1;
+}
+
+message Empty {}
+
+message ReqInfo {
+	double domesticInterestRate = 1;
+	double relativeFiniteDifferenceStep = 2;
+	int32 sampleNb = 3;
+}
